@@ -1,0 +1,110 @@
+@import "tailwindcss/preflight";
+
+/* Add custom base styles here... */
+
+@import "tailwindcss/components";
+
+/* Add custom components here... */
+
+@import "tailwindcss/utilities";
+
+/* Add custom utilities here... */
+/* //====================
+  //== EXTRACTED
+ //==================== */
+.form_label {
+  @apply block text-grey-darker text-sm font-bold mb-2;
+}
+.form_input {
+  @apply w-full bg-grey-lightest text-grey-darkest border border-grey-light rounded px-3 py-3;
+}
+.form_input:focus {
+  @apply bg-white border-lazeeza-darker;
+}
+.form_textarea {
+  @apply appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight;
+}
+.form_textarea:focus {
+  @apply bg-white border-grey outline-none;
+}
+
+.btn_cancel {
+  @apply text-center align-middle whitespace-no-wrap select-none cursor-pointer inline-block mb-0 bg-transparent border border-grey-light text-grey-darker font-semibold text-lg no-underline rounded leading-tight px-4 py-2;
+}
+.btn_new {
+  @apply text-center align-middle whitespace-no-wrap select-none cursor-pointer inline-block mb-0 bg-blue border border-grey-light text-white font-semibold text-lg rounded leading-tight px-4 py-2 shadow;
+}
+
+.btn_jobsave {
+  @apply text-center align-middle whitespace-no-wrap select-none cursor-pointer inline-block mb-0 bg-green border border-grey-light text-green-darker font-semibold text-lg rounded leading-tight px-4 py-2 shadow;
+}
+.btn_jobsave:hover {
+  @apply bg-green-dark text-white
+}
+.btn_jobsave:focus {
+  @apply outline-none shadow-outline
+}
+.btn_lazeeza {
+  @apply bg-lazeeza-light text-lazeeza-darker font-bold py-2 px-4 rounded mr-6;
+}
+.btn_lazeeza:hover {
+  @apply bg-lazeeza-darker text-white;
+}
+.btn_action {
+  @apply self-center bg-orange-dark p-1 border border-lazeeza-darker rounded;
+}
+.btn_action:hover {
+  @apply bg-orange;
+}
+.alert {
+  @apply bg-orange-lightest border-l-4 border-orange text-orange-dark;
+}
+
+.tbl_header {
+  @apply font-semibold tracking-wide leading-loose border-b-2 border-blue;
+}
+
+
+/* //====================
+  //== CUSTOM CSS
+ //==================== */
+input[type="checkbox"].css3checkbox{
+  display: none;
+}
+
+label.toggler{ /* checkbox label */
+  display: block;
+  position: relative;
+  padding-left: 32px; /* space to the left of label text */
+  padding-top: 2px;
+  cursor: pointer;
+}
+
+label.toggler::before{ /* flat box */
+  content: '';
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: #c4d7e0 ; /* B1E5EF */
+  box-shadow: 0 0 3px #BFDEFC inset;
+  left: 0;
+  top: 0;
+}
+
+label.toggler::after{ /* check mark inside flat box*/
+  content: '\f00c'; /* fontAwesome icon font unicode. See http://fortawesome.github.io/Font-Awesome/cheatsheet/ for others */
+  position:absolute;
+  left: 3px;
+  top: 3px;
+  font: bold 18px FontAwesome;
+  color: #6D82B4; /* 1B4977 */
+  width: 0; /* hide check mark initially */
+  text-shadow: 0 0 2px #eee;
+  overflow: hidden;
+}
+
+input[type="checkbox"]:checked + label.toggler::after{ /* check mark when checkbox is checked */
+  transition: width 0.2s; /* CSS3 transition on width property */
+  width: 25px; /* expand check mark to show it. Value should reflect that of container box */
+}

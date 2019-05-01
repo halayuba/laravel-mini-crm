@@ -1,0 +1,11 @@
+@extends('layouts.master')
+
+@section('title', 'Home')
+
+@section('content')
+
+  <div class="min-h-screen flex items-center justify-center">
+      <h1 class="text-5xl text-purple font-sans">Home</h1>
+  </div>
+
+@endsection
