@@ -3,7 +3,7 @@
 - Author: Simon Bashir
 - Version: 0.1.1
 - Release Date: May 1st, 2019
-- To see a hosted demo you can visit [mini-crm.c1st.net](http://mini-crm.c1st.net)
+- To see a hosted demo you can visit [ziffoo.com](http://ziffo.com)
 
 ### Brief Description
 Coded in `Laravel 5.8`, Mini CRM is a demo project.
@@ -24,7 +24,7 @@ Coming soon
 
 
 ### Disclaimer
-Mini CRM is still is just for demo purposes. Although it is a work in progress with many more features to be added regularly, we offer no active support and we do not guarantee the stability of the code so be cautious not to use Mini CRM in any production environment. 
+Mini CRM is just for demo purposes. Although it is a work in progress with many more features to be added regularly, we offer no active support and we do not guarantee the stability of the code so be cautious not to use Mini CRM in any production environment.
 
 ### Setup Instructions
 ```
@@ -32,7 +32,7 @@ Mini CRM requires Laravel v5.8 (not tested with other versions).
 ```
 
 
-* Clone this repository to your local drive 
+* Clone this repository to your local drive
 ~~~
     git clone https://github.com/halayuba/laravel-mini-crm.git
 ~~~
