@@ -12,6 +12,7 @@
 
           <!-- MANAGER -->
           <h3 class="mb-1">{{ $manager->name }}</h3>
+          <p class="px-2 py-2 text-sm">{{ $manager->email }}</p>
         </div>
 
         <!-- //== SECOND ROW

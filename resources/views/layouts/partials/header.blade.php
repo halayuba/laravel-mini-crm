@@ -53,7 +53,7 @@
 
           <div class="flex items-center relative">
             <!-- AVATAR -->
-            <img src="{{ asset('img/avatar.png') }}" class="inline-block h-8 w-8 rounded-full mr-4">
+            <img src="{{ asset('img/avatar.png') }}" class="inline-block h-8 w-8 rounded-full mr-2">
             <!-- USER NAME -->
             <span class="text-white text-sm mr-2">{{ Auth::user()->name }}</span>
             <!-- CHEVRON -->

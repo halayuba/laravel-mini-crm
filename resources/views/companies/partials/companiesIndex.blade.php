@@ -54,8 +54,8 @@
          <!-- ADD NEW EMPLOYEES -->
          <span class="flex-1 bg-grey-lighter hover:bg-white text-center py-2">
 
-           <a href="{{ route('employee.create') }}" class="no-underline text-grey-darker" title="Add new employees">
-             <img src="{{ asset('img/ios-people.svg') }}" class="w-4 pt-1">
+           <a href="{{ route('employee.createSpecific', $company->id) }}" class="no-underline text-grey-darker" title="Add new employees">
+             <img src="{{ asset('img/md-person-add.svg') }}" class="w-4 pt-1">
              <span class="hidden sm:inline-block">employees</span>
            </a>
 

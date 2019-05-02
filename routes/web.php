@@ -27,6 +27,7 @@ Route::prefix('companies')->middleware(['auth'])->group(function(){
 Route::prefix('employees')->middleware(['auth'])->group(function(){
   Route::get('/', 'EmployeeController@index')->name('employees.index');
   Route::get('/create', 'EmployeeController@create')->name('employee.create');
+  Route::get('create-specific/{employee}', 'EmployeeController@createSpecific')->name('employee.createSpecific');
   Route::post('/', 'EmployeeController@store')->name('employee.store');
   Route::get('/{employee}', 'EmployeeController@show')->name('employee.show');
   Route::get('/{employee}/edit', 'EmployeeController@edit')->name('employee.edit');
@@ -41,7 +42,7 @@ Route::prefix('managers')->middleware(['auth', 'adminRole'])->group(function(){
   Route::get('/', 'ManagerController@index')->name('managers.index');
   Route::get('/create', 'ManagerController@create')->name('manager.create');
   Route::post('/', 'ManagerController@store')->name('manager.store');
-  Route::get('/{user}', 'ManagerController@show')->name('manager.show');
+  // Route::get('/{user}', 'ManagerController@show')->name('manager.show');
   Route::get('/{user}/edit', 'ManagerController@edit')->name('manager.edit');
   Route::patch('/{user}', 'ManagerController@update')->name('manager.update');
   Route::delete('/{user}', 'ManagerController@destroy')->name('manager.destroy');

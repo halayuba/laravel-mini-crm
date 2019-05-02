@@ -21,7 +21,7 @@ class ManagerController extends Controller
      //==================== */
     public function create()
     {
-
+      return view('managers.create');
     }
 
     /* //====================
@@ -29,6 +29,14 @@ class ManagerController extends Controller
      //==================== */
     public function store(Request $request)
     {
+      $attributes = request()->validate([
+        'name' => 'required',
+        'email' => 'required|email'
+      ]);
+
+      User::create($attributes);
+
+      return redirect("/managers")->with(flash_message("success", "Created successfully."));
 
     }
 
@@ -62,7 +70,7 @@ class ManagerController extends Controller
      //==================== */
     public function edit(User $user)
     {
-
+      return view("managers.edit", compact('user'));
     }
 
     /* //====================
@@ -70,7 +78,14 @@ class ManagerController extends Controller
      //==================== */
     public function update(Request $request, User $user)
     {
+      $attributes = request()->validate([
+        'name' => 'required',
+        'email' => 'required|email'
+      ]);
 
+      $user->update($attributes);
+
+      return redirect("/managers")->with(flash_message("success", "Updated successfully."));
     }
 
     /* //====================
@@ -78,7 +93,7 @@ class ManagerController extends Controller
      //==================== */
     public function assign(Request $request, User $user)
     {
-      
+
     }
 
     /* //====================

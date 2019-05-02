@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Employee;
+use App\Models\{Employee, Company};
 
 class EmployeeController extends Controller
 {
@@ -25,11 +25,37 @@ class EmployeeController extends Controller
       }
 
       /* //====================
+        //== CREATE NEW EMP FOR A SPECIFIC COMPANY
+       //==================== */
+      public function createSpecific($id)
+      {
+        // dd(str_contains(request()->path(), 'create-specific'));
+        return view("employees.createSpecific", compact('id'));
+      }
+
+      /* //====================
         //== STORE
        //==================== */
       public function store(Request $request)
       {
+        // dd(Company::find($request->company_id)->name);
 
+        request()->validate([
+          'first_name' => 'required',
+          'last_name' => 'required'
+        ]);
+
+        Employee::create($request->all());
+
+        if ( $request->return_to_route == 'companies' )
+        {
+          $company = Company::find($request->company_id)->name;
+          return redirect()->route('companies.index')->with(flash_message("success", "A new employee has been added successfully to company " . $company . "."));
+        }
+        else
+        {
+          return redirect("/employees")->with(flash_message("success", "Employee created successfully."));
+        }
       }
 
       /* //====================

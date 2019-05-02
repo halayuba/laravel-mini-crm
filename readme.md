@@ -10,13 +10,13 @@ Coded in `Laravel 5.8`, Mini CRM is a demo project.
 
 ### Basic Features
 1. The tool will allow "Admin" users to perform CRUD operations.
-2. The "AdminRoleMiddleware" will block access to the "Managers" nav menu bar unless signed in as Admin.
+2. The "AdminRoleMiddleware" middleware will block access to the "Managers" nav menu bar unless signed in as Admin.
 3. Pivot table is used to store access permissions for the "Managers".
 4. Policy is used to prevent performing delete action.
 5. Seeders are used to prepopulate certain tables.
 6. The "ValidateAndStoreUpload" repository is used to validate and store uploaded files.
-7. Form validation, scope (in Models), view composer, markdown mail, flash messaging, and helper functiond are used in this project.
-8. TailwindCSS is used for the layout design.
+7. Form validation, scope (in Models), view composer, markdown mail, flash messaging, and helper functions are used in this project.
+8. TailwindCSS is used for layout design.
 9. Vue.js is used in a few places.
 
 ### Screen Shots

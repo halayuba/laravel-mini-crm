@@ -58,6 +58,15 @@ class User extends Authenticatable
               ->where('role_id', 2);
    }
 
+   public static function boot()
+   {
+     parent::boot();
+     static::creating(function ($user) {
+       $user->password = bcrypt('password');
+       $user->role_id = 2;
+     });
+   }
+
      //== RELATIONSHIPS
     //====================
     public function role()
