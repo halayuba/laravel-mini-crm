@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{Employee, Company};
+use App\Http\Requests\EmployeeRequest;
 
 class EmployeeController extends Controller
 {
@@ -12,7 +13,7 @@ class EmployeeController extends Controller
        //==================== */
       public function index()
       {
-        $employees = Employee::with('company');
+        $employees = Employee::with('company')->paginate(10);
         return view("employees.index", compact('employees'));
       }
 
@@ -35,13 +36,8 @@ class EmployeeController extends Controller
       /* //====================
         //== STORE
        //==================== */
-      public function store(Request $request)
+      public function store(EmployeeRequest $request)
       {
-        request()->validate([
-          'first_name' => 'required',
-          'last_name' => 'required'
-        ]);
-
         Employee::create($request->all());
 
         if ( $request->return_to_route == 'companies' )
@@ -77,7 +73,7 @@ class EmployeeController extends Controller
        //==================== */
       public function show(Employee $employee)
       {
-
+        return view("employees.show", compact('employee'));
       }
 
       /* //====================
@@ -85,14 +81,22 @@ class EmployeeController extends Controller
        //==================== */
       public function edit(Employee $employee)
       {
-
+        return view("employees.edit", compact('employee'));
       }
 
       /* //====================
         //== UPDATE
        //==================== */
-      public function update(Request $request, Employee $employee)
+      public function update(EmployeeRequest $request, Employee $employee)
       {
+        if ( $employee->update($request->all()) )
+        {
+          return redirect("/employees")->with(flash_message("success", "Employee created successfully."));
+        }
+        else
+        {
+          return redirect("/employees")->with(flash_message("danger", "Update failed."));
+        }
 
       }
 
@@ -101,6 +105,13 @@ class EmployeeController extends Controller
        //==================== */
       public function destroy(Employee $employee)
       {
-
+        if ( $employee->delete() )
+        {
+          return redirect("/employees")->with(flash_message("success", "Employee deleted successfully."));
+        }
+        else
+        {
+          return redirect("/employees")->with(flash_message("danger", "Failed to delete employee."));
+        }
       }
 }

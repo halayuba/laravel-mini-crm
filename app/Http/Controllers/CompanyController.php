@@ -152,7 +152,7 @@ class CompanyController extends Controller
    //==================== */
   public function destroy(Company $company)
   {
-    if( Gate::allows('delete-company') )
+    if( Gate::allows('perform-admin-actions') )
     {
       /* == PROPAGATE TO DELETE ALL EMPLOYEES == */
       if ( $company->employees )

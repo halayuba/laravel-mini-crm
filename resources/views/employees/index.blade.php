@@ -4,8 +4,16 @@
 
 @section('content')
 
-  <div class="min-h-screen flex items-center justify-center">
-      <h1 class="text-5xl text-purple font-sans">Coming Tomorrow</h1>
+<div class="min-h-screen container mx-auto mt-8">
+  <div class="flex flex-col-reverse sm:flex-row">
+
+    <!-- LEFT SIDE -->
+    @include('employees.partials.employeesIndex')
+
+    <!-- RIGHT SIDE -->
+    @include('employees.partials.filters')
+
   </div>
+</div>
 
 @endsection

@@ -1,23 +1,24 @@
 @extends('layouts.master')
 
-@section('title', 'New Employee')
+@section('title', 'Edit Employee')
 
 @section('content')
 
 <!-- INSTRUCTIONS -->
 <div class="container mx-auto px-4 mt-4 bg-yellow-lightest border-l-4 border-yellow-dark text-grey-darker p-4" role="alert">
-  <p>Complete the form below to create a new employee record.</p>
+  <p>Update employee record.</p>
 </div>
 
 <div class="flex flex-col items-center justify-center mt-12 sm:mt-16 lg:mb-20">
   <div class="w-full max-w-md">
 
     <div class="bg-green-lightest border-t-4 border-green-dark rounded-t text-teal-darkest px-4 py-4 shadow-md uppercase font-bold">
-      {{ __('New Employee') }}
+      {{ __('Update Employee') }}
     </div>
 
-    <form method="POST" action="{{ url('/employees') }}" aria-label="{{ __('Employee') }}" class="bg-white shadow-md rounded-b px-8 pt-6 py-12 mb-4">
+    <form method="POST" action="{{ route('employee.update', $employee->id) }}" aria-label="{{ __('Employee') }}" class="bg-white shadow-md rounded-b px-8 pt-6 py-12 mb-4">
       @csrf
+      @method('PATCH')
 
       <!-- FIRST NAME -->
       <div class="mb-8 ">
@@ -30,7 +31,7 @@
           </svg>
         </div>
 
-        <input id="first_name" type="text" name="first_name" class="form_input" value="{{ old('first_name') }}" placeholder="First Name" required autofocus>
+        <input id="first_name" type="text" name="first_name" class="form_input" value="{{ old('first_name')?: $employee->first_name }}" placeholder="First Name" required>
       </div>
 
       <!-- LAST NAME -->
@@ -44,19 +45,19 @@
           </svg>
         </div>
 
-        <input id="last_name" type="text" name="last_name" class="form_input" value="{{ old('last_name') }}" placeholder="Last Name" required>
+        <input id="last_name" type="text" name="last_name" class="form_input" value="{{ old('last_name')?: $employee->last_name }}" placeholder="Last Name" required>
       </div>
 
       <!-- EMAIL -->
       <div class="w-full mb-8">
         <label for="email" class="form_label">Email</label>
-        <input id="email" type="email" name="email" class="form_input" value="{{ old('email') }}" placeholder="Employee email address">
+        <input id="email" type="email" name="email" class="form_input" value="{{ old('email')?: $employee->email }}" placeholder="Employee email address">
       </div>
 
       <!-- PHONE -->
       <div class="w-full mb-8">
         <label for="phone" class="form_label">Phone</label>
-        <input id="phone" type="text" name="phone" class="form_input" value="{{ old('phone') }}" placeholder="(888) 213-5656">
+        <input id="phone" type="text" name="phone" class="form_input" value="{{ old('phone')?: $employee->phone }}" placeholder="(888) 213-5656">
       </div>
 
       <!-- COMPANY -->
@@ -84,7 +85,7 @@
         <select name="company_id" class="form_input">
           <option value="">Select</option>
           @foreach($companies as $company)
-            <option value="{{ $company->id }}" {{ selected(old('company_id'), $company->id) }}>{{ $company->name }}</option>
+            <option value="{{ $company->id }}" {{ selected(old('company_id'), $company->id, $employee->company_id) }}>{{ $company->name }}</option>
           @endforeach
         </select>
       </div>

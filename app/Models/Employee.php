@@ -19,7 +19,7 @@ class Employee extends Model
 
      //== RELATIONSHIPS
     //====================
-    public function Compnay()
+    public function Company()
     {
         return $this->belongsTo(Company::class);
     }
