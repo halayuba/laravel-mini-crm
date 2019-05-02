@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use App\Models\Role;
 
 class AdminRoleMiddleware
 {
@@ -16,9 +15,7 @@ class AdminRoleMiddleware
      */
     public function handle($request, Closure $next)
     {
-      $adminID = Role::admin()->first()->id;
-
-      if( $request->is('managers') && $request->user()->role_id !== $adminID )
+      if( $request->is('managers') && $request->user()->role_id !== adminRole() )
       {
         return redirect('/home')->with(flash_message('danger', 'You do not have enough permissions to access this area.'));
       }

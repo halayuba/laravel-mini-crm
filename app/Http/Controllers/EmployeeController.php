@@ -29,7 +29,6 @@ class EmployeeController extends Controller
        //==================== */
       public function createSpecific($id)
       {
-        // dd(str_contains(request()->path(), 'create-specific'));
         return view("employees.createSpecific", compact('id'));
       }
 
@@ -38,8 +37,6 @@ class EmployeeController extends Controller
        //==================== */
       public function store(Request $request)
       {
-        // dd(Company::find($request->company_id)->name);
-
         request()->validate([
           'first_name' => 'required',
           'last_name' => 'required'
@@ -50,7 +47,7 @@ class EmployeeController extends Controller
         if ( $request->return_to_route == 'companies' )
         {
           $company = Company::find($request->company_id)->name;
-          return redirect()->route('companies.index')->with(flash_message("success", "A new employee has been added successfully to company " . $company . "."));
+          return redirect()->route('companies.index')->with(flash_message("success", "A new employee has been added successfully to company '" . $company . "'."));
         }
         else
         {

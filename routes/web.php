@@ -27,7 +27,7 @@ Route::prefix('companies')->middleware(['auth'])->group(function(){
 Route::prefix('employees')->middleware(['auth'])->group(function(){
   Route::get('/', 'EmployeeController@index')->name('employees.index');
   Route::get('/create', 'EmployeeController@create')->name('employee.create');
-  Route::get('create-specific/{employee}', 'EmployeeController@createSpecific')->name('employee.createSpecific');
+  Route::get('create-specific/{id}', 'EmployeeController@createSpecific')->name('employee.createSpecific');
   Route::post('/', 'EmployeeController@store')->name('employee.store');
   Route::get('/{employee}', 'EmployeeController@show')->name('employee.show');
   Route::get('/{employee}/edit', 'EmployeeController@edit')->name('employee.edit');
@@ -49,3 +49,5 @@ Route::prefix('managers')->middleware(['auth', 'adminRole'])->group(function(){
   Route::post('/search', 'ManagerController@search')->name('managers.search');
   Route::post('/assign', 'ManagerController@assign')->name('managers.assign');
 });
+
+Route::get('test', function(){ dd(adminRole()); });

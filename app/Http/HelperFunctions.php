@@ -1,4 +1,5 @@
 <?php
+use App\Models\Role;
 
 function flash_message($state, $msg)
 {
@@ -59,4 +60,9 @@ function selected($old, $compare_to, $stored='')
    return ($val == $compare_to)? ' selected' : '';
  }
  else return ($old == $compare_to)? ' selected' : '';
+}
+
+function adminRole()
+{
+  return App\Models\Role::admin()->first()->id;
 }

@@ -7,6 +7,7 @@ use App\Http\Requests\CompanyRequest;
 use App\Models\Company;
 use App\Repositories\ValidateAndStoreUpload;
 use Illuminate\Support\Facades\Storage;
+use Gate;
 
 class CompanyController extends Controller
 {
@@ -151,28 +152,34 @@ class CompanyController extends Controller
    //==================== */
   public function destroy(Company $company)
   {
-
-    /* == PROPAGATE TO DELETE ALL EMPLOYEES == */
-    if ( $company->employees )
+    if( Gate::allows('delete-company') )
     {
-      $company->employees->each->delete();
-    }
-
-    /* == PERFORM DELETE == */
-    if ( $company->delete() )
-    {
-      /* == UPLOADED IMAGE (LOGO) EXISTS == */
-      if ( $company->file )
+      /* == PROPAGATE TO DELETE ALL EMPLOYEES == */
+      if ( $company->employees )
       {
-        $pathAndName = 'public/uploads/' . $company->file;
-        $exists = Storage::exists($pathAndName);
-        if( $exists ) Storage::delete($pathAndName);
+        $company->employees->each->delete();
       }
 
-      return redirect("/companies")->with(flash_message("success", "Company deleted successfully."));
-    }
+      /* == PERFORM DELETE == */
+      if ( $company->delete() )
+      {
+        /* == UPLOADED IMAGE (LOGO) EXISTS == */
+        if ( $company->file )
+        {
+          $pathAndName = 'public/uploads/' . $company->file;
+          $exists = Storage::exists($pathAndName);
+          if( $exists ) Storage::delete($pathAndName);
+        }
 
-    return redirect("/companies")->with(flash_message("danger", "Failed to delete company."));
+        return redirect("/companies")->with(flash_message("success", "Company deleted successfully."));
+      }
+
+      return redirect("/companies")->with(flash_message("danger", "Failed to delete company."));
+    }
+    else
+    {
+      return back()->with(flash_message("danger", "You don't have enough permissions to perform this action."));
+    }
   }
 
 }

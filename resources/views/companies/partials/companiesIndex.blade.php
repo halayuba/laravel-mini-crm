@@ -83,14 +83,20 @@
 
           <!-- DELETE -->
           <span class="flex-1 bg-grey-lighter hover:bg-white text-center py-2">
-
-            <a href="{{ route('company.destroy', $company->slug) }}" class="no-underline text-grey-darker" title="Warning! attempting to delete a company will also delete all associated employees"
-              onclick="event.preventDefault();
-              document.getElementById('delete-{{ $company->slug }}').submit();"
-            >
-              <img src="{{ asset('img/erase.png') }}" class="w-4 pt-1">
-              <span class="hidden sm:inline-block">delete</span>
-            </a>
+            @can('delete-company')
+              <a href="{{ route('company.destroy', $company->slug) }}" class="no-underline text-grey-darker" title="Warning! attempting to delete a company will also delete all associated employees"
+                onclick="event.preventDefault();
+                document.getElementById('delete-{{ $company->slug }}').submit();"
+              >
+                <img src="{{ asset('img/erase.png') }}" class="w-4 pt-1">
+                <span class="hidden sm:inline-block">delete</span>
+              </a>
+            @else
+              <a class="no-underline text-grey-darker cursor-not-allowed opacity-50" title="You don't have enough permissions to perform this action.">
+                <img src="{{ asset('img/erase.png') }}" class="w-4 pt-1">
+                <span class="hidden sm:inline-block">delete</span>
+              </a>
+            @endcan
           </span>
              <form id="delete-{{ $company->slug }}" action="{{ route('company.destroy', $company->slug) }}" method="POST" class="hidden">
                @csrf
