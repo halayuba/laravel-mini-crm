@@ -83,7 +83,7 @@
 
           <!-- DELETE -->
           <span class="flex-1 bg-grey-lighter hover:bg-white text-center py-2">
-            @can('delete-company')
+            @can('perform-admin-actions')
               <a href="{{ route('company.destroy', $company->slug) }}" class="no-underline text-grey-darker" title="Warning! attempting to delete a company will also delete all associated employees"
                 onclick="event.preventDefault();
                 document.getElementById('delete-{{ $company->slug }}').submit();"

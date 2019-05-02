@@ -17,18 +17,20 @@
   >
 
     <!-- COMPANY -->
+    @can('perform-admin-actions')
     <a href="{{ url('companies/create') }}" class="block px-6 py-3 width-full no-underline hover:bg-grey-light">
       <span class="text-sm text-blue-dark tracking-tight hover:text-blue-darker">New Company</span>
-    </a>
-
-    <!-- EMPLOYEE -->
-    <a href="{{ route('employee.create') }}" class="block px-6 py-3 width-full no-underline hover:bg-grey-light">
-      <span class="text-sm text-blue-dark tracking-tight hover:text-blue-darker">New Employee</span>
     </a>
 
     <!-- MANAGERS -->
     <a href="{{ route('manager.create') }}" class="block px-6 py-3 width-full no-underline hover:bg-grey-light">
       <span class="text-sm text-blue-dark tracking-tight hover:text-blue-darker">New Manager</span>
+    </a>
+    @endcan
+
+    <!-- EMPLOYEE -->
+    <a href="{{ route('employee.create') }}" class="block px-6 py-3 width-full no-underline hover:bg-grey-light">
+      <span class="text-sm text-blue-dark tracking-tight hover:text-blue-darker">New Employee</span>
     </a>
 
   </div>
