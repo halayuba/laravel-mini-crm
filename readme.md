@@ -3,7 +3,7 @@
 - Author: Simon Bashir
 - Version: 0.1.1
 - Release Date: May 1st, 2019
-- To see a hosted demo you can visit [ziffoo.com](http://ziffo.com)
+- To see a hosted demo you can visit [ziffoo.com](http://www.ziffoo.com)
 
 ### Brief Description
 Coded in `Laravel 5.8`, Mini CRM is a demo project.
