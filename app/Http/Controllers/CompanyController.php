@@ -23,7 +23,15 @@ class CompanyController extends Controller
    //==================== */
   public function index()
   {
-    $companies = Company::paginate(10);
+    /* == ADMIN HAS ACCESS TO ALL COMPANIES == */
+    if( Gate::allows('perform-admin-actions') )
+    {
+      $companies = Company::paginate(10);
+    }
+    else
+    {
+      $companies = request()->user()->companies()->paginate(10);
+    }
     return view("companies.index", compact('companies'));
   }
 

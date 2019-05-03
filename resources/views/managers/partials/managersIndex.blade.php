@@ -12,21 +12,24 @@
 
           <!-- MANAGER -->
           <h3 class="mb-1">{{ $manager->name }}</h3>
-          <p class="px-2 py-2 text-sm">{{ $manager->email }}</p>
+          <p class="py-1 text-sm">{{ $manager->email }}</p>
         </div>
 
         <!-- //== SECOND ROW
             //==================== -->
-        <div class="flex text-grey-dark flex flex-wrap mb-4 py-2 px-2">
+        <div class="text-grey-dark mb-4 px-2">
 
           @if( $manager->companies->count() )
+            <p class="block mb-2 text-sm underline leading-loose tracking-tight ">Access permissions to these companies:</p>
 
+            <div class="flex flex-wrap text-grey-dark mb-4 py-2 px-2">
             @foreach( $manager->companies as $company )
               <!-- COMPNAY ACCESS -->
               <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
-                $company->name
+                {{ $company->name }}
               </span>
             @endforeach
+          </div>
           @else
             <p class="px-2 py-2">No access permissions to any company.</p>
           @endif
@@ -39,7 +42,7 @@
          <!-- ASSIGN COMPANIES -->
          <span class="flex-1 bg-grey-lighter hover:bg-white text-center py-2">
 
-           <a href="#" class="flex items-center justify-center no-underline text-grey-darker" title="Assign access to companies">
+           <a href="{{ route('permissions.create', $manager->id) }}" class="flex items-center justify-center no-underline text-grey-darker" title="Assign access to companies">
              <img src="{{ asset('img/md-key.svg') }}" class="w-6 mr-1">
              <span class="hidden sm:inline-block">assign access</span>
            </a>

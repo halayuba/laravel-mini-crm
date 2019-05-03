@@ -81,7 +81,7 @@
 
           </label>
         </div>
-        <select name="company_id" class="form_input">
+        <select name="company_id" class="form_input" required>
           <option value="">Select</option>
           @foreach($companies as $company)
             <option value="{{ $company->id }}" {{ selected(old('company_id'), $company->id) }}>{{ $company->name }}</option>

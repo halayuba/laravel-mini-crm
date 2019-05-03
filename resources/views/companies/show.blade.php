@@ -40,7 +40,13 @@
               <div class="flex flex-wrap py-2">
                 <img src="{{ asset('img/md-link.svg') }}" class="w-6 h-6">
                 <span class="text-sm bg-grey-light p-1 mx-1">Website</span>
-                <span class="text-lg ml-2">{{ $company->website }}</span>
+                @if($company->website)
+                  <span class="text-lg ml-2">
+                    <a href="{{ $company->website }}" target="_blank" class="no-underline text-indigo">{{ $company->website }}</a>
+                  </span>
+                @else
+                  <span class="text-lg ml-2">{{ $company->website }}</span>
+                @endif
               </div>
 
             </div>

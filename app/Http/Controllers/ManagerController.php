@@ -30,8 +30,8 @@ class ManagerController extends Controller
     public function store(Request $request)
     {
       $attributes = request()->validate([
-        'name' => 'required',
-        'email' => 'required|email'
+        'name' => 'required|min:3',
+        'email' => 'required|unique:users,email'
       ]);
 
       User::create($attributes);

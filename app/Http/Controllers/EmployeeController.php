@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\{Employee, Company};
 use App\Http\Requests\EmployeeRequest;
+use Gate;
 
 class EmployeeController extends Controller
 {
@@ -14,6 +15,15 @@ class EmployeeController extends Controller
       public function index()
       {
         $employees = Employee::with('company')->paginate(10);
+
+        // if( Gate::allows('perform-admin-actions') )
+        // {
+        //   $employees = Employee::with('company')->paginate(10);
+        // }
+        // else
+        // {
+        //   $employees = request()->user()->companies->each->employees;
+        // }
         return view("employees.index", compact('employees'));
       }
 
@@ -66,7 +76,7 @@ class EmployeeController extends Controller
           return redirect('/employees')->with(flash_message("warning", "Search field must contain 3 characters at least."));
         }
 
-      }      
+      }
 
       /* //====================
         //== SHOW
@@ -87,8 +97,15 @@ class EmployeeController extends Controller
       /* //====================
         //== UPDATE
        //==================== */
-      public function update(EmployeeRequest $request, Employee $employee)
+      public function update(Request $request, Employee $employee)
       {
+        request()->validate([
+          'first_name' => 'required',
+          'last_name' => 'required',
+          'company_id' => 'required',
+          'email' => 'email|unique:employees,email,' . $employee->id
+        ]);
+
         if ( $employee->update($request->all()) )
         {
           return redirect("/employees")->with(flash_message("success", "Employee created successfully."));

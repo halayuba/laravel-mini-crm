@@ -111,10 +111,17 @@
     @empty
       <!-- NOTHING EXISTS IN THE DB -->
       <div class="container mx-auto px-4 mt-4 bg-orange-lightest border-l-4 border-orange text-orange-dark p-4" role="alert">
-        <p class="font-bold mb-3">Please confirm</p>
-        <p>No companies found! To create a new record click
+        <p class="font-bold mb-3">No companies found!</p>
+
+        @can('perform-admin-actions')
+        <p>
+          To create a new record click
           <a href="{{ url('companies/create') }}" class="no-underline text-semibold text-indigo"> here</a>
         </p>
+        @else
+          <p>You do not have enough permissions to create new companies.</p>
+        @endcan
+
       </div>
     @endforelse
 

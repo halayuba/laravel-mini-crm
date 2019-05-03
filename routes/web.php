@@ -38,7 +38,7 @@ Route::prefix('employees')->middleware(['auth'])->group(function(){
 
  //== COMPANY-EMPLOYEE: SHOW EMPLOYEES FOR A GIVEN COMPANY
 //====================
-Route::get('companies/{company}/employees', 'CompanyEmployeeController')->name('company.employees');  
+Route::get('companies/{company}/employees', 'CompanyEmployeeController')->name('company.employees');
 
  //== MANAGERS
 //====================
@@ -51,7 +51,14 @@ Route::prefix('managers')->middleware(['auth', 'adminRole'])->group(function(){
   Route::patch('/{user}', 'ManagerController@update')->name('manager.update');
   Route::delete('/{user}', 'ManagerController@destroy')->name('manager.destroy');
   Route::post('/search', 'ManagerController@search')->name('managers.search');
-  Route::post('/assign', 'ManagerController@assign')->name('managers.assign');
+  // Route::post('/assign', 'ManagerController@assign')->name('managers.assign');
 });
 
-Route::get('test', function(){ dd(adminRole()); });
+//== ASSIGN-COMPANIES: PROVIDE ACCESS PERMISSIONS TO A MANAGER
+//====================
+Route::prefix('permissions')->middleware(['auth', 'adminRole'])->group(function(){
+  Route::get('/{user}/create', 'PermissionController@create')->name('permissions.create');
+  Route::post('/', 'PermissionController@store')->name('permissions.store');
+  Route::get('/{user}/edit', 'PermissionController@edit')->name('permissions.edit');
+  Route::patch('/{user}', 'PermissionController@update')->name('permissions.update');
+});
