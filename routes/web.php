@@ -19,7 +19,6 @@ Route::prefix('companies')->middleware(['auth'])->group(function(){
   Route::patch('/{company}', 'CompanyController@update')->name('company.update');
   Route::delete('/{company}', 'CompanyController@destroy')->name('company.destroy');
   Route::post('/search', 'CompanyController@search')->name('companies.search');
-  Route::get('/{compnay}/employees', 'CompnayController@showEmployees')->name('companies.employees');
 });
 
  //== EMPLOYEES
@@ -35,6 +34,11 @@ Route::prefix('employees')->middleware(['auth'])->group(function(){
   Route::delete('/{employee}', 'EmployeeController@destroy')->name('employee.destroy');
   Route::post('/search', 'EmployeeController@search')->name('employees.search');
 });
+
+
+ //== COMPANY-EMPLOYEE: SHOW EMPLOYEES FOR A GIVEN COMPANY
+//====================
+Route::get('companies/{company}/employees', 'CompanyEmployeeController')->name('company.employees');  
 
  //== MANAGERS
 //====================

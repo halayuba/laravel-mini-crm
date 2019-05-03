@@ -66,7 +66,7 @@ class EmployeeController extends Controller
           return redirect('/employees')->with(flash_message("warning", "Search field must contain 3 characters at least."));
         }
 
-      }
+      }      
 
       /* //====================
         //== SHOW

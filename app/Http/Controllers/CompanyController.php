@@ -89,6 +89,7 @@ class CompanyController extends Controller
 
   }
 
+
   /* //====================
     //== SHOW
    //==================== */
@@ -124,7 +125,7 @@ class CompanyController extends Controller
     $image_name = $this->upload->uploadValidation($request);
 
     /* == ASSUMING NO UPDATE WAS NEEDED FOR THE LOGO == */
-    $image_name = empty($image_name)?: $current_image_name;
+    $image_name = empty($image_name)? $current_image_name : $image_name;
 
      //== SAVE TO DB
     //====================

@@ -14,7 +14,7 @@
             {{ $company->name }}
 
             @if( $company->employees->count() )
-              <a href="{{ route('companies.employees', $company->name) }}" class="ml-2 no-underline">
+              <a href="{{ route('company.employees', $company->slug) }}" class="ml-2 no-underline">
                 <span class="bg-blue text-xs text-white p-2 rounded" title="Total number of employees. Click to view">
                     {{ count($company->employees) }}
                 </span>

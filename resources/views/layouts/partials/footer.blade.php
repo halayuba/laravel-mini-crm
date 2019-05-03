@@ -2,7 +2,7 @@
   <div class="flex flex-col lg:flex-row lg:justify-between border-t-2 border-grey-light py-6 text-grey-darker">
 
     <div class="mb-4 lg:mb-1">
-      {{ (date('Y') > 2019)?  '2019 - '.date('Y') : '2019' }} Mini CRM.
+      {{ (date('Y') > 2019)?  '2019 - '.date('Y') : '2019' }} Mini CRM
     </div>
 
     <div class="flex flex-col">

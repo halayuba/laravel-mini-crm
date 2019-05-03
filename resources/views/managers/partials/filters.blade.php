@@ -1,4 +1,6 @@
-<div class="w-full sm:w-1/4 px-4 py-2">
+<div class="w-full sm:w-1/4 px-4 py-2"
+  @click.self="actionsVisible = false"
+>
 
     <div class="mb-6 xl:mb-12">
 
