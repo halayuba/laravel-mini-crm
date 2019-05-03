@@ -42,9 +42,19 @@
          <!-- ASSIGN COMPANIES -->
          <span class="flex-1 bg-grey-lighter hover:bg-white text-center py-2">
 
-           <a href="{{ route('permissions.create', $manager->id) }}" class="flex items-center justify-center no-underline text-grey-darker" title="Assign access to companies">
+           <a href="{{ route('permissions.create', $manager->id) }}" class="flex items-center justify-center no-underline text-grey-darker" title="Assign access to companies for this manager">
              <img src="{{ asset('img/md-key.svg') }}" class="w-6 mr-1">
              <span class="hidden sm:inline-block">assign access</span>
+           </a>
+
+         </span>
+
+         <!-- VIEW -->
+         <span class="flex-1 bg-grey-lighter hover:bg-white text-center py-2">
+
+           <a href="{{ route('manager.show', $manager->id) }}" class="no-underline text-grey-darker" title="View Manager">
+             <img src="{{ asset('img/md-eye.svg') }}" class="w-4 pt-1">
+             <span class="hidden sm:inline-block">view</span>
            </a>
 
          </span>

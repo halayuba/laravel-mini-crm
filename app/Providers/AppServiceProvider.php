@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        view()->composer(['employees.create', 'employees.edit', 'permissions.create'], function($view)
+        view()->composer(['employees.create', 'employees.edit', 'permissions.create', 'permissions.edit'], function($view)
         {
           $companies = Company::all()->sortBy('name');
           $view->with(compact('companies'));

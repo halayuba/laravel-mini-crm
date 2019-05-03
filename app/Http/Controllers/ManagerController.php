@@ -62,7 +62,8 @@ class ManagerController extends Controller
      //==================== */
     public function show(User $user)
     {
-
+      $user = $user->load('companies');
+      return view("managers.show", compact('user'));
     }
 
     /* //====================

@@ -67,6 +67,12 @@ class User extends Authenticatable
      });
    }
 
+   /* == FETCH COMPANY IDs WHERE THIS USER HAS ACCESS PERMISSION == */
+   public function fetchAccessIds()
+   {
+     return $this->companies()->pluck('id')->toArray();
+   }
+
      //== RELATIONSHIPS
     //====================
     public function role()

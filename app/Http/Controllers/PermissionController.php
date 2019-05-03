@@ -20,11 +20,9 @@ class PermissionController extends Controller
    //==================== */
   public function store(Request $request, User $user)
   {
-    $companyIds = $request->input('companies');
-
     $user = User::find($request->user_id);
 
-    $user->companies()->attach($companyIds);
+    $user->companies()->attach($request->input('companies'));
 
     return redirect("/managers")->with(flash_message("success", "New access permissions has been added."));
 
@@ -35,7 +33,7 @@ class PermissionController extends Controller
    //==================== */
   public function edit(User $user)
   {
-    
+      return view('permissions.edit', compact('user'));
   }
 
   /* //====================
@@ -43,6 +41,19 @@ class PermissionController extends Controller
    //==================== */
   public function update(Request $request, User $user)
   {
+    $user->companies()->sync($request->input('companies'));
 
+    return back()->with(flash_message("success", "Permissions were updated successfully."));
+  }
+
+  /* //====================
+    //== DESTROY
+   //==================== */
+  public function destroy(User $user)
+  {
+    /* == USER MODEL >> FETCH THE IDs OF THE COMPANIES ASSOCIATED WITH THE USER  == */
+    $user->companies()->detach($user->fetchAccessIds());
+
+    return back()->with(flash_message("success", "All permissions were removed successfully."));
   }
 }

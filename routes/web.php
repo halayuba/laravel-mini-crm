@@ -46,7 +46,7 @@ Route::prefix('managers')->middleware(['auth', 'adminRole'])->group(function(){
   Route::get('/', 'ManagerController@index')->name('managers.index');
   Route::get('/create', 'ManagerController@create')->name('manager.create');
   Route::post('/', 'ManagerController@store')->name('manager.store');
-  // Route::get('/{user}', 'ManagerController@show')->name('manager.show');
+  Route::get('/{user}', 'ManagerController@show')->name('manager.show');
   Route::get('/{user}/edit', 'ManagerController@edit')->name('manager.edit');
   Route::patch('/{user}', 'ManagerController@update')->name('manager.update');
   Route::delete('/{user}', 'ManagerController@destroy')->name('manager.destroy');
@@ -61,4 +61,5 @@ Route::prefix('permissions')->middleware(['auth', 'adminRole'])->group(function(
   Route::post('/', 'PermissionController@store')->name('permissions.store');
   Route::get('/{user}/edit', 'PermissionController@edit')->name('permissions.edit');
   Route::patch('/{user}', 'PermissionController@update')->name('permissions.update');
+  Route::delete('/{user}', 'PermissionController@destroy')->name('permissions.destroy');
 });
