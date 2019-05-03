@@ -14,17 +14,19 @@ class EmployeeController extends Controller
        //==================== */
       public function index()
       {
-        $employees = Employee::with('company')->paginate(10);
+        // $employees = Employee::with('company')->paginate(10);
 
-        // if( Gate::allows('perform-admin-actions') )
-        // {
-        //   $employees = Employee::with('company')->paginate(10);
-        // }
-        // else
-        // {
-        //   $employees = request()->user()->companies->each->employees;
-        // }
-        return view("employees.index", compact('employees'));
+        if( Gate::allows('perform-admin-actions') )
+        {
+          $employees = Employee::with('company')->paginate(10);
+          return view("employees.index", compact('employees'));
+        }
+        else
+        {
+          $manager = request()->user()->load('companies.employees');
+          return view("employees.indexManagers", compact('manager'));
+        }
+
       }
 
       /* //====================
