@@ -41,12 +41,18 @@
             </div>
 
             <div class="bg-grey-lightest px-2 py-4 text-grey-darker">
+
+              <!-- ACCESS PERMISSIONS WERE ASSIGNED -->
               @if( $user->companies->count() )
                 <div class="flex flex-wrap">
                   <p class="block mb-2 text-sm underline leading-loose tracking-tight mr-4">{{ $user->name }} has access permissions to these companies:</p>
+
+                  <!-- UPDATE ACCESS PERMISSIONS -->
                   <a href="{{ route('permissions.edit', $user->id) }}">
                     <img src="{{ asset('img/ios-refresh-circle.svg') }}" class="w-6 h-6 xl:mr-4" title="Update access permissions">
                   </a>
+
+                  <!-- REMOVE ACCESS PERMISSIONS -->
                   <a href="{{ route('permissions.destroy', $user->id) }}"
                     onclick="event.preventDefault();
                     document.getElementById('remove-{{ $user->id }}').submit();"

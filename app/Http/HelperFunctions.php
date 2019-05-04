@@ -1,5 +1,5 @@
 <?php
-use App\Models\Role;
+use App\Models\{Role, Company};
 
 function flash_message($state, $msg)
 {
@@ -65,4 +65,13 @@ function selected($old, $compare_to, $stored='')
 function adminRole()
 {
   return App\Models\Role::admin()->first()->id;
+}
+
+function mailCompanies($ids)
+{
+  $companies = [];
+  for($i=0; $i<=count($ids)-1; $i++){
+    $companies[] = App\Models\Company::find($ids[$i])->name;
+  }
+  return array_sort($companies);
 }

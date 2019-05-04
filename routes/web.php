@@ -63,3 +63,21 @@ Route::prefix('permissions')->middleware(['auth', 'adminRole'])->group(function(
   Route::patch('/{user}', 'PermissionController@update')->name('permissions.update');
   Route::delete('/{user}', 'PermissionController@destroy')->name('permissions.destroy');
 });
+
+Route::get('test', function(){
+  $manager = App\Models\User::find(2);
+  // dd($user->companies);
+  // dd($user->load('companies.employees'));
+  // $user->load('companies.employees');
+  // dd($user->name);
+  $ids = [2,17,21];
+  $companies = [];
+  for($i=0; $i<=count($ids)-1; $i++){
+    $companies[] = App\Models\Company::find($ids[$i])->name;
+  }
+  // dd(array_flatten($companies));
+  // dd($companies);
+  dd(array_sort($companies));
+
+
+});

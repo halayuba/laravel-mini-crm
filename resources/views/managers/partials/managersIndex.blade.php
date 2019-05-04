@@ -39,13 +39,26 @@
             //==================== -->
         <div class="flex text-grey-darker text-sm font-semibold mb-4 px-2">
 
-         <!-- ASSIGN COMPANIES -->
          <span class="flex-1 bg-grey-lighter hover:bg-white text-center py-2">
 
-           <a href="{{ route('permissions.create', $manager->id) }}" class="flex items-center justify-center no-underline text-grey-darker" title="Assign access to companies for this manager">
-             <img src="{{ asset('img/md-key.svg') }}" class="w-6 mr-1">
-             <span class="hidden sm:inline-block">assign access</span>
-           </a>
+           <!-- ACCESS PERMISSIONS WERE ASSIGNED -->
+           @if( $manager->companies->count() )
+
+             <!-- UPDATE ACCESS PERMISSIONS -->
+             <a href="{{ route('permissions.edit', $manager->id) }}" class="flex items-center justify-center no-underline text-grey-darker" title="Update access permission to companies for this manager">
+               <img src="{{ asset('img/ios-refresh-circle.svg') }}" class="w-6 h-6 mr-1">
+               <span class="hidden sm:inline-block">update permission</span>
+             </a>
+
+           @else
+
+             <!-- ASSIGN ACCESS PERMISSIONS -->
+             <a href="{{ route('permissions.create', $manager->id) }}" class="flex items-center justify-center no-underline text-grey-darker" title="Assign access permission to companies for this manager">
+               <img src="{{ asset('img/md-key.svg') }}" class="w-6 mr-1">
+               <span class="hidden sm:inline-block">assign permission</span>
+             </a>
+
+           @endif
 
          </span>
 

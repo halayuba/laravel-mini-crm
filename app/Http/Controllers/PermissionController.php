@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{User, Company};
+use App\Mail\AccessToCompanyGranted;
+
 
 class PermissionController extends Controller
 {
@@ -24,6 +26,8 @@ class PermissionController extends Controller
 
     $user->companies()->attach($request->input('companies'));
 
+    \Mail::to($user->email)->send( new AccessToCompanyGranted(mailCompanies($request->input('companies'))) );
+
     return redirect("/managers")->with(flash_message("success", "New access permissions has been added."));
 
   }
@@ -42,6 +46,8 @@ class PermissionController extends Controller
   public function update(Request $request, User $user)
   {
     $user->companies()->sync($request->input('companies'));
+
+    \Mail::to($user->email)->send( new AccessToCompanyGranted(mailCompanies($request->input('companies'))) );
 
     return back()->with(flash_message("success", "Permissions were updated successfully."));
   }
