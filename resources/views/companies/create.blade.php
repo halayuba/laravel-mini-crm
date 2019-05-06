@@ -48,13 +48,37 @@
       <!-- LOGO UPLOAD -->
       <div class="w-full mb-16">
         <label class="form_label">Upload Logo
+
           <!-- TIP -->
-          <span class="text-sm text-grey-darker ml-1" title="Logo must be an image and min 100X100">
+          <span class="text-sm text-grey-darker ml-1" title="Logo must be an image and min 100X100"
+            @click="tipFlag = !tipFlag"
+          >
             <img src="/img/md-information-circle.svg" class="w-6">
           </span>
+          <p class="px-2 py-1 text-grey-darker border border-grey"
+            v-if="tipFlag"
+          >
+            Logo must be an image and min 100X100
+          </p>
         </label>
-        <input name="file" type="file" class="" >
-      </div>
+
+        <!-- VUE FOR FORMATTING AND INITIAL VALIDATION -->
+        <div class="block w-32 h-32 cursor-pointer bg-cover bg-center bg-grey hover:bg-grey-light"
+          :style="{ 'background-image': `url(${imageData})` }"
+          @click="$refs.fileInput.click()"
+        >
+          <span class="w-full h-full flex justify-center items-center text-grey-darker text-sm text-semibold"
+            v-if="!imageData"
+          >
+            Choose an Image
+          </span>
+          <input name="file" type="file" class="hidden"
+            ref="fileInput"
+            @input="onFileSelected"
+          >
+        </div>
+
+      </div> <!-- END LOGO UPLOAD -->
 
       <!-- BUTTONS -->
       <div class="flex justify-end">

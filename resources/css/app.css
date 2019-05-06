@@ -2,11 +2,14 @@
 
 /* Add custom base styles here... */
 
+
 @import "tailwindcss/components";
 
 /* Add custom components here... */
 
 @import "tailwindcss/utilities";
+
+@import 'vue-toastr/src/vue-toastr.scss';
 
 /* Add custom utilities here... */
 /* //====================
@@ -36,10 +39,10 @@
 }
 
 .btn_jobsave {
-  @apply text-center align-middle whitespace-no-wrap select-none cursor-pointer inline-block mb-0 bg-green border border-grey-light text-green-darker font-semibold text-lg rounded leading-tight px-4 py-2 shadow;
+  @apply text-center align-middle whitespace-no-wrap select-none cursor-pointer inline-block mb-0 bg-green-dark border border-grey-light text-white font-semibold text-lg rounded leading-tight px-4 py-2 shadow;
 }
 .btn_jobsave:hover {
-  @apply bg-green-dark text-white
+  @apply bg-green text-green-darker
 }
 .btn_jobsave:focus {
   @apply outline-none shadow-outline
@@ -64,6 +67,13 @@
   @apply font-semibold tracking-wide leading-loose border-b-2 border-blue;
 }
 
+.transition {
+  transition: all 300ms ease;
+}
+.transition:hover {
+  box-shadow: 5px 0 10px 0 rgba(39, 190, 64, 0.5);
+  transform: translateY(-2px);
+}
 
 /* //====================
   //== CUSTOM CSS

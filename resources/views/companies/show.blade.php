@@ -10,18 +10,28 @@
     <div class="w-full sm:w-3/4 px-4">
       <div class="container mx-auto px-6 py-4">
 
+        <!-- RETURN BACK TO THE LIST -->
+        <a href="{{ route('companies.index') }}" class="btn_cancel transition mb-4 xl:mb-8">
+          Back to the list
+        </a>
+
         <!-- CARD -->
         <div class="max-w-md bg-white rounded-gl flex-1 flex flex-col overflow-hidden shadow-lg">
 
           <div class="px-6 py-4">
 
             <div class="flex flex-col md:flex-row md:items-center xl:mt-4 py-2 mb-2">
-              @if($company->file)
               <!-- LOGO -->
+              @imageExists($company)
               <figure class="sm:inline-block sm:mr-2 mb-2 sm:mb-0">
-                <img src="{{ $company->imagePathName() }}" class="w-16">
+                <img src="{{ $company->imagePathName() }}" class="w-24">
               </figure>
-              @endif
+              @else
+              <figure class="sm:inline-block sm:mr-2 mb-2 sm:mb-0">
+                <img src="{{ asset('img/img-not-available.png') }}" class="w-24">
+              </figure>
+
+              @endimageExists
 
               <!-- NAME -->
               <div class="font-bold text-lg xl:text-xl">{{ $company->name }}</div>

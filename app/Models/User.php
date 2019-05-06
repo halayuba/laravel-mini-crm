@@ -85,8 +85,4 @@ class User extends Authenticatable
         return $this->belongsToMany(Company::class);
     }
 
-    // public function employees()
-    // {
-    //     return $this->hasManyThrough(Employee::class, Company::class);
-    // }
 }

@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "tailwindcss-tables": "^0.2.0",
-        "vue-clickaway": "^2.2.2"
+        "vue-clickaway": "^2.2.2",
+        "vue-toastr": "^2.0.16"
     }
 }

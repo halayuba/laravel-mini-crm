@@ -2,7 +2,7 @@
 
 Route::redirect('/', '/home');
 Route::view('/technologies', 'pages.technologies');
-Route::view('workflow', 'pages.workflow');
+Route::view('features', 'pages.features');
 
 Auth::routes();
 
@@ -18,6 +18,7 @@ Route::prefix('companies')->middleware(['auth'])->group(function(){
   Route::get('/{company}/edit', 'CompanyController@edit')->name('company.edit');
   Route::patch('/{company}', 'CompanyController@update')->name('company.update');
   Route::delete('/{company}', 'CompanyController@destroy')->name('company.destroy');
+  Route::delete('/{company}/delete-logo', 'CompanyController@deleteLogo')->name('logo.delete');
   Route::post('/search', 'CompanyController@search')->name('companies.search');
 });
 
@@ -51,7 +52,6 @@ Route::prefix('managers')->middleware(['auth', 'adminRole'])->group(function(){
   Route::patch('/{user}', 'ManagerController@update')->name('manager.update');
   Route::delete('/{user}', 'ManagerController@destroy')->name('manager.destroy');
   Route::post('/search', 'ManagerController@search')->name('managers.search');
-  // Route::post('/assign', 'ManagerController@assign')->name('managers.assign');
 });
 
 //== ASSIGN-COMPANIES: PROVIDE ACCESS PERMISSIONS TO A MANAGER
@@ -62,22 +62,4 @@ Route::prefix('permissions')->middleware(['auth', 'adminRole'])->group(function(
   Route::get('/{user}/edit', 'PermissionController@edit')->name('permissions.edit');
   Route::patch('/{user}', 'PermissionController@update')->name('permissions.update');
   Route::delete('/{user}', 'PermissionController@destroy')->name('permissions.destroy');
-});
-
-Route::get('test', function(){
-  $manager = App\Models\User::find(2);
-  // dd($user->companies);
-  // dd($user->load('companies.employees'));
-  // $user->load('companies.employees');
-  // dd($user->name);
-  $ids = [2,17,21];
-  $companies = [];
-  for($i=0; $i<=count($ids)-1; $i++){
-    $companies[] = App\Models\Company::find($ids[$i])->name;
-  }
-  // dd(array_flatten($companies));
-  // dd($companies);
-  dd(array_sort($companies));
-
-
 });

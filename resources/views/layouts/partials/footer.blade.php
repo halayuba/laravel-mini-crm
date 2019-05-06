@@ -10,9 +10,9 @@
         <span class="mr-2"><img src="{{ asset('img/md-home.svg') }}" alt="Home" class="w-4 h-4"></span>
         Home
       </a>
-      <a href="{{ url('/workflow') }}" class="no-underline text-grey-dark leading-loose hover:underline hover:text-grey-darkest">
+      <a href="{{ url('/features') }}" class="no-underline text-grey-dark leading-loose hover:underline hover:text-grey-darkest">
         <span class="mr-2"><img src="{{ asset('img/md-color-wand.svg') }}" alt="Wand" class="w-4 h-4"></span>
-        Workflow
+        Features
       </a>
     </div>
 

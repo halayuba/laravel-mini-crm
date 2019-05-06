@@ -47,29 +47,100 @@
       </div>
 
       <!-- LOGO UPLOAD -->
-      <div class="w-full mb-16">
+      <div class="w-full mb-8 xl:mb-16">
         <label class="form_label">Upload Logo
+
           <!-- TIP -->
-          <span class="text-sm text-grey-darker ml-1" title="Logo must be an image and min 100X100">
+          <span class="text-sm text-grey-darker ml-1" title="Logo must be an image and min 100X100"
+            @click="tipFlag = !tipFlag"
+          >
             <img src="/img/md-information-circle.svg" class="w-6">
           </span>
+          <p class="px-2 py-1 text-grey-darker border border-grey"
+            v-if="tipFlag"
+          >
+            Logo must be an image and min 100X100
+          </p>
         </label>
-        <input name="file" type="file" class="" >
 
-        @if($company->file)
-        <!-- SHOW CURRENT LOGO -->
-        <div class="flex flex-col md:flex-row md:items-center xl:mt-4 py-2 mb-2">
-          <!-- LOGO -->
-          <figure class="sm:inline-block sm:mr-2 mb-2 sm:mb-0">
-            <img src="{{ $company->imagePathName() }}" class="w-16">
-          </figure>
-          <span class="bg-grey-lighter rounded px-3 py-1 text-sm lg:text-lg font-semibold text-grey-darker">
-            {{ $company->file }}
-          </span>
-        </div>
-        @endif
+          <!-- WHEN IMAGE EXISTS -->
+          @imageExists($company)
+            <div class="flex flex-col py-2 mb-2">
+              <div class="flex">
 
-      </div>
+                <!-- STATE = DEFAULT -->
+                <div class=""
+                  v-if="state == 'default'"
+                >
+                  <!-- LOGO -->
+                  <figure class="sm:inline-block sm:mr-2 mb-2 sm:mb-0">
+                    <img src="{{ $company->imagePathName() }}" class="w-32">
+                  </figure>
+
+                </div> <!-- END STATE = DEFAULT -->
+
+                <!-- STATE = UPDATE -->
+                <div class=""
+                  v-else
+                >
+                  <!-- VUE FOR FORMATTING AND INITIAL VALIDATION -->
+                  <div class="block w-32 h-32 cursor-pointer bg-cover bg-center bg-grey hover:bg-grey-light"
+                    :style="{ 'background-image': `url(${imageData})` }"
+                    @click="$refs.fileInput.click()"
+                  >
+
+                  </div>
+                </div> <!-- END STATE = UPDATE -->
+
+                <!-- ACTION ICONS -->
+                <div class="ml-2 flex flex-col justify-start">
+
+                  <!-- UPDATE -->
+                  <a href="#" title="Update logo" class="mb-2 border border-grey-light p-1 transition"
+                    @click.prevent="chooseImage"
+                  >
+                    <img src="{{ asset('img/update.png') }}" alt="">
+                  </a>
+
+                  <!-- DELETE -->
+                  <a href="{{ route('logo.delete', $company->slug) }}" title="Remove logo" class="border border-grey-light p-1 transition"
+                    onclick="event.preventDefault();
+                    document.getElementById('delete-{{ $company->slug }}').submit();"
+                  >
+                    <img src="{{  asset('img/erase.png') }}" alt="">
+                  </a>
+
+                </div> <!-- END UPDATE & DELETE ACTION BUTTONS -->
+              </div> <!-- END FLEX CLASS -->
+
+              <span class="bg-grey-lighter rounded px-3 py-1 text-sm lg:text-lg font-semibold text-grey-darker">
+                {{ $company->file }}
+              </span>
+
+            </div> <!-- END WHEN IMAGE EXISTS -->
+          @else
+            <!-- WHEN IMAGE DOES NOT EXIST -->
+            <div class="block w-32 h-32 cursor-pointer bg-cover bg-center bg-grey hover:bg-grey-light"
+              :style="{ 'background-image': `url(${imageData})` }"
+              @click="$refs.fileInput.click()"
+            >
+              <span class="w-full h-full flex justify-center items-center text-grey-darker text-sm text-semibold"
+                v-if="!imageData"
+              >
+                Choose an Image
+              </span>
+
+            </div> <!-- END WHEN IMAGE DOES NOT EXIST -->
+          @endimageExists
+
+          <!-- HIDDEN FILE INPUT -->
+          <input name="file" type="file" class="hidden"
+            ref="fileInput"
+            @input="onFileSelected"
+          >
+
+
+      </div> <!-- END LOGO UPLOAD -->
 
       <!-- BUTTONS -->
       <div class="flex justify-end">
@@ -82,5 +153,12 @@
 
   </div>
 </div>
+
+<!-- HIDDEN FORM -->
+<form id="delete-{{ $company->slug }}" action="{{ route('logo.delete', $company->slug) }}" method="post" class="hidden">
+  @csrf
+  @method('DELETE')
+  <input class="hidden" type="submit" value="Delete">
+</form>
 
 @endsection

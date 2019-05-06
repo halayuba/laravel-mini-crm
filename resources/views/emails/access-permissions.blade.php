@@ -7,6 +7,8 @@ You have been given access permission to the following companies
   - {{ $company }}
 @endforeach
 
+
+
 Thanks,<br>
 {{ config('app.name') }}
 @endcomponent

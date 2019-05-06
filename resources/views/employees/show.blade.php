@@ -10,6 +10,11 @@
     <div class="w-full sm:w-3/4 px-4">
       <div class="container mx-auto px-6 py-4">
 
+        <!-- RETURN BACK TO THE LIST -->
+        <a href="{{ route('employees.index') }}" class="btn_cancel transition mb-4 xl:mb-8">
+          Back to the list
+        </a>
+
         <!-- CARD -->
         <div class="max-w-md bg-white rounded-gl flex-1 flex flex-col overflow-hidden shadow-lg">
 

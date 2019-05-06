@@ -72,12 +72,22 @@
 
             <!-- TIP -->
             @can('perform-admin-actions')
-            <span class="text-sm text-grey-darker ml-1">
-              <a href="{{ route('company.create') }}" class="text-xs text-indigo no-underline" title="If the list does not contain the company for which this employee needs to be associated with then click this link to create a new company.">
-                  <img src="/img/md-information-circle.svg" class="w-6 h-6">
-                   Not in the list? Add a new company
+
+              <span class="text-sm text-grey-darker ml-1" title="If the list does not contain the company for which this employee needs to be associated with then click this link to create a new company."
+                @click="tipFlag = !tipFlag"
+              >
+                <img src="/img/md-information-circle.svg" class="w-6">
+              </span>
+              <p class="px-2 py-1 text-grey-darker border border-grey"
+                v-if="tipFlag"
+              >
+                If the list does not contain the company for which this employee needs to be associated with then click this link to create a new company.
+              </p>
+
+              <a href="{{ route('company.create') }}" class="text-xs text-indigo no-underline ml-1">
+               Not in the list? Add a new company
               </a>
-            </span>
+
             @endcan
 
           </label>

@@ -36,6 +36,11 @@ class Company extends Model
       return Storage::disk('local')->url('public/uploads/' . $this->file);
     }
 
+    public function removeLogo()
+    {
+      return $this->update(['file' => '']);
+    }
+
      //== RELATIONSHIPS
     //====================
     public function employees()

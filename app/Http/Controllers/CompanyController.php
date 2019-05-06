@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\CompanyRequest;
 use App\Models\Company;
-use App\Repositories\ValidateAndStoreUpload;
+use App\Repositories\ProcessFileUpload;
 use Illuminate\Support\Facades\Storage;
 use Gate;
 
@@ -13,7 +13,7 @@ class CompanyController extends Controller
 {
   protected $upload;
 
-  public function __construct(ValidateAndStoreUpload $upload)
+  public function __construct(ProcessFileUpload $upload)
   {
     $this->upload = $upload;
   }
@@ -57,7 +57,7 @@ class CompanyController extends Controller
       else
       {
         /* == USE REPOSITORY FOR VAIDATING AND STORING IMAGE == */
-        $image_name = $this->upload->uploadValidation($request);
+        $image_name = $this->upload->validateAndStoreUpload($request);
 
          //== SAVE TO DB
         //====================
@@ -130,7 +130,7 @@ class CompanyController extends Controller
     $current_image_name = $company->file;
 
     /* == USE REPOSITORY FOR VAIDATING AND STORING IMAGE == */
-    $image_name = $this->upload->uploadValidation($request);
+    $image_name = $this->upload->validateAndStoreUpload($request);
 
     /* == ASSUMING NO UPDATE WAS NEEDED FOR THE LOGO == */
     $image_name = empty($image_name)? $current_image_name : $image_name;
@@ -179,10 +179,8 @@ class CompanyController extends Controller
           $exists = Storage::exists($pathAndName);
           if( $exists ) Storage::delete($pathAndName);
         }
-
         return redirect("/companies")->with(flash_message("success", "Company deleted successfully."));
       }
-
       return redirect("/companies")->with(flash_message("danger", "Failed to delete company."));
     }
     else
@@ -190,5 +188,19 @@ class CompanyController extends Controller
       return back()->with(flash_message("danger", "You don't have enough permissions to perform this action."));
     }
   }
+
+  /* //====================
+    //== DELETE LOGO
+   //==================== */
+   public function deleteLogo(Company $company)
+   {
+     $this->upload->removeStoredUpload($company->file);
+
+     $company->removeLogo();
+
+     return back()->with(flash_message("success", "Logo has been removed."));
+   }
+
+
 
 }
