@@ -2,14 +2,11 @@
 
 /* Add custom base styles here... */
 
-
 @import "tailwindcss/components";
 
 /* Add custom components here... */
 
 @import "tailwindcss/utilities";
-
-@import 'vue-toastr/src/vue-toastr.scss';
 
 /* Add custom utilities here... */
 /* //====================
