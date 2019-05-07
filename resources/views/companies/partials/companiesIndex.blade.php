@@ -1,5 +1,10 @@
 <div class="w-full sm:w-3/4 px-4 sm:px-0 sm:pr-8 mt-8 rounded">
 
+  <!-- HEADER -->
+    <div class="flex items-baseline justify-between border-b-2 border-grey-light mb-10">
+      <span class="tracking-wide uppercase font-bold pb-4 border-b-2 border-indigo -mb-2px">{{ 'Companies: ' . $companies_count }}</span>
+    </div>
+
     <!-- MAIN SECTION -->
     @forelse($companies as $company)
 

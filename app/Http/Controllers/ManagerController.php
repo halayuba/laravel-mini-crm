@@ -90,14 +90,6 @@ class ManagerController extends Controller
     }
 
     /* //====================
-      //== ASSIGN
-     //==================== */
-    public function assign(Request $request, User $user)
-    {
-
-    }
-
-    /* //====================
       //== DESTROY
      //==================== */
     public function destroy(User $user)

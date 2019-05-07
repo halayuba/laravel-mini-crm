@@ -27,12 +27,14 @@ class CompanyController extends Controller
     if( Gate::allows('perform-admin-actions') )
     {
       $companies = Company::with('employees')->paginate(10);
+      $companies_count = Company::get()->count();
     }
     else
     {
       $companies = request()->user()->companies()->paginate(10);
+      $companies_count = request()->user()->companies()->count();
     }
-    return view("companies.index", compact('companies'));
+    return view("companies.index", compact('companies', 'companies_count'));
   }
 
   /* //====================
@@ -132,7 +134,7 @@ class CompanyController extends Controller
     /* == USE REPOSITORY FOR VAIDATING AND STORING IMAGE == */
     $image_name = $this->upload->validateAndStoreUpload($request);
 
-    /* == ASSUMING NO UPDATE WAS NEEDED FOR THE LOGO == */
+    /* == ASSUMING NO FILE UPLOAD (NO UPDATE WAS NEEDED FOR THE LOGO) == */
     $image_name = empty($image_name)? $current_image_name : $image_name;
 
      //== SAVE TO DB
@@ -200,7 +202,5 @@ class CompanyController extends Controller
 
      return back()->with(flash_message("success", "Logo has been removed."));
    }
-
-
 
 }

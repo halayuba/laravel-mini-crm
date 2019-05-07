@@ -63,3 +63,7 @@ Route::prefix('permissions')->middleware(['auth', 'adminRole'])->group(function(
   Route::patch('/{user}', 'PermissionController@update')->name('permissions.update');
   Route::delete('/{user}', 'PermissionController@destroy')->name('permissions.destroy');
 });
+
+Route::get('test', function(){
+  dd(App\Models\Company::get()->count()); 
+});
