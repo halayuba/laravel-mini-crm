@@ -71,7 +71,7 @@ function mailCompanies($ids)
 {
   $companies = [];
   for($i=0; $i<=count($ids)-1; $i++){
-    $companies[] = App\Models\Company::find($ids[$i])->name;
+    $companies[] = Company::find($ids[$i])->name;
   }
   return array_sort($companies);
 }

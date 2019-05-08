@@ -81,7 +81,7 @@ class ManagerController extends Controller
     {
       $attributes = request()->validate([
         'name' => 'required',
-        'email' => 'required|email'
+        'email' => 'required|unique:users,email,' . $user->id
       ]);
 
       $user->update($attributes);
