@@ -1,8 +1,8 @@
 ## Laravel - Mini CRM
 
 - Author: Simon Bashir
-- Version: 0.1.1
-- Release Date: May 1st, 2019
+- Version: 0.2
+- First release Date: May 1st, 2019
 - To see a hosted demo you can visit [ziffoo.com](http://www.ziffoo.com)
 
 ### Brief Description
