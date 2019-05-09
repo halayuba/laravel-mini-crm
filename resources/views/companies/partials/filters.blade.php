@@ -21,7 +21,6 @@
     <!-- ACTIONS PULL-DOWN LIST -->
     @include('layouts.partials.actions')
 
-
     <!-- BUTTON -->
     <div class="my-2 sm:my-4">
       <a class="bg-green-dark text-center font-bold text-white rounded block px-4 py-3 tracking-wide">Filters</a>
@@ -34,11 +33,21 @@
     <div class="hidden sm:block">
       <ul class="list-reset pl-4">
           <li class="py-2 mb-1">
-            Filter 1
+            <a href="{{ url('companies'.'?recent=true') }}" class="text-sm text-grey-darker hover:text-green-darker no-underline hover:underline">
+              Recently Added
+            </a>
           </li>
 
           <li class="py-2 mb-1">
-            Filter 2
+            <a href="{{ url('companies'.'?has-employees=true') }}" class="text-sm text-grey-darker hover:text-green-darker no-underline hover:underline">
+              With employees
+            </a>
+          </li>
+
+          <li class="py-2 mb-1">
+            <a href="{{ url('companies'.'?has-employees=false') }}" class="text-sm text-grey-darker hover:text-green-darker no-underline hover:underline">
+              With no employees
+            </a>
           </li>
 
       </ul>
@@ -47,11 +56,21 @@
     <!-- SHOW ON MOBILE ONLY -->
     <div class="sm:hidden flex flex-col items-center px-2 py-2 w-full mb-4">
       <div class="mb-2 py-1">
-        Filter 1
+        <a href="{{ url('companies'.'?recent=true') }}" class="text-sm text-grey-darker hover:text-green-darker no-underline hover:underline ">
+          Recently Added
+        </a>
       </div>
 
       <div class="mb-2 py-1">
-        Filter 2
+        <a href="{{ url('companies'.'?has-employees=true') }}" class="text-sm text-grey-darker hover:text-green-darker no-underline hover:underline ">
+          With employees
+        </a>
+      </div>
+
+      <div class="mb-2 py-1">
+        <a href="{{ url('companies'.'?has-employees=false') }}" class="text-sm text-grey-darker hover:text-green-darker no-underline hover:underline ">
+          With no employees
+        </a>
       </div>
 
     </div>

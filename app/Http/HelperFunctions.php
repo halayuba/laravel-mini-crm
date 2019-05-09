@@ -1,5 +1,6 @@
 <?php
 use App\Models\{Role, Company};
+use Carbon\Carbon;
 
 function flash_message($state, $msg)
 {
@@ -74,4 +75,18 @@ function mailCompanies($ids)
     $companies[] = Company::find($ids[$i])->name;
   }
   return array_sort($companies);
+}
+
+ //== APPLICATION TIMEZONE
+//====================
+function appTz()
+{
+  $tz = config('app.timezone')?? 'America/Chicago';
+  return Carbon::now(new DateTimeZone($tz));
+}
+
+ //RETURN DATE = 7 DAYS AGO (ex: 2018-12-28)
+function last_week()
+{
+  return appTz()->subWeek()->toDateString();
 }

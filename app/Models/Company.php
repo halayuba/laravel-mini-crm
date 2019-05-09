@@ -3,15 +3,24 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+use App\Filters\Company\CompanyFilters;
 use Storage;
 
 class Company extends Model
 {
     protected $guarded = ['id'];
 
+    public $appends = [ 'employeeCount' ];
+
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function getEmployeeCountAttribute()
+    {
+      return $this->employees->count();
     }
 
      //== SEARCH COMPANIES BY NAME
@@ -21,15 +30,30 @@ class Company extends Model
         $query->where('name', 'like', '%'.$value.'%');
     }
 
+     //== CHECK IF NAME IS DUPLICATE
+    //====================
     public function scopeIsDuplicate($query, $value)
     {
         $query->where('name', $value);
     }
 
+     //== CHECK IF IMAGE EXISTS (FILE ATTRIBUTE NOT EMPTY)
+    //====================
     public function scopeImageExists($query, $value)
     {
         $query->where('file', $value);
     }
+
+     //== FILTER SCOPE
+    //====================
+    public function scopeFilter(Builder $builder, $request)
+    {
+        return (new CompanyFilters($request))->filter($builder);
+    }
+    // public function scopeFilter(Builder $builder, $request, array $filters = [])
+    // {
+    //     return (new CompanyFilters($request))->add($filters)->filter($builder);
+    // }
 
     public function imagePathName()
     {

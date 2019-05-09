@@ -14,19 +14,18 @@ class EmployeeController extends Controller
        //==================== */
       public function index()
       {
-        // $employees = Employee::with('company')->paginate(10);
-
         if( Gate::allows('perform-admin-actions') )
         {
           $employees = Employee::with('company')->paginate(10);
-          return view("employees.index", compact('employees'));
+          $employees_count = Employee::count();
+
+          return view("employees.index", compact('employees', 'employees_count'));
         }
         else
         {
           $manager = request()->user()->load('companies.employees');
           return view("employees.indexManagers", compact('manager'));
         }
-
       }
 
       /* //====================
@@ -71,13 +70,14 @@ class EmployeeController extends Controller
         if ( strlen(trim($request->employee)) >= 3 )
         {
           $employees = Employee::searchByName($request->employee)->paginate(10);
-          return view("employees.index", compact('employees'));
+          $employees_count = Employee::searchByName($request->employee)->count();
+
+          return view("employees.index", compact('employees', 'employees_count'));
         }
         else
         {
           return redirect('/employees')->with(flash_message("warning", "Search field must contain 3 characters at least."));
         }
-
       }
 
       /* //====================
@@ -116,7 +116,6 @@ class EmployeeController extends Controller
         {
           return redirect("/employees")->with(flash_message("danger", "Update failed."));
         }
-
       }
 
       /* //====================

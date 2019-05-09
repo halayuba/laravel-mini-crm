@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Builder;
+use App\Filters\Manager\ManagerFilters;
 
 class User extends Authenticatable
 {
@@ -49,6 +51,13 @@ class User extends Authenticatable
     {
         $query->where('role_id', 2);
     }
+
+    //== FILTER SCOPE
+   //====================
+   public function scopeFilter(Builder $builder, $request)
+   {
+       return (new ManagerFilters($request))->filter($builder);
+   }
 
     //== SEARCH USERS BY NAME
    //====================

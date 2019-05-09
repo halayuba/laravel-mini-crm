@@ -33,13 +33,27 @@
     <!-- SHOW ON LARGER THAN MOBILE SCREENS -->
     <div class="hidden sm:block">
       <ul class="list-reset pl-4">
-          <li class="py-2 mb-1">
-            Filter 1
-          </li>
 
-          <li class="py-2 mb-1">
-            Filter 2
-          </li>
+        <!-- MANAGERS RECENTLY ADDED -->
+        <li class="py-2 mb-1">
+          <a href="{{ url('managers'.'?recent=true') }}" class="text-sm text-grey-darker hover:text-green-darker no-underline hover:underline ">
+            Recently Added
+          </a>
+        </li>
+
+        <!-- MANAGERS WITH PERMISSIONS -->
+        <li class="py-2 mb-1">
+          <a href="{{ url('managers'.'?has-permissions=true') }}" class="text-sm text-grey-darker hover:text-green-darker no-underline hover:underline ">
+            With permissions
+          </a>
+        </li>
+
+        <!-- MANAGERS WITH NO PERMISSIONS -->
+        <li class="py-2 mb-1">
+          <a href="{{ url('managers'.'?has-permissions=false') }}" class="text-sm text-grey-darker hover:text-green-darker no-underline hover:underline ">
+            With no permissions
+          </a>
+        </li>
 
       </ul>
     </div>

@@ -20,7 +20,7 @@ class PermissionController extends Controller
   /* //====================
     //== STORE
    //==================== */
-  public function store(Request $request, User $user)
+  public function store(Request $request)
   {
     $user = User::find($request->user_id);
 

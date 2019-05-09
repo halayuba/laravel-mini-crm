@@ -10,10 +10,12 @@ class ManagerController extends Controller
     /* //====================
       //== INDEX
      //==================== */
-    public function index()
+    public function index(Request $request)
     {
-      $managers = User::managers()->paginate(10);
-      return view("managers.index", compact('managers'));
+      $managers = User::managers()->filter($request)->paginate(10);
+      $managers_count = User::managers()->filter($request)->count();
+
+      return view("managers.index", compact('managers', 'managers_count'));
     }
 
     /* //====================
@@ -48,7 +50,9 @@ class ManagerController extends Controller
       if ( strlen(trim($request->manager)) >= 3 )
       {
         $managers = User::searchByName($request->manager)->paginate(10);
-        return view("managers.index", compact('managers'));
+        $managers_count = User::searchByName($request->manager)->count();
+
+        return view("managers.index", compact('managers', 'managers_count'));
       }
       else
       {

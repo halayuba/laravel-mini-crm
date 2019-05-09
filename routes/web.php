@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Http\Request;
+
 
 Route::redirect('/', '/home');
 Route::view('/technologies', 'pages.technologies');
@@ -62,8 +64,4 @@ Route::prefix('permissions')->middleware(['auth', 'adminRole'])->group(function(
   Route::get('/{user}/edit', 'PermissionController@edit')->name('permissions.edit');
   Route::patch('/{user}', 'PermissionController@update')->name('permissions.update');
   Route::delete('/{user}', 'PermissionController@destroy')->name('permissions.destroy');
-});
-
-Route::get('test', function(){
-  dd(App\Models\Company::get()->count()); 
 });

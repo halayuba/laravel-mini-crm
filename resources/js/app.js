@@ -2,6 +2,7 @@ import { directive as onClickaway } from 'vue-clickaway';
 import Toastr from 'vue-toastr'
 
 require('./bootstrap');
+require('vue-toastr/src/vue-toastr.scss');
 
 window.Vue = require('vue');
 

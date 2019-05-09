@@ -21,17 +21,17 @@ class CompanyController extends Controller
   /* //====================
     //== INDEX
    //==================== */
-  public function index()
+  public function index(Request $request)
   {
     /* == ADMIN HAS ACCESS TO ALL COMPANIES == */
     if( Gate::allows('perform-admin-actions') )
     {
-      $companies = Company::with('employees')->paginate(10);
-      $companies_count = Company::get()->count();
+      $companies = Company::filter($request)->with('employees')->paginate(10);
+      $companies_count = Company::filter($request)->count();
     }
     else
     {
-      $companies = request()->user()->companies()->paginate(10);
+      $companies = request()->user()->companies()->filter($request)->paginate(10);
       $companies_count = request()->user()->companies()->count();
     }
     return view("companies.index", compact('companies', 'companies_count'));
@@ -90,7 +90,9 @@ class CompanyController extends Controller
     if ( strlen(trim($request->company)) >= 3 )
     {
       $companies = Company::searchByName($request->company)->paginate(10);
-      return view("companies.index", compact('companies'));
+      $companies_count = Company::searchByName($request->company)->count();
+
+      return view("companies.index", compact('companies', 'companies_count'));
     }
     else
     {
