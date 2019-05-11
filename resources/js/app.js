@@ -41,7 +41,8 @@ const app = new Vue({
             feature10: false,
             feature11: false,
             feature12: false,
-            feature13: false
+            feature13: false,
+            feature14: false
         }
     },
     directives: {

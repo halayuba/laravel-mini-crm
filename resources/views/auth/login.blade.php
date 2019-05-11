@@ -10,13 +10,13 @@
     <p>If you'd prefer to login with Admin credentials:</p>
     <p class="text-grey-dark text-sm pl-4">
       email: admin@site.com
-      <span class="mx-1 hidden sm:inline"><img src="{{ asset('img/ios-more.svg') }}" class="w-4"></span>
+      <span class="mx-1 hidden sm:inline"><img src="{{ asset('img/icons/ios-more.svg') }}" class="w-4"></span>
       password: password
     </p>
     <p class="mt-2">If you'd prefer to login with Manager credentials:</p>
     <p class="text-grey-dark text-sm pl-4">
       email: manager@site.com
-      <span class="mx-1 hidden sm:inline"><img src="{{ asset('img/ios-more.svg') }}" class="w-4"></span>
+      <span class="mx-1 hidden sm:inline"><img src="{{ asset('img/icons/ios-more.svg') }}" class="w-4"></span>
       password: password
     </p>
   </div>

@@ -4,7 +4,7 @@
       @if(session('state') == 'success')
         <div class="bg-teal-lightest border-t-4 border-teal rounded-b text-teal-darkest px-4 py-3 shadow-md" role="alert">
           <div class="flex items-center py-2">
-            <img src="{{ asset('img\circle-with-check-symbol.svg') }}" alt="Check mark" class="w-6 h-6 mr-4">
+            <img src="{{ asset('img/icons/circle-with-check-symbol.svg') }}" alt="Check mark" class="w-6 h-6 mr-4">
             <p class="text-sm xl:text-lg">{{ session('message') }}</p>
           </div>
         </div>

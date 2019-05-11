@@ -12,7 +12,7 @@
 
   <div class="container mx-auto mt-12 items-center justify-center mb-8 lg:mb-20">
 
-    <!-- FIRST -->
+    <!-- 1 -->
     <div class="flex flex-col sm:flex-row mb-4">
       <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center content-center xl:py-10">
         1
@@ -36,7 +36,7 @@
     <!-- DIVIDER -->
     <div class="my-3 border-b border-blue-lightest"></div>
 
-    <!-- SECOND -->
+    <!-- 2 -->
     <div class="flex flex-col sm:flex-row mb-4">
       <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
         2
@@ -60,7 +60,7 @@
     <!-- DIVIDER -->
     <div class="my-3 border-b border-blue-lightest"></div>
 
-    <!-- THIRD -->
+    <!-- 3 -->
     <div class="flex flex-col sm:flex-row mb-4">
       <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
         3
@@ -84,7 +84,7 @@
     <!-- DIVIDER -->
     <div class="my-3 border-b border-blue-lightest"></div>
 
-    <!-- FORTH -->
+    <!-- 4 -->
     <div class="flex flex-col sm:flex-row mb-4">
       <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
         4
@@ -108,7 +108,7 @@
     <!-- DIVIDER -->
     <div class="my-3 border-b border-blue-lightest"></div>
 
-    <!-- FIFTH -->
+    <!-- 5 -->
     <div class="flex flex-col sm:flex-row mb-4">
       <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
         5
@@ -282,7 +282,7 @@
         12
       </div>
       <div class="w-5/6 px-2 text-grey-darker"
-        @click.self="feature11 = false"
+        @click.self="feature12 = false"
       >
         <p class="mb-3"><strong>Email notification</strong></p>
         <p class="mb-2">Using mailable to send formatted email to a user when granted access permissions.
@@ -306,7 +306,7 @@
         13
       </div>
       <div class="w-5/6 px-2 text-grey-darker"
-        @click.self="feature11 = false"
+        @click.self="feature13 = false"
       >
         <p class="mb-3"><strong>Logo manipulation</strong></p>
         <p class="mb-2">DOM manipulation and Front-end development with Vue.js for enhanced results.
@@ -318,6 +318,28 @@
         <img src="{{ asset('img/features/LogoPreview.png') }}" class="p-1 border border-grey-light"
           v-if="feature13"
           @click="feature13 = false"
+        >
+      </div>
+    </div>
+
+    <!-- 14 -->
+    <div class="flex flex-col sm:flex-row mb-4">
+      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
+        14
+      </div>
+      <div class="w-5/6 px-2 text-grey-darker"
+        @click.self="feature14 = false"
+      >
+        <p class="mb-3"><strong>Filters</strong></p>
+        <p class="mb-2">Filter result to narrow down the search result.
+          <a class="text-indigo text-lg text-bold tracking-widest no-underline cursor-pointer"
+            @click="feature14 = true"
+          > View ...
+          </a>
+        </p>
+        <img src="{{ asset('img/features/Filters.png') }}" class="p-1 border border-grey-light"
+          v-if="feature14"
+          @click="feature14 = false"
         >
       </div>
     </div>
