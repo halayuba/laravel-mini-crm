@@ -98,7 +98,6 @@ class CompanyController extends Controller
     {
       return redirect('/companies')->with(flash_message("warning", "Search field must contain 3 characters at least."));
     }
-
   }
 
 
@@ -157,7 +156,6 @@ class CompanyController extends Controller
     {
       return redirect("/companies")->with(flash_message("warning", "Failed to update company. Please try again later."));
     }
-
   }
 
   /* //====================

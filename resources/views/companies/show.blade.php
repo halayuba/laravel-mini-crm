@@ -41,14 +41,14 @@
 
               <!-- EMAIL -->
               <div class="flex flex-wrap py-2">
-                <img src="{{ asset('img/ios-mail.svg') }}" class="w-6 h-6">
+                <img src="{{ asset('img/icons/ios-mail.svg') }}" class="w-6 h-6">
                 <span class="text-sm bg-grey-light p-1 mx-1">Email</span>
                 <span class="text-lg ml-2">{{ $company->email }}</span>
               </div>
 
               <!-- WEBSITE -->
               <div class="flex flex-wrap py-2">
-                <img src="{{ asset('img/md-link.svg') }}" class="w-6 h-6">
+                <img src="{{ asset('img/icons/md-link.svg') }}" class="w-6 h-6">
                 <span class="text-sm bg-grey-light p-1 mx-1">Website</span>
                 @if($company->website)
                   <span class="text-lg ml-2">
@@ -69,7 +69,7 @@
             <!-- EDIT ACTION -->
             <span class="flex-1 bg-grey-lighter text-center py-2">
               <a href="{{ route('company.edit', $company->slug) }}" class="" title="Edit">
-                <img src="{{ asset('img/ios-create.svg') }}" class="w-8">
+                <img src="{{ asset('img/icons/ios-create.svg') }}" class="w-8">
               </a>
             </span>
 
@@ -79,7 +79,7 @@
                 onclick="event.preventDefault();
                 document.getElementById('delete-{{ $company->slug }}').submit();"
               >
-                <img src="{{ asset('img/md-trash.svg') }}" class="w-8">
+                <img src="{{ asset('img/icons/md-trash.svg') }}" class="w-8">
               </a>
             </span>
 

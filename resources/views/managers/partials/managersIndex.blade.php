@@ -51,7 +51,7 @@
 
            <!-- UPDATE ACCESS PERMISSIONS -->
            <a href="{{ route('permissions.edit', $manager->id) }}" class="flex items-center justify-center no-underline text-grey-darker" title="Update access permission to companies for this manager">
-             <img src="{{ asset('img/ios-refresh-circle.svg') }}" class="w-6 h-6 mr-1">
+             <img src="{{ asset('img/icons/ios-refresh-circle.svg') }}" class="w-6 h-6 mr-1">
              <span class="hidden sm:inline-block">update permission</span>
            </a>
 
@@ -59,7 +59,7 @@
 
            <!-- ASSIGN ACCESS PERMISSIONS -->
            <a href="{{ route('permissions.create', $manager->id) }}" class="flex items-center justify-center no-underline text-grey-darker" title="Assign access permission to companies for this manager">
-             <img src="{{ asset('img/md-key.svg') }}" class="w-6 mr-1">
+             <img src="{{ asset('img/icons/md-key.svg') }}" class="w-6 mr-1">
              <span class="hidden sm:inline-block">assign permission</span>
            </a>
 
@@ -71,7 +71,7 @@
        <span class="flex-1 bg-grey-lighter hover:bg-white text-center py-2">
 
          <a href="{{ route('manager.show', $manager->id) }}" class="no-underline text-grey-darker" title="View Manager">
-           <img src="{{ asset('img/md-eye.svg') }}" class="w-4 pt-1">
+           <img src="{{ asset('img/icons/md-eye.svg') }}" class="w-4 pt-1">
            <span class="hidden sm:inline-block">view</span>
          </a>
 
@@ -81,7 +81,7 @@
         <span class="flex-1 bg-grey-lighter hover:bg-white text-center py-2">
 
           <a href="{{ route('manager.edit', $manager->id) }}" class="no-underline text-grey-darker" title="Edit Manager">
-            <img src="{{ asset('img/ios-create.svg') }}" class="w-4 pt-1">
+            <img src="{{ asset('img/icons/ios-create.svg') }}" class="w-4 pt-1">
             <span class="hidden sm:inline-block">edit</span>
           </a>
 
@@ -94,7 +94,7 @@
             onclick="event.preventDefault();
             document.getElementById('delete-{{ $manager->id }}').submit();"
           >
-            <img src="{{ asset('img/erase.png') }}" class="w-4 pt-1">
+            <img src="{{ asset('img/icons/erase.png') }}" class="w-4 pt-1">
             <span class="hidden sm:inline-block">delete</span>
           </a>
         </span>

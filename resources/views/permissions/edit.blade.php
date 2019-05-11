@@ -40,7 +40,7 @@
               <span class="text-sm text-grey-darker ml-1" title="Logo must be an image and min 100X100"
                 @click="tipFlag = !tipFlag"
               >
-                <img src="/img/md-information-circle.svg" class="w-6">
+                <img src="/img/icons/md-information-circle.svg" class="w-6">
               </span>
               <p class="px-2 py-1 text-grey-darker border border-grey"
                 v-if="tipFlag"

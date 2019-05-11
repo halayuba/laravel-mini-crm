@@ -22,7 +22,7 @@
       >
         <p class="mb-3"><strong>Migration and Seeder</strong>.</p>
         <p class="mb-2">Create database tables and attributes then populate them with fake data.
-          <a href="#" class="text-indigo text-lg text-bold tracking-widest no-underline"
+          <a class="text-indigo text-lg text-bold tracking-widest no-underline cursor-pointer"
             @click="feature1 = true"
           > View ...
           </a>
@@ -46,7 +46,7 @@
       >
         <p class="mb-3"><strong>Search field</strong></p>
         <p class="mb-2">Search by name of Company, Manager, or Employee.
-          <a href="#" class="text-indigo text-lg text-bold tracking-widest no-underline"
+          <a class="text-indigo text-lg text-bold tracking-widest no-underline cursor-pointer"
             @click="feature2 = true"
           > View ...
           </a>
@@ -70,7 +70,7 @@
       >
         <p class="mb-3"><strong>Action List</strong></p>
         <p class="mb-2">Use this action pull-down list to creat a new Company, Manager, or Employee.
-          <a href="#" class="text-indigo text-lg text-bold tracking-widest no-underline"
+          <a class="text-indigo text-lg text-bold tracking-widest no-underline cursor-pointer"
             @click="feature3 = true"
           > View ...
           </a>
@@ -94,7 +94,7 @@
       >
         <p class="mb-3"><strong>Flash Messages</strong></p>
         <p class="mb-2">Flash messages to alert users about the result when performing actions.
-          <a href="#" class="text-indigo text-lg text-bold tracking-widest no-underline"
+          <a class="text-indigo text-lg text-bold tracking-widest no-underline cursor-pointer"
             @click="feature4 = true"
           > View ...
           </a>
@@ -118,7 +118,7 @@
       >
         <p class="mb-3"><strong>Pagination</strong></p>
         <p class="mb-2">Navigate pages when showing a long list of results.
-          <a href="#" class="text-indigo text-lg text-bold tracking-widest no-underline"
+          <a class="text-indigo text-lg text-bold tracking-widest no-underline cursor-pointer"
             @click="feature5 = true"
           > View ...
           </a>
@@ -142,7 +142,7 @@
       >
         <p class="mb-3"><strong>Form Validation</strong></p>
         <p class="mb-2">Basic form validation for better control.
-          <a href="#" class="text-indigo text-lg text-bold tracking-widest no-underline"
+          <a class="text-indigo text-lg text-bold tracking-widest no-underline cursor-pointer"
             @click="feature6 = true"
           > View ...
           </a>
@@ -166,7 +166,7 @@
       >
         <p class="mb-3"><strong>Show details</strong></p>
         <p class="mb-2">Using Card style to display additional details.
-          <a href="#" class="text-indigo text-lg text-bold tracking-widest no-underline"
+          <a class="text-indigo text-lg text-bold tracking-widest no-underline cursor-pointer"
             @click="feature7 = true"
           > View ...
           </a>
@@ -190,7 +190,7 @@
       >
         <p class="mb-3"><strong>Middleware</strong></p>
         <p class="mb-2">Using Middleware to block users of type "Manager" access specific pages. Click view to see a figure showing a user of type Manager attempting to access "Managers" menu on the top navigation bar where he was blocked.
-          <a href="#" class="text-indigo text-lg text-bold tracking-widest no-underline"
+          <a class="text-indigo text-lg text-bold tracking-widest no-underline cursor-pointer"
             @click="feature8 = true"
           > View ...
           </a>
@@ -214,7 +214,7 @@
       >
         <p class="mb-3"><strong>Restricted view</strong></p>
         <p class="mb-2">Restrict access to resources based on permissions provided. Click view to see a figure showing a user of type Manager has access to only 3 companies from a long list of companies.
-          <a href="#" class="text-indigo text-lg text-bold tracking-widest no-underline"
+          <a class="text-indigo text-lg text-bold tracking-widest no-underline cursor-pointer"
             @click="feature9 = true"
           > View ...
           </a>
@@ -238,7 +238,7 @@
       >
         <p class="mb-3"><strong>Access permissions</strong></p>
         <p class="mb-2">Configure access permissions for certain types of users to restrict access to resources.
-          <a href="#" class="text-indigo text-lg text-bold tracking-widest no-underline"
+          <a class="text-indigo text-lg text-bold tracking-widest no-underline cursor-pointer"
             @click="feature10 = true"
           > View ...
           </a>
@@ -262,7 +262,7 @@
       >
         <p class="mb-3"><strong>Gate restriction</strong></p>
         <p class="mb-2">Restrict access to resources based on certain criteria. In this figure the delete button has been disabled for this user.
-          <a href="#" class="text-indigo text-lg text-bold tracking-widest no-underline"
+          <a class="text-indigo text-lg text-bold tracking-widest no-underline cursor-pointer"
             @click="feature11 = true"
           > View ...
           </a>
@@ -286,7 +286,7 @@
       >
         <p class="mb-3"><strong>Email notification</strong></p>
         <p class="mb-2">Using mailable to send formatted email to a user when granted access permissions.
-          <a href="#" class="text-indigo text-lg text-bold tracking-widest no-underline"
+          <a class="text-indigo text-lg text-bold tracking-widest no-underline cursor-pointer"
             @click="feature12 = true"
           > View ...
           </a>
@@ -310,7 +310,7 @@
       >
         <p class="mb-3"><strong>Logo manipulation</strong></p>
         <p class="mb-2">DOM manipulation and Front-end development with Vue.js for enhanced results.
-          <a href="#" class="text-indigo text-lg text-bold tracking-widest no-underline"
+          <a class="text-indigo text-lg text-bold tracking-widest no-underline cursor-pointer"
             @click="feature13 = true"
           > View ...
           </a>

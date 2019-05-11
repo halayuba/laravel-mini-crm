@@ -19,11 +19,17 @@
           {{ $company->name }}
 
           <!-- NUMBER OF EMPLOYEES -->
+          @if($company->employees->count())
           <a href="{{ route('company.employees', $company->slug) }}" class="ml-2 no-underline">
             <span class="bg-blue text-xs text-white p-2 rounded" title="Total number of employees. Click to view">
                 {{ $company->employees->count() }}
             </span>
           </a>
+          @else
+          <span class="bg-pink text-xs text-white p-2 rounded" title="Total number of employees. Click to view">
+              {{ 0 }}
+          </span>
+          @endif
         </h3>
       </div>
 
@@ -33,13 +39,13 @@
 
         <!-- COMPNAY EMAIL -->
         <span class="flex-auto text-sm mb-1 sm:mb-0 sm:mr-2" title="{{ $company->email }}">
-          <img src="{{ asset('img/ios-mail.svg') }}" class="w-4 pt-1">
+          <img src="{{ asset('img/icons/ios-mail.svg') }}" class="w-4 pt-1">
           {{ $company->email }}
         </span>
 
         <!-- COMPNAY OFFICIAL WEBSITE -->
         <span class="flex-auto text-sm mb-1 sm:mb-0 sm:mr-2" title="COMPNAY's Website">
-          <img src="{{ asset('img/md-link.svg') }}" class="w-4 pt-1">
+          <img src="{{ asset('img/icons/md-link.svg') }}" class="w-4 pt-1">
           @if($company->website)
             <a href="{{ $company->website }}" class="text-indigo no-underline">{{ clean_url($company->website) }}</a>
           @endif
@@ -55,7 +61,7 @@
        <span class="flex-1 bg-grey-lighter hover:bg-white text-center py-2">
 
          <a href="{{ route('employee.createSpecific', $company->id) }}" class="no-underline text-grey-darker" title="Add new employees">
-           <img src="{{ asset('img/md-person-add.svg') }}" class="w-4 pt-1">
+           <img src="{{ asset('img/icons/md-person-add.svg') }}" class="w-4 pt-1">
            <span class="hidden sm:inline-block">employees</span>
          </a>
 
@@ -65,7 +71,7 @@
        <span class="flex-1 bg-grey-lighter hover:bg-white text-center py-2">
 
          <a href="{{ route('company.show', $company->slug) }}" class="no-underline text-grey-darker" title="View details">
-           <img src="{{ asset('img/md-eye.svg') }}" class="w-4 pt-1">
+           <img src="{{ asset('img/icons/md-eye.svg') }}" class="w-4 pt-1">
            <span class="hidden sm:inline-block">view</span>
          </a>
 
@@ -75,7 +81,7 @@
         <span class="flex-1 bg-grey-lighter hover:bg-white text-center py-2">
 
           <a href="{{ route('company.edit', $company->slug) }}" class="no-underline text-grey-darker" title="Edit COMPNAY">
-            <img src="{{ asset('img/ios-create.svg') }}" class="w-4 pt-1">
+            <img src="{{ asset('img/icons/ios-create.svg') }}" class="w-4 pt-1">
             <span class="hidden sm:inline-block">edit</span>
           </a>
 
@@ -88,12 +94,12 @@
               onclick="event.preventDefault();
               document.getElementById('delete-{{ $company->slug }}').submit();"
             >
-              <img src="{{ asset('img/erase.png') }}" class="w-4 pt-1">
+              <img src="{{ asset('img/icons/erase.png') }}" class="w-4 pt-1">
               <span class="hidden sm:inline-block">delete</span>
             </a>
           @else
             <a class="no-underline text-grey-darker cursor-not-allowed opacity-50" title="You don't have enough permissions to perform this action.">
-              <img src="{{ asset('img/erase.png') }}" class="w-4 pt-1">
+              <img src="{{ asset('img/icons/erase.png') }}" class="w-4 pt-1">
               <span class="hidden sm:inline-block">delete</span>
             </a>
           @endcan

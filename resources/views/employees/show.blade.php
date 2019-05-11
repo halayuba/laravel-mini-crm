@@ -31,21 +31,21 @@
 
               <!-- COMPANY -->
               <div class="flex flex-wrap py-2">
-                <img src="{{ asset('img/ios-business.svg') }}" class="w-6 h-6">
+                <img src="{{ asset('img/icons/ios-business.svg') }}" class="w-6 h-6">
                 <span class="text-sm bg-grey-light p-1 mx-1">Company</span>
                 <span class="text-lg ml-2">{{ $employee->company->name }}</span>
               </div>
 
               <!-- EMAIL -->
               <div class="flex flex-wrap py-2">
-                <img src="{{ asset('img/ios-mail.svg') }}" class="w-6 h-6">
+                <img src="{{ asset('img/icons/ios-mail.svg') }}" class="w-6 h-6">
                 <span class="text-sm bg-grey-light p-1 mx-1">Email</span>
                 <span class="text-lg ml-2">{{ $employee->email }}</span>
               </div>
 
               <!-- PHONE -->
               <div class="flex flex-wrap py-2">
-                <img src="{{ asset('img/ios-call.svg') }}" class="w-6 h-6">
+                <img src="{{ asset('img/icons/ios-call.svg') }}" class="w-6 h-6">
                 <span class="text-sm bg-grey-light p-1 mx-1">Contact</span>
                 <span class="text-lg ml-2">{{ $employee->phone }}</span>
               </div>
@@ -60,7 +60,7 @@
             <!-- EDIT ACTION -->
             <span class="flex-1 bg-grey-lighter text-center py-2">
               <a href="{{ route('employee.edit', $employee->id) }}" class="" title="Edit">
-                <img src="{{ asset('img/ios-create.svg') }}" class="w-8">
+                <img src="{{ asset('img/icons/ios-create.svg') }}" class="w-8">
               </a>
             </span>
 
@@ -70,7 +70,7 @@
                 onclick="event.preventDefault();
                 document.getElementById('delete-{{ $employee->id }}').submit();"
               >
-                <img src="{{ asset('img/md-trash.svg') }}" class="w-8">
+                <img src="{{ asset('img/icons/md-trash.svg') }}" class="w-8">
               </a>
             </span>
 

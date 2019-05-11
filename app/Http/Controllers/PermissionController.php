@@ -28,8 +28,7 @@ class PermissionController extends Controller
 
     \Mail::to($user->email)->send( new AccessToCompanyGranted(mailCompanies($request->input('companies'))) );
 
-    return redirect("/managers")->with(flash_message("success", "New access permissions has been added."));
-
+    return redirect("/managers")->with(flash_message("success", "New access permissions have been added."));
   }
 
   /* //====================

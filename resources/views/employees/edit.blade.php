@@ -76,7 +76,7 @@
               <span class="text-sm text-grey-darker ml-1" title="If the list does not contain the company for which this employee needs to be associated with then click this link to create a new company."
                 @click="tipFlag = !tipFlag"
               >
-                <img src="/img/md-information-circle.svg" class="w-6">
+                <img src="/img/icons/md-information-circle.svg" class="w-6">
               </span>
               <p class="px-2 py-1 text-grey-darker border border-grey"
                 v-if="tipFlag"

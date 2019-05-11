@@ -57,7 +57,7 @@
             <!-- USER NAME -->
             <span class="text-white text-sm mr-2">{{ Auth::user()->name }}</span>
             <!-- CHEVRON -->
-            <img src="{{ asset('img/chevron.svg') }}" class="fill-current h-4 w-4 block opacity-50 hover:opacity-100">
+            <img src="{{ asset('img/icons/chevron.svg') }}" class="fill-current h-4 w-4 block opacity-50 hover:opacity-100">
           </div>
 
           <!-- DROPDOWN CONTENT -->
