@@ -68,10 +68,11 @@ Mini CRM requires Laravel v5.8 (not tested with other versions).
 
 ### Roadmap
 - ~~Add filters.~~
-- Admin dashboard.
+- ~~Admin dashboard.~~
 - Responsive design.
 - Expand functionality to include basic Customer Care and Billing.
 - Additional form validation (including client-side validation).
+- Expand on Admin dashboard.
 
 
 ### Maintainers & Contributors

@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Models\Company;
+use App\Models\{Company, Employee, User};
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -18,6 +18,14 @@ class AppServiceProvider extends ServiceProvider
         {
           $companies = Company::all()->sortBy('name');
           $view->with(compact('companies'));
+        });
+
+        view()->composer('dashboard.index', function($view)
+        {
+          $managers = User::managers()->count();
+          $companies = Company::count();
+          $employees = Employee::count();
+          $view->with(compact('companies', 'managers', 'employees'));
         });
     }
 

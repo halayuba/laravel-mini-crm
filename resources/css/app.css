@@ -115,3 +115,5 @@ input[type="checkbox"]:checked + label.toggler::after{ /* check mark when checkb
   transition: width 0.2s; /* CSS3 transition on width property */
   width: 25px; /* expand check mark to show it. Value should reflect that of container box */
 }
+
+.border-t-green {border-top-color: #136100 !important}

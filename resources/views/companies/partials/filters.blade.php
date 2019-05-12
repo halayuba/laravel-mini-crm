@@ -33,19 +33,19 @@
     <div class="hidden sm:block">
       <ul class="list-reset pl-4">
           <li class="py-2 mb-1">
-            <a href="{{ url('companies'.'?recent=true') }}" class="text-sm text-grey-darker hover:text-green-darker no-underline hover:underline">
+            <a href="{{ url('companies'.'?recent=true') }}" class="text-sm text-grey-darker no-underline {{ active_filter('recent') }}">
               Recently Added
             </a>
           </li>
 
           <li class="py-2 mb-1">
-            <a href="{{ url('companies'.'?has-employees=true') }}" class="text-sm text-grey-darker hover:text-green-darker no-underline hover:underline">
+            <a href="{{ url('companies'.'?has-employees=true') }}" class="text-sm text-grey-darker no-underline {{ active_filter('employees=true') }}">
               With employees
             </a>
           </li>
 
           <li class="py-2 mb-1">
-            <a href="{{ url('companies'.'?has-employees=false') }}" class="text-sm text-grey-darker hover:text-green-darker no-underline hover:underline">
+            <a href="{{ url('companies'.'?has-employees=false') }}" class="text-sm text-grey-darker no-underline {{ active_filter('employees=false') }}">
               With no employees
             </a>
           </li>

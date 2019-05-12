@@ -14,7 +14,7 @@
 
     <!-- 1 -->
     <div class="flex flex-col sm:flex-row mb-4">
-      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center content-center xl:py-10">
+      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg flex justify-center items-center text-center content-center xl:py-10">
         1
       </div>
       <div class="w-5/6 px-2 text-grey-darker"
@@ -33,12 +33,10 @@
         >
       </div>
     </div>
-    <!-- DIVIDER -->
-    <div class="my-3 border-b border-blue-lightest"></div>
 
     <!-- 2 -->
     <div class="flex flex-col sm:flex-row mb-4">
-      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
+      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg flex justify-center items-center text-center xl:py-10">
         2
       </div>
       <div class="w-5/6 px-2 text-grey-darker"
@@ -57,12 +55,10 @@
         >
       </div>
     </div>
-    <!-- DIVIDER -->
-    <div class="my-3 border-b border-blue-lightest"></div>
 
     <!-- 3 -->
     <div class="flex flex-col sm:flex-row mb-4">
-      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
+      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg flex justify-center items-center text-center xl:py-10">
         3
       </div>
       <div class="w-5/6 px-2 text-grey-darker"
@@ -81,12 +77,10 @@
         >
       </div>
     </div>
-    <!-- DIVIDER -->
-    <div class="my-3 border-b border-blue-lightest"></div>
 
     <!-- 4 -->
     <div class="flex flex-col sm:flex-row mb-4">
-      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
+      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg flex justify-center items-center text-center xl:py-10">
         4
       </div>
       <div class="w-5/6 px-2 text-grey-darker"
@@ -105,12 +99,10 @@
         >
       </div>
     </div>
-    <!-- DIVIDER -->
-    <div class="my-3 border-b border-blue-lightest"></div>
 
     <!-- 5 -->
     <div class="flex flex-col sm:flex-row mb-4">
-      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
+      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg flex justify-center items-center text-center xl:py-10">
         5
       </div>
       <div class="w-5/6 px-2 text-grey-darker"
@@ -129,12 +121,10 @@
         >
       </div>
     </div>
-    <!-- DIVIDER -->
-    <div class="my-3 border-b border-blue-lightest"></div>
 
     <!-- 6 -->
     <div class="flex flex-col sm:flex-row mb-4">
-      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
+      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg flex justify-center items-center text-center xl:py-10">
         6
       </div>
       <div class="w-5/6 px-2 text-grey-darker"
@@ -153,12 +143,10 @@
         >
       </div>
     </div>
-    <!-- DIVIDER -->
-    <div class="my-3 border-b border-blue-lightest"></div>
 
     <!-- 7 -->
     <div class="flex flex-col sm:flex-row mb-4">
-      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
+      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg flex justify-center items-center text-center xl:py-10">
         7
       </div>
       <div class="w-5/6 px-2 text-grey-darker"
@@ -177,12 +165,10 @@
         >
       </div>
     </div>
-    <!-- DIVIDER -->
-    <div class="my-3 border-b border-blue-lightest"></div>
 
     <!-- 8 -->
     <div class="flex flex-col sm:flex-row mb-4">
-      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
+      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg flex justify-center items-center text-center xl:py-10">
         8
       </div>
       <div class="w-5/6 px-2 text-grey-darker"
@@ -201,12 +187,10 @@
         >
       </div>
     </div>
-    <!-- DIVIDER -->
-    <div class="my-3 border-b border-blue-lightest"></div>
 
     <!-- 9 -->
     <div class="flex flex-col sm:flex-row mb-4">
-      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
+      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg flex justify-center items-center text-center xl:py-10">
         9
       </div>
       <div class="w-5/6 px-2 text-grey-darker"
@@ -225,12 +209,10 @@
         >
       </div>
     </div>
-    <!-- DIVIDER -->
-    <div class="my-3 border-b border-blue-lightest"></div>
 
     <!-- 10 -->
     <div class="flex flex-col sm:flex-row mb-4">
-      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
+      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg flex justify-center items-center text-center xl:py-10">
         10
       </div>
       <div class="w-5/6 px-2 text-grey-darker"
@@ -249,12 +231,10 @@
         >
       </div>
     </div>
-    <!-- DIVIDER -->
-    <div class="my-3 border-b border-blue-lightest"></div>
 
     <!-- 11 -->
     <div class="flex flex-col sm:flex-row mb-4">
-      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
+      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg flex justify-center items-center text-center xl:py-10">
         11
       </div>
       <div class="w-5/6 px-2 text-grey-darker"
@@ -273,19 +253,17 @@
         >
       </div>
     </div>
-    <!-- DIVIDER -->
-    <div class="my-3 border-b border-blue-lightest"></div>
 
     <!-- 12 -->
     <div class="flex flex-col sm:flex-row mb-4">
-      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
+      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg flex justify-center items-center text-center xl:py-10">
         12
       </div>
       <div class="w-5/6 px-2 text-grey-darker"
         @click.self="feature12 = false"
       >
         <p class="mb-3"><strong>Email notification</strong></p>
-        <p class="mb-2">Using mailable to send formatted email to a user when granted access permissions.
+        <p class="mb-2">Using mailable to send formatted email to a user after being granted access permissions.
           <a class="text-indigo text-lg text-bold tracking-widest no-underline cursor-pointer"
             @click="feature12 = true"
           > View ...
@@ -297,12 +275,10 @@
         >
       </div>
     </div>
-    <!-- DIVIDER -->
-    <div class="my-3 border-b border-blue-lightest"></div>
 
     <!-- 13 -->
     <div class="flex flex-col sm:flex-row mb-4">
-      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
+      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg flex justify-center items-center text-center xl:py-10">
         13
       </div>
       <div class="w-5/6 px-2 text-grey-darker"
@@ -324,14 +300,14 @@
 
     <!-- 14 -->
     <div class="flex flex-col sm:flex-row mb-4">
-      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg justify-center items-center text-center xl:py-10">
+      <div class="w-1/6 mb-2 sm:mb-0 sm:mr-2 border border-grey-dark rounded-lg flex justify-center items-center text-center xl:py-10">
         14
       </div>
       <div class="w-5/6 px-2 text-grey-darker"
         @click.self="feature14 = false"
       >
         <p class="mb-3"><strong>Filters</strong></p>
-        <p class="mb-2">Filter result to narrow down the search result.
+        <p class="mb-2">Filter result to narrow down your search. Click view to see a figure showing only the companies which have been recently added.
           <a class="text-indigo text-lg text-bold tracking-widest no-underline cursor-pointer"
             @click="feature14 = true"
           > View ...

@@ -49,6 +49,27 @@ function active_topNav($passed_value = '/')
   }
 }
 
+ //== ACTIVE FILTER
+//====================
+function active_filter($passed_value = '/')
+{
+  $uri = $_SERVER['QUERY_STRING'];
+  if ( str_contains($uri, $passed_value)) {
+    return 'bg-grey-light p-1 font-semibold cursor-default -m-1';
+  }
+  else {
+    return 'hover:underline hover:text-green-darker';
+  }
+}
+
+   //== ACTIVE DASHBOARD NAV MENU ITEM
+  //====================
+  function active_dashboard($passed_value = '/')
+  {
+   $uri = request()->path();
+   return ends_with($uri, $passed_value)? 'pl-3 bg-white border-l-4 border-blue-resolute' : 'pl-4 hover:bg-grey-light';
+  }
+
  //== FUNCTION WILL RETURN "SELECTED" USED IN FORM LOOKUP SELECT LIST
 //====================
 function selected($old, $compare_to, $stored='')

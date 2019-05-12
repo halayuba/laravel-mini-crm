@@ -6,7 +6,6 @@
       <figure class="inline mr-2">
         <img src="{{ asset('img/logo.png') }}" class="w-16">
       </figure>
-
       Mini CRM
     </a>
   </div>
@@ -66,9 +65,11 @@
           >
 
             <!-- DASHBOARD -->
-            <a href="#" class="block px-6 py-3 width-full no-underline hover:bg-grey-light">
+            @can('perform-admin-actions')
+            <a href="{{ route('dashboard') }}" class="block px-6 py-3 width-full no-underline hover:bg-grey-light">
               <span class="text-sm text-blue-dark tracking-tight hover:text-blue-darker">Dashboard</span>
             </a>
+            @endcan
 
             <!-- SIGN OUT -->
             <a href="{{ route('logout') }}" class="block px-6 py-3 width-full no-underline hover:bg-grey-light"

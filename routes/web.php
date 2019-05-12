@@ -65,3 +65,15 @@ Route::prefix('permissions')->middleware(['auth', 'adminRole'])->group(function(
   Route::patch('/{user}', 'PermissionController@update')->name('permissions.update');
   Route::delete('/{user}', 'PermissionController@destroy')->name('permissions.destroy');
 });
+
+Route::prefix('dashboard')->middleware(['auth'])->group(function(){
+  Route::get('/', 'Dashboard\DashboardController@index')->name('dashboard');
+
+  /* == ACCOUNTS == */
+  Route::get('/accounts', 'Dashboard\AccountController@index')->name('accounts.index');
+  Route::post('/accounts', 'Dashboard\AccountController@store')->name('accounts.store');
+
+  /* == PASSWORD == */
+  Route::get('/password', 'Dashboard\PasswordController@index')->name('password.index');
+  Route::post('/password', 'Dashboard\PasswordController@store')->name('password.store');
+});
