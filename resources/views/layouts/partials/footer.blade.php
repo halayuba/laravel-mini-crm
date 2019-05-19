@@ -34,7 +34,7 @@
     </div>
 
     <div>
-      Designed &amp; Developed by <a href="#" class="no-underline hover:underline text-grey-dark hover:text-grey-darkest font-semibold">Simon Bashir</a>
+      Designed &amp; Developed by <a href="https://www.linkedin.com/in/simon-bashir-a0309490" class="no-underline hover:underline text-grey-dark hover:text-grey-darkest font-semibold">Simon Bashir</a>
     </div>
 
   </div>

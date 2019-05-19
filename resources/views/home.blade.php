@@ -20,7 +20,7 @@
         <li class="leading-loose">Authorization using Laravel "Gate" is used to restrict user actions (for example to prevent performing delete action on Companies).</li>
         <li class="leading-loose">Migrations to create schema and DB structure and Seeders (including factories) are used to pre-populate certain tables.</li>
         <li class="leading-loose">The "ProcessFileUpload" repository is used to validate and store uploaded files to local storage folder that is publicly accessible.</li>
-        <li class="leading-loose">Many essential concepts from using Filters, Form validation, scope (in Models), view composer, blade service provider, markdown mail, flash messaging, and helper functions are used in this mini CRM application.</li>
+        <li class="leading-loose">Contains many essential concepts: using Filters, Form validation, scope (in Models), view composer, blade service provider, markdown mail, flash messaging, and helper functions are used in this mini CRM application.</li>
         <li class="leading-loose">Vue.js is used to allow previewing images (logo) in the form (client-side and before uploading to the back-end). Vue.js is also used in a few other places (for example, showing/hiding tooltips).</li>
       </ul>
     </div>
