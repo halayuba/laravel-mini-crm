@@ -4,7 +4,6 @@
 - Version: 0.3 (2019.07.10)
 - First release Date: May 1st, 2019
 - To see a hosted demo you can visit [ziffoo.com](http://www.ziffoo.com)
-- To see a hosted demo you can visit [flexcrm.app](http://www.flexcrm.app)
 
 ### Brief Description
 Coded in `Laravel 5.8`, Mini CRM is a demo project.
