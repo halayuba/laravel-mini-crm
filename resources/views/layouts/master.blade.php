@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ app()->getLocale() }}">
 
   @include('layouts.partials.head')
 
-  <body class="font-sans antialiased text-black leading-tight bg-grey-lightest">
+  <body class="antialiased leading-none bg-gray-100">
 
     <div id="app">
 

@@ -27,63 +27,73 @@
 
             </div>
 
-            <div class="px-2 py-4 text-grey-darker">
+            <div class="px-2 py-4 text-gray-700">
 
               <!-- EMAIL -->
               <div class="flex flex-wrap py-2">
-                <img src="{{ asset('img/icons/ios-mail.svg') }}" class="w-6 h-6">
-                <span class="text-sm bg-grey-light p-1 mx-1">Email</span>
-                <span class="text-lg ml-2">{{ $user->email }}</span>
+                <div class="text-sm bg-gray-200 mx-1">
+                  @include('layouts.partials.svg.mail')
+                  <span class="hidden xl:inline-block">Email</span>
+                </div>
+                <span class="ml-2">{{ $user->email }}</span>
               </div>
 
               <!-- LAST UPDATE -->
               <div class="flex flex-wrap py-2">
-                <img src="{{ asset('img/icons/ios-calendar.svg') }}" class="w-6 h-6">
-                <span class="text-sm bg-grey-light p-1 mx-1">Last update</span>
-                <span class="text-lg ml-2">{{ $user->updated_at->toFormattedDateString() }}</span>
+                <div class="text-sm bg-gray-200 mx-1">
+                  @include('layouts.partials.svg.calendar')
+                  <span class="hidden xl:inline-block">Last update</span>
+                </div>
+                <span class="ml-2">{{ $user->updated_at->toFormattedDateString() }}</span>
               </div>
 
             </div>
 
-            <div class="bg-grey-lightest px-2 py-4 text-grey-darker">
+            <div class="bg-gray-100 px-2 py-4 text-gray-700">
 
               <!-- ACCESS PERMISSIONS WERE ASSIGNED -->
               @if( $user->companies->count() )
-                <div class="flex flex-wrap">
-                  <p class="block mb-2 text-sm underline leading-loose tracking-tight mr-4">{{ $user->name }} has access permissions to these companies:</p>
+                <div class="px-2">
+                  <span>{{ $user->name }} has access permissions to these companies:</span>
 
-                  <!-- UPDATE ACCESS PERMISSIONS -->
-                  <a href="{{ route('permissions.edit', $user->id) }}">
-                    <img src="{{ asset('img/icons/ios-refresh-circle.svg') }}" class="w-6 h-6 xl:mr-4" title="Update access permissions">
-                  </a>
+                  <!-- LIST OF COMPANIES WITH ACCESS -->
+                  <ol class="text-gray-600 px-2 py-2">
+                    @foreach( $user->companies as $company )
+                      <li class="leading-loose list-decimal ml-2 py-1 text-sm font-semibold">
+                        {{ $company->name }}
+                      </li>
+                    @endforeach
+                  </ol>
 
-                  <!-- REMOVE ACCESS PERMISSIONS -->
-                  <a href="{{ route('permissions.destroy', $user->id) }}"
-                    onclick="event.preventDefault();
-                    document.getElementById('remove-{{ $user->id }}').submit();"
-                  >
-                    <img src="{{ asset('img/icons/md-close-circle.svg') }}" class="w-6 h-6" title="Remove access permissions">
-                  </a>
-                  <form id="remove-{{ $user->id }}" action="{{ route('permissions.destroy', $user->id) }}" method="POST" class="hidden">
-                    @csrf
-                    @method('DELETE')
-                    <input class="" type="submit" value="Delete">
-                  </form>
-                </div>
+                  <div class="flex flex-col my-4">
+                    <!-- UPDATE ACCESS PERMISSIONS -->
+                    <a href="{{ route('permissions.edit', $user->id) }}" class="inline-block" title="Update access permissions">
+                      @include('layouts.partials.svg.refresh')
+                      <span class="hidden xl:inline-block">Update access permissions</span>
+                    </a>
 
-                <div class="flex flex-wrap text-grey-dark mb-4 py-2 px-2">
-                  @foreach( $user->companies as $company )
-                    <!-- COMPNAY ACCESS -->
-                    <span class="inline-block bg-white px-3 py-1 text-sm font-semibold mr-2">
-                      {{ $company->name }}
-                    </span>
-                  @endforeach
+                    <!-- REMOVE ACCESS PERMISSIONS -->
+                    <a href="{{ route('permissions.destroy', $user->id) }}" class="mt-4 inline-block" title="Remove access permissions"
+                      onclick="event.preventDefault();
+                      document.getElementById('remove-{{ $user->id }}').submit();"
+                    >
+                      @include('layouts.partials.svg.remove')
+                      <span class="hidden xl:inline-block">Remove access permissions</span>
+                    </a>
+                    <form id="remove-{{ $user->id }}" action="{{ route('permissions.destroy', $user->id) }}" method="POST" class="hidden">
+                      @csrf
+                      @method('DELETE')
+                      <input class="" type="submit" value="Delete">
+                    </form>
+                  </div>
+
                 </div>
               @else
-                <div class="flex flex-wrap">
-                  <p class="px-2">{{ $user->name }} has no access permissions to any company.</p>
-                  <a href="{{ route('permissions.create', $user->id) }}">
-                    <img src="{{ asset('img/icons/md-add-circle.svg') }}" class="w-6 h-6" title="Assign access permissions">
+                <div class="px-2">
+                  <span class="">{{ $user->name }} has no access permissions to any company.</span>
+                  <a href="{{ route('permissions.create', $user->id) }}" class="mt-2 block" title="Assign access permissions">
+                    @include('layouts.partials.svg.add')
+                    <span class="text-gray-500 hover:underline">Assign access permissions</span>
                   </a>
                 </div>
               @endif
@@ -95,19 +105,19 @@
           <div class="w-full px-2 py-4 flex">
 
             <!-- EDIT ACTION -->
-            <span class="flex-1 bg-grey-lighter text-center py-2">
+            <span class="flex-1 bg-gray-200 text-center py-2">
               <a href="{{ route('employee.edit', $user->id) }}" class="" title="Edit">
-                <img src="{{ asset('img/icons/ios-create.svg') }}" class="w-8">
+                @include('layouts.partials.svg.edit2')
               </a>
             </span>
 
             <!-- DELETE ACTION -->
-            <span class="flex-1 bg-grey-lighter text-center py-2">
+            <span class="flex-1 bg-gray-200 text-center py-2">
               <a href="{{ route('employee.destroy', $user->id) }}" class="" title="Delete"
                 onclick="event.preventDefault();
                 document.getElementById('delete-{{ $user->id }}').submit();"
               >
-                <img src="{{ asset('img/icons/md-trash.svg') }}" class="w-8">
+                @include('layouts.partials.svg.delete2')
               </a>
             </span>
 

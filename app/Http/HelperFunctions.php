@@ -42,10 +42,10 @@ function active_topNav($passed_value = '/')
 {
   $uri = request()->path();
   if ( ends_with($uri, $passed_value) || str_contains($uri, $passed_value)) {
-    return 'text-green-light font-semibold border-b-2 border-green';
+    return 'text-green-300 font-semibold border-b-2 border-green-500';
   }
   else {
-    return 'text-green-dark hover:text-green-light opacity-75 hover:opacity-100 border-b border-transparent hover:border-green-dark';
+    return 'text-green-600 hover:text-green-300 opacity-75 hover:opacity-100 border-b border-transparent hover:border-green-600';
   }
 }
 
@@ -55,10 +55,10 @@ function active_filter($passed_value = '/')
 {
   $uri = $_SERVER['QUERY_STRING'];
   if ( str_contains($uri, $passed_value)) {
-    return 'bg-grey-light p-1 font-semibold cursor-default -m-1';
+    return 'bg-gray-300 p-1 font-semibold cursor-default -m-1';
   }
   else {
-    return 'hover:underline hover:text-green-darker';
+    return 'hover:underline hover:text-green-700';
   }
 }
 
@@ -67,7 +67,7 @@ function active_filter($passed_value = '/')
   function active_dashboard($passed_value = '/')
   {
    $uri = request()->path();
-   return ends_with($uri, $passed_value)? 'pl-3 bg-white border-l-4 border-blue-resolute' : 'pl-4 hover:bg-grey-light';
+   return ends_with($uri, $passed_value)? 'pl-3 bg-white border-l-4 border-teal-800' : 'pl-4 hover:bg-gray-300';
   }
 
  //== FUNCTION WILL RETURN "SELECTED" USED IN FORM LOOKUP SELECT LIST
@@ -106,8 +106,20 @@ function appTz()
   return Carbon::now(new DateTimeZone($tz));
 }
 
- //RETURN DATE = 7 DAYS AGO (ex: 2018-12-28)
+  //== RETURN DATE = 7 DAYS AGO (ex: 2018-12-28)
+ //====================
 function last_week()
 {
   return appTz()->subWeek()->toDateString();
+}
+
+
+ //== COMPANIES WITH/WITHOUT EMPLOYEES
+//====================
+function companies_filter()
+{
+  $uri = $_SERVER['QUERY_STRING'];
+  if ( str_contains($uri, 'employees=true') ) return 'with employees';
+  elseif ( str_contains($uri, 'employees=false') ) return 'with no employees';
+  elseif ( str_contains($uri, 'recent=true') ) return 'recently added';
 }

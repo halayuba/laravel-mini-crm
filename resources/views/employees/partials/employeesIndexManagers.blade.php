@@ -6,11 +6,11 @@
       @foreach($company->employees as $employee)
 
       <!-- CARD -->
-      <div class="bg-white border-b border-grey-light px-2 mb-8 shadow">
+      <div class="bg-white border-b border-gray-400 px-2 mb-8 shadow">
 
         <!-- //== FIRST ROW
             //==================== -->
-        <div class="mb-2 py-2 text-grey-darker">
+        <div class="mb-2 py-2 text-gray-700">
 
           <!-- EMPLOYEE NANE -->
           <h3 class="mb-1">{{ $employee->first_name .' '.$employee->last_name }}</h3>
@@ -22,7 +22,7 @@
 
         <!-- //== SECOND ROW
             //==================== -->
-        <div class="flex text-grey-dark flex flex-col sm:flex-row sm:flex-wrap mb-4 py-2 px-2">
+        <div class="flex text-gray-600 flex flex-col sm:flex-row sm:flex-wrap mb-4 py-2 px-2">
 
           <!-- EMPLOYEE EMAIL -->
           <span class="flex-auto text-sm mb-1 sm:mb-0 sm:mr-2" title="Employee email">
@@ -40,12 +40,12 @@
 
         <!-- //== THIRD ROW: ACTIONS
             //==================== -->
-        <div class="flex text-grey-darker text-sm font-semibold mb-4 px-2">
+        <div class="flex text-gray-700 text-sm font-semibold mb-4 px-2">
 
          <!-- VIEW -->
-         <span class="flex-1 bg-grey-lighter hover:bg-white text-center py-2">
+         <span class="flex-1 bg-gray-200 hover:bg-white text-center py-2">
 
-           <a href="{{ route('employee.show', $employee->id) }}" class="no-underline text-grey-darker" title="View details">
+           <a href="{{ route('employee.show', $employee->id) }}" class="text-gray-700" title="View details">
              <img src="{{ asset('img/icons/md-eye.svg') }}" class="w-4 pt-1">
              <span class="hidden sm:inline-block">view</span>
            </a>
@@ -53,9 +53,9 @@
          </span>
 
           <!-- EDIT -->
-          <span class="flex-1 bg-grey-lighter hover:bg-white text-center py-2">
+          <span class="flex-1 bg-gray-200 hover:bg-white text-center py-2">
 
-            <a href="{{ route('employee.edit', $employee->id) }}" class="no-underline text-grey-darker" title="Edit COMPNAY">
+            <a href="{{ route('employee.edit', $employee->id) }}" class="text-gray-700" title="Edit COMPNAY">
               <img src="{{ asset('img/icons/ios-create.svg') }}" class="w-4 pt-1">
               <span class="hidden sm:inline-block">edit</span>
             </a>
@@ -63,8 +63,8 @@
           </span>
 
           <!-- DELETE -->
-          <span class="flex-1 bg-grey-lighter hover:bg-white text-center py-2">
-            <a href="{{ route('employee.destroy', $employee->id) }}" class="no-underline text-grey-darker" title="Warning! attempting to delete a company will also delete all associated employees"
+          <span class="flex-1 bg-gray-200 hover:bg-white text-center py-2">
+            <a href="{{ route('employee.destroy', $employee->id) }}" class="text-gray-700" title="Warning! attempting to delete a company will also delete all associated employees"
               onclick="event.preventDefault();
               document.getElementById('delete-{{ $employee->id }}').submit();"
             >
@@ -86,13 +86,13 @@
 
     @empty
       <!-- NOTHING EXISTS IN THE DB -->
-      <div class="container mx-auto px-4 mt-4 bg-orange-lightest border-l-4 border-orange text-orange-dark p-4" role="alert">
+      <div class="container mx-auto px-4 mt-4 bg-orange-100 border-l-4 border-orange-500 text-orange-600 p-4" role="alert">
         <p class="font-bold mb-3">No employees found!</p>
 
         @can('perform-admin-actions')
         <p>
           To create a new record click
-          <a href="{{ url('employees/create') }}" class="no-underline text-semibold text-indigo"> here</a>
+          <a href="{{ url('employees/create') }}" class="text-semibold text-indigo"> here</a>
         </p>
         @else
           <p>You do not have enough permissions to create new employees.</p>

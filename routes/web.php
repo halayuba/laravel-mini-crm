@@ -4,7 +4,8 @@ use Illuminate\Http\Request;
 
 Route::redirect('/', '/home');
 Route::view('/technologies', 'pages.technologies');
-Route::view('features', 'pages.features');
+Route::view('/features', 'pages.features');
+Route::view('/welcome', 'welcome');
 
 Auth::routes();
 

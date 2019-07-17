@@ -10,8 +10,8 @@
 
         <div class="w-full flex">
           <input name="manager" type="text" class="appearance-none block sm:w-32 xl:w-56 px-4 py-2 rounded sm:rounded-r-none mb-2 sm:mb-0 border-2 sm:border-r-0" placeholder="Search for a manager">
-          <button type="submit" class="sm:w-auto bg-green-dark hover:bg-green-light rounded sm:rounded-l-none px-3 py-1">
-            <img src="{{ asset('img/icons/magnifying-glass.svg') }}" class="appearance-none w-6 h-8 p-0">
+          <button type="submit" class="sm:w-auto bg-green-600 hover:bg-green-400 rounded sm:rounded-l-none px-3 py-1">
+            @include('layouts.partials.svg.magnifyingGlass')
           </button>
         </div>
 
@@ -24,7 +24,7 @@
 
     <!-- BUTTON -->
     <div class="my-2 sm:my-4">
-      <a class="bg-green-dark text-center font-bold text-white rounded block px-4 py-3 tracking-wide">Filters</a>
+      <a class="bg-green-600 text-center font-bold text-white rounded block px-4 py-3 tracking-wide">Filters</a>
     </div>
 
     <!-- //== FILTERS
@@ -36,21 +36,21 @@
 
         <!-- MANAGERS RECENTLY ADDED -->
         <li class="py-2 mb-1">
-          <a href="{{ url('managers'.'?recent=true') }}" class="text-sm text-grey-darker hover:text-green-darker no-underline hover:underline ">
+          <a href="{{ url('managers'.'?recent=true') }}" class="text-sm text-gray-700 hover:text-green-700 hover:underline">
             Recently Added
           </a>
         </li>
 
         <!-- MANAGERS WITH PERMISSIONS -->
         <li class="py-2 mb-1">
-          <a href="{{ url('managers'.'?has-permissions=true') }}" class="text-sm text-grey-darker hover:text-green-darker no-underline hover:underline ">
+          <a href="{{ url('managers'.'?has-permissions=true') }}" class="text-sm text-gray-700 hover:text-green-700 hover:underline">
             With permissions
           </a>
         </li>
 
         <!-- MANAGERS WITH NO PERMISSIONS -->
         <li class="py-2 mb-1">
-          <a href="{{ url('managers'.'?has-permissions=false') }}" class="text-sm text-grey-darker hover:text-green-darker no-underline hover:underline ">
+          <a href="{{ url('managers'.'?has-permissions=false') }}" class="text-sm text-gray-700 hover:text-green-700 hover:underline">
             With no permissions
           </a>
         </li>

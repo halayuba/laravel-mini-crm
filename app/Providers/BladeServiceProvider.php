@@ -28,7 +28,12 @@ class BladeServiceProvider extends ServiceProvider
           if ( $company->file )
           {
             $pathAndName = 'public/uploads/' . $company->file;
-            return  \Storage::exists($pathAndName);
+
+            /* == CONFIRM THE IMAGE EXISTS IN THE LOCAL FILE STORAGE == */
+            $exists = \Storage::exists($pathAndName);
+
+            if( $exists ) return  \Storage::exists($pathAndName);
+            else return false;
           }
           else return false;
         });

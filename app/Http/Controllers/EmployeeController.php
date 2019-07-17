@@ -58,7 +58,7 @@ class EmployeeController extends Controller
         }
         else
         {
-          return redirect("/employees")->with(flash_message("success", "Employee created successfully."));
+          return redirect("/employees")->with(flash_message("success", "A new employee has been created successfully."));
         }
       }
 
@@ -110,7 +110,7 @@ class EmployeeController extends Controller
 
         if ( $employee->update($request->all()) )
         {
-          return redirect("/employees")->with(flash_message("success", "Employee created successfully."));
+          return redirect("/employees")->with(flash_message("success", "The selected employee was updated successfully."));
         }
         else
         {
@@ -125,7 +125,7 @@ class EmployeeController extends Controller
       {
         if ( $employee->delete() )
         {
-          return redirect("/employees")->with(flash_message("success", "Employee deleted successfully."));
+          return redirect("/employees")->with(flash_message("success", "The selected employee was deleted successfully."));
         }
         else
         {

@@ -7,14 +7,14 @@
 <div class="min-h-screen ">
 
   <!-- INSTRUCTIONS -->
-  <div class="container mx-auto px-4 mt-4 bg-yellow-lightest border-l-4 border-yellow-dark text-grey-darker p-4" role="alert">
+  <div class="container mx-auto px-4 mt-4 bg-yellow-100 border-l-4 border-yellow-600 text-gray-700 p-4" role="alert">
     <p>Update the form below for the selected "manager" record.</p>
   </div>
 
   <div class="flex flex-col items-center justify-center mt-12 sm:mt-16 lg:mb-20">
     <div class="w-full max-w-md">
 
-      <div class="bg-green-lightest border-t-4 border-green-dark rounded-t text-teal-darkest px-4 py-4 shadow-md uppercase font-bold">
+      <div class="bg-green-100 border-t-4 border-green-600 rounded-t text-teal-800 px-4 py-4 shadow-md uppercase font-bold">
         {{ __('Update Manager') }}
       </div>
 
@@ -25,7 +25,7 @@
         <!-- NAME -->
         <div class="mb-8 ">
           <div class="mb-2">
-            <label class="inline text-grey-darker text-sm font-bold" for="name">
+            <label class="inline text-gray-700 text-sm font-bold" for="name">
               {{ __('Name') }}
             </label>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline">
@@ -38,7 +38,7 @@
         <!-- EMAIL -->
         <div class="w-full mb-8">
           <div class="mb-2">
-            <label for="email" class="inline text-grey-darker text-sm font-bold">Email</label>
+            <label for="email" class="inline text-gray-700 text-sm font-bold">Email</label>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline">
               <polygon points="5,0 15,0 10,15" fill="#cc3333"/>
             </svg>

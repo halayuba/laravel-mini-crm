@@ -3,7 +3,7 @@
 
   @include('layouts.partials.head')
 
-  <body class="font-sans antialiased text-grey-darker bg-grey-lighter">
+  <body class="antialiased bg-gray-100">
 
     <div id="app">
 

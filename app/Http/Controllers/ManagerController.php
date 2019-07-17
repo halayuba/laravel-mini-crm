@@ -100,10 +100,10 @@ class ManagerController extends Controller
     {
       if ( $user->delete() )
       {
-        return redirect("/managers")->with(flash_message("success", "Manager deleted successfully."));
+        return redirect("/managers")->with(flash_message("success", $user->name ." has been deleted successfully."));
       }
 
-      return redirect("/managers")->with(flash_message("danger", "Failed to delete manager."));
+      return redirect("/managers")->with(flash_message("danger", "Failed to delete the selected manager."));
     }
 
 }

@@ -14,19 +14,19 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        view()->composer(['employees.create', 'employees.edit', 'permissions.create', 'permissions.edit'], function($view)
-        {
-          $companies = Company::all()->sortBy('name');
-          $view->with(compact('companies'));
-        });
+      view()->composer(['employees.create', 'employees.edit', 'permissions.create', 'permissions.edit'], function($view)
+      {
+        $companies = Company::all()->sortBy('name');
+        $view->with(compact('companies'));
+      });
 
-        view()->composer('dashboard.index', function($view)
-        {
-          $managers = User::managers()->count();
-          $companies = Company::count();
-          $employees = Employee::count();
-          $view->with(compact('companies', 'managers', 'employees'));
-        });
+      view()->composer('dashboard.index', function($view)
+      {
+        $managers = User::managers()->count();
+        $companies = Company::count();
+        $employees = Employee::count();
+        $view->with(compact('companies', 'managers', 'employees'));
+      });
     }
 
     /**

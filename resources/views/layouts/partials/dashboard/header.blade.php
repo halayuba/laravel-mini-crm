@@ -2,13 +2,11 @@
   v-on-clickaway="away"
 >
 
-  <div class="w-1/6 text-grey-darkest text-2xl pl-2">
+  <div class="w-1/6 text-gray-900 text-2xl pl-2">
     <!-- LOGO -->
     <div class="flex-1 items-center flex-no-shrink py-1 xl:pl-2">
-      <a href="{{ route('home') }}" class="flex items-center no-underline xl:text-2xl text-green-dark">
-        <figure class="inline mr-2">
-          <img src="{{ asset('img/logo.png') }}" class="w-16">
-        </figure>
+      <a href="{{ route('home') }}" class="flex items-center xl:text-2xl text-green-600">
+        @include('layouts.partials.svg.logo')
         Mini CRM
       </a>
     </div>
@@ -19,10 +17,10 @@
     <!-- SEARCH -->
     <div class="relative w-1/3">
 
-      <input name="" class="w-full text-sm pl-10 pr-4 py-4 bg-grey-lighter border border-blue-resolute-dark outline-none" placeholder="Search (unavailable)">
+      <input name="" class="w-full text-sm pl-10 pr-4 py-4 bg-gray-300 border border-green-700 outline-none" placeholder="Search (unavailable)">
 
-      <figure class="absolute pin-t px-2 py-3">
-        <img src="{{ asset('img/icons/md-search.svg') }}" alt="search" class="w-6 h-6">
+      <figure class="absolute top-0 px-2 py-3">
+        @include('layouts.partials.svg.search')
       </figure>
 
     </div>
@@ -35,11 +33,11 @@
 
         <div class="flex items-center relative pr-4 xl:pr-8">
           <!-- AVATAR -->
-          <img src="{{ asset('img/icons/md-contact.svg') }}" class="inline-block h-8 w-8 rounded-full mr-2">
+          @include('layouts.partials.svg.avatar')
           <!-- USER NAME -->
-          <span class="text-grey-darkest text-sm mr-2">{{ Auth::user()->name }}</span>
+          <span class="text-gray-900 text-sm mx-2">{{ Auth::user()->name }}</span>
           <!-- CHEVRON -->
-          <img src="{{ asset('img/icons/md-arrow-dropdown-circle.svg') }}" class="fill-current h-4 w-4 block opacity-50 hover:opacity-100">
+          @include('layouts.partials.svg.chevron2')
         </div>
 
         <!-- DROPDOWN CONTENT -->
@@ -48,16 +46,16 @@
         >
 
           <!-- DASHBOARD -->
-          <a href="{{ url('/home') }}" class="block px-6 py-3 width-full no-underline hover:bg-grey-light">
-            <span class="text-sm text-blue-dark tracking-tight hover:text-blue-darker">Home page</span>
+          <a href="{{ url('/home') }}" class="block px-6 py-3 width-full no-underline hover:bg-gray-200">
+            <span class="text-sm text-blue-600 tracking-tight hover:text-blue-700">Home page</span>
           </a>
 
           <!-- SIGN OUT -->
-          <a href="{{ route('logout') }}" class="block px-6 py-3 width-full no-underline hover:bg-grey-light"
+          <a href="{{ route('logout') }}" class="block px-6 py-3 width-full no-underline hover:bg-gray-200"
             onclick="event.preventDefault();
             document.getElementById('logout-form').submit();"
           >
-            <span class="text-sm text-blue-dark tracking-tight hover:text-blue-darker">{{ __('Logout') }}</span>
+            <span class="text-sm text-blue-600 tracking-tight hover:text-blue-700">{{ __('Logout') }}</span>
           </a>
 
           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">

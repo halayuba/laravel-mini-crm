@@ -1,40 +1,40 @@
 <div class="container mx-auto px-6 py-10">
-  <div class="flex flex-col lg:flex-row lg:justify-between border-t-2 border-grey-light py-6 text-grey-darker">
+  <div class="flex flex-col lg:flex-row lg:justify-between border-t-2 border-gray-200 py-6 text-gray-700">
 
+    <!-- LOGO -->
     <div class="mb-4 lg:mb-1 flex items-center">
-      <figure class="mr-2">
-        <img src="{{ asset('img/logo.png') }}" alt="Logo" class="w-16">
-      </figure>
-      {{ (date('Y') > 2019)?  '2019 - '.date('Y') : '2019' }} Mini CRM
+        @include('layouts.partials.svg.logo')
+      <span class="ml-2">{{ (date('Y') > 2019)?  '2019 - '.date('Y') : '2019' }} Mini CRM</span>
     </div>
 
     <div class="flex flex-col">
-      <a href="{{ route('home') }}" class="no-underline text-grey-dark leading-loose hover:underline hover:text-grey-darkest">
-        <span class="mr-2"><img src="{{ asset('img/icons/md-home.svg') }}" alt="Home" class="w-4 h-4"></span>
-        Home
+      <!-- HOME -->
+      <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-500">
+        @include('layouts.partials.svg.home')
+        <span class="inline-block">Home</span>
       </a>
-      <a href="{{ url('/features') }}" class="no-underline text-grey-dark leading-loose hover:underline hover:text-grey-darkest">
-        <span class="mr-2"><img src="{{ asset('img/icons/md-color-wand.svg') }}" alt="Wand" class="w-4 h-4"></span>
-        Features
+      <!-- FEATURES -->
+      <a href="{{ url('/features') }}" class="text-gray-700 hover:text-green-500 mt-4">
+        @include('layouts.partials.svg.features')
+        <span class="">Features</span>
       </a>
     </div>
 
-    <div class="flex flex-col mb-4 lg:mb-1">
+    <div class="flex flex-col">
       <!-- SOURCE CODE -->
-      <a href="https://github.com/halayuba/laravel-mini-crm.git" class="no-underline text-grey-dark leading-loose hover:underline hover:text-grey-darkest">
-        <span class="mr-2"><img src="{{ asset('img/icons/logo-github.svg') }}" alt="github" class="w-4 h-4"></span>
-        Source code
+      <a href="https://github.com/halayuba/laravel-mini-crm.git" class="text-gray-700 hover:text-green-500 mt-4 xl:mt-0">
+        @include('layouts.partials.svg.github')
+        <span class="">Source code</span>
       </a>
-
       <!-- TECHNOLOGIES & SERVICES -->
-      <a href="{{ url('/technologies') }}" class="no-underline text-grey-dark leading-loose hover:underline hover:text-grey-darkest">
-        <span class="mr-2"><img src="{{ asset('img/icons/ios-clipboard.svg') }}" alt="microphone" class="w-4 h-4"></span>
-        Technologies
+      <a href="{{ url('/technologies') }}" class="text-gray-700 hover:text-green-500 mt-4">
+        @include('layouts.partials.svg.technologies')
+        <span class="">Technologies</span>
       </a>
     </div>
 
-    <div>
-      Designed &amp; Developed by <a href="https://www.linkedin.com/in/simon-bashir-a0309490" class="no-underline hover:underline text-grey-dark hover:text-grey-darkest font-semibold">Simon Bashir</a>
+    <div class="mt-8 xl:mt-0">
+      Designed &amp; Developed by <a href="https://www.linkedin.com/in/simon-bashir-a0309490" class="text-gray-600 hover:text-green-700 font-semibold">Simon Bashir</a>
     </div>
 
   </div>

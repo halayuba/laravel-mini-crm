@@ -5,14 +5,14 @@
 @section('content')
 
 <!-- INSTRUCTIONS -->
-<div class="container mx-auto px-4 mt-4 bg-yellow-lightest border-l-4 border-yellow-dark text-grey-darker p-4" role="alert">
+<div class="container mx-auto px-4 mt-4 bg-yellow-100 border-l-4 border-yellow-600 text-gray-700 p-4" role="alert">
   <p>Complete the form below to create a new company record.</p>
 </div>
 
 <div class="flex flex-col items-center justify-center mt-12 sm:mt-16 lg:mb-20">
   <div class="w-full max-w-md">
 
-    <div class="bg-green-lightest border-t-4 border-green-dark rounded-t text-teal-darkest px-4 py-4 shadow-md uppercase font-bold">
+    <div class="bg-green-100 border-t-4 border-green-600 rounded-t text-teal-900 px-4 py-4 shadow-md uppercase font-bold">
       {{ __('New Company') }}
     </div>
 
@@ -22,7 +22,7 @@
       <!-- COMPANY NAME -->
       <div class="mb-8 ">
         <div class="mb-2">
-          <label class="inline text-grey-darker text-sm font-bold" for="name">
+          <label class="inline text-gray-700 text-sm font-bold" for="name">
             {{ __('Name') }}
           </label>
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline">
@@ -50,12 +50,12 @@
         <label class="form_label">Upload Logo
 
           <!-- TIP -->
-          <span class="text-sm text-grey-darker ml-1" title="Logo must be an image and min 100X100"
+          <span class="text-sm text-gray-700 ml-1" title="Logo must be an image and min 100X100"
             @click="tipFlag = !tipFlag"
           >
-            <img src="/img/icons/md-information-circle.svg" class="w-6">
+            @include('layouts.partials.svg.tip')
           </span>
-          <p class="px-2 py-1 text-grey-darker border border-grey"
+          <p class="px-2 py-1 text-gray-700 border border-gray-500"
             v-if="tipFlag"
           >
             Logo must be an image and min 100X100
@@ -63,11 +63,11 @@
         </label>
 
         <!-- VUE FOR FORMATTING AND INITIAL VALIDATION -->
-        <div class="block w-32 h-32 cursor-pointer bg-cover bg-center bg-grey hover:bg-grey-light"
+        <div class="block w-32 h-32 cursor-pointer bg-cover bg-center bg-gray-500 hover:bg-gray-400"
           :style="{ 'background-image': `url(${imageData})` }"
           @click="$refs.fileInput.click()"
         >
-          <span class="w-full h-full flex justify-center items-center text-grey-darker text-sm text-semibold"
+          <span class="w-full h-full flex justify-center items-center text-gray-700 text-sm text-semibold"
             v-if="!imageData"
           >
             Choose an Image

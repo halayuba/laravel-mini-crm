@@ -9,12 +9,18 @@ window.Vue = require('vue');
 Vue.use(Toastr)
 
 /**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
+ * The following block of code may be used to automatically register your
+ * Vue components. It will recursively scan this directory for the Vue
+ * components and automatically register them with their "basename".
+ *
+ * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
+// const files = require.context('./', true, /\.vue$/i);
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+
 Vue.component('app', require('./components/App.vue').default);
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 const app = new Vue({
     el: '#app',
@@ -42,7 +48,8 @@ const app = new Vue({
             feature11: false,
             feature12: false,
             feature13: false,
-            feature14: false
+            feature14: false,
+            feature15: false
         }
     },
     directives: {
@@ -51,8 +58,8 @@ const app = new Vue({
     computed: {
       btnState() {
         return {
-          'text-green-light border-b-2 border-green font-semibold': this.navClicked,
-          'text-green-dark hover:text-green-light opacity-75 hover:opacity-100 border-b border-transparent hover:border-green-dark': ! this.navClicked
+          'text-green-400 border-b-2 border-green-500 font-semibold': this.navClicked,
+          'text-green-600 hover:text-green-400 opacity-75 hover:opacity-100 border-b border-transparent hover:border-green-600': ! this.navClicked
         }
       }
     },
@@ -100,7 +107,7 @@ const app = new Vue({
         removeImage() {
           this.imageData = null
           this.selectedFile = null
-          this.$toastr.i('Book cover image is removed.')
+          this.$toastr.i('image is removed.')
         },
     },
 

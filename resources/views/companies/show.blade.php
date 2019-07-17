@@ -37,22 +37,26 @@
               <div class="font-bold text-lg xl:text-xl">{{ $company->name }}</div>
             </div>
 
-            <div class="px-2 py-4 text-grey-darker">
+            <div class="px-2 py-4 text-gray-700">
 
               <!-- EMAIL -->
-              <div class="flex flex-wrap py-2">
-                <img src="{{ asset('img/icons/ios-mail.svg') }}" class="w-6 h-6">
-                <span class="text-sm bg-grey-light p-1 mx-1">Email</span>
+              <div class="flex flex-wrap items-center py-2">
+                <span class="text-sm bg-gray-200 p-1 mx-1">
+                  @include('layouts.partials.svg.mail')
+                  Email
+                </span>
                 <span class="text-lg ml-2">{{ $company->email }}</span>
               </div>
 
               <!-- WEBSITE -->
               <div class="flex flex-wrap py-2">
-                <img src="{{ asset('img/icons/md-link.svg') }}" class="w-6 h-6">
-                <span class="text-sm bg-grey-light p-1 mx-1">Website</span>
+                <span class="text-sm bg-gray-200 p-1 mx-1">
+                  @include('layouts.partials.svg.link2')
+                  Website
+                </span>
                 @if($company->website)
                   <span class="text-lg ml-2">
-                    <a href="{{ $company->website }}" target="_blank" class="no-underline text-indigo">{{ $company->website }}</a>
+                    <a href="{{ $company->website }}" target="_blank" class="text-indigo-500">{{ $company->website }}</a>
                   </span>
                 @else
                   <span class="text-lg ml-2">{{ $company->website }}</span>
@@ -67,19 +71,19 @@
           <div class="w-full px-2 py-4 flex">
 
             <!-- EDIT ACTION -->
-            <span class="flex-1 bg-grey-lighter text-center py-2">
+            <span class="flex-1 bg-gray-300 text-center py-2">
               <a href="{{ route('company.edit', $company->slug) }}" class="" title="Edit">
-                <img src="{{ asset('img/icons/ios-create.svg') }}" class="w-8">
+                @include('layouts.partials.svg.edit2')
               </a>
             </span>
 
             <!-- DELETE ACTION -->
-            <span class="flex-1 bg-grey-lighter text-center py-2">
+            <span class="flex-1 bg-gray-300 text-center py-2">
               <a href="{{ route('company.destroy', $company->slug) }}" class="" title="Delete"
                 onclick="event.preventDefault();
                 document.getElementById('delete-{{ $company->slug }}').submit();"
               >
-                <img src="{{ asset('img/icons/md-trash.svg') }}" class="w-8">
+                @include('layouts.partials.svg.delete2')
               </a>
             </span>
 

@@ -1,9 +1,10 @@
 ## Laravel - Mini CRM
 
 - Author: Simon Bashir
-- Version: 0.2
+- Version: 0.3 (2019.07.10)
 - First release Date: May 1st, 2019
 - To see a hosted demo you can visit [ziffoo.com](http://www.ziffoo.com)
+- To see a hosted demo you can visit [flexcrm.app](http://www.flexcrm.app)
 
 ### Brief Description
 Coded in `Laravel 5.8`, Mini CRM is a demo project.
@@ -13,11 +14,12 @@ Coded in `Laravel 5.8`, Mini CRM is a demo project.
 2. The "AdminRoleMiddleware" middleware will block access to the "Managers" nav menu bar unless signed in as Admin.
 3. A pivot table is used to store access permissions for "Managers". So, Managers will only have a restricted view based on the companies they’ve been given access to.
 4. Authorization using Laravel "Gate" is used to restrict user actions (for example to prevent performing delete action on Companies).
-5. Seeders (including factories) are used to pre-populate certain tables.
-6. The "ProcessFileUpload" repository is used to validate and store uploaded files to local storage folder that is publicly accessible.
-7. Filters, form validation, scope (in Models), view composer, blade service provider, markdown mail, flash messaging, and helper functions are used in this project.
+5. Migrations to create schema and DB structure and Seeders (including factories) are used to pre-populate certain tables.
+6. The "ProcessFileUpload" repository is used to validate and store uploaded files to the local storage folder that is publicly accessible.
+7. Contains many useful concepts: Filters, form validation, scope (in Models), view composer, blade service provider, markdown mail, flash messaging, pagination, and helper functions are used in this project.
 8. TailwindCSS is used for layout design.
 9. Vue.js is used to allow previewing image (logo) in the form (client-side and before uploading to the back-end). Vue.js is also used in a few other places (for example, showing/hiding tooltips).
+10. Simple Admin dashboard for updating password.
 
 ### Screen Shots
 visit [ziffoo.com](http://www.ziffoo.com/features)

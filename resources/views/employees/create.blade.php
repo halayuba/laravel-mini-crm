@@ -5,14 +5,14 @@
 @section('content')
 
 <!-- INSTRUCTIONS -->
-<div class="container mx-auto px-4 mt-4 bg-yellow-lightest border-l-4 border-yellow-dark text-grey-darker p-4" role="alert">
+<div class="container mx-auto px-4 mt-4 bg-yellow-100 border-l-4 border-yellow-600 text-gray-700 p-4" role="alert">
   <p>Complete the form below to create a new employee record.</p>
 </div>
 
 <div class="flex flex-col items-center justify-center mt-12 sm:mt-16 lg:mb-20">
   <div class="w-full max-w-md">
 
-    <div class="bg-green-lightest border-t-4 border-green-dark rounded-t text-teal-darkest px-4 py-4 shadow-md uppercase font-bold">
+    <div class="bg-green-100 border-t-4 border-green-600 rounded-t text-teal-800 px-4 py-4 shadow-md uppercase font-bold">
       {{ __('New Employee') }}
     </div>
 
@@ -22,7 +22,7 @@
       <!-- FIRST NAME -->
       <div class="mb-8 ">
         <div class="mb-2">
-          <label class="inline text-grey-darker text-sm font-bold" for="first_name">
+          <label class="inline text-gray-700 text-sm font-bold" for="first_name">
             {{ __('First Name') }}
           </label>
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline">
@@ -36,7 +36,7 @@
       <!-- LAST NAME -->
       <div class="mb-8 ">
         <div class="mb-2">
-          <label class="inline text-grey-darker text-sm font-bold" for="last_name">
+          <label class="inline text-gray-700 text-sm font-bold" for="last_name">
             {{ __('Last Name') }}
           </label>
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline">
@@ -62,7 +62,7 @@
       <!-- COMPANY -->
       <div class="w-full mb-8">
         <div class="mb-2">
-          <label class="inline text-grey-darker text-sm font-bold" for="company_id">
+          <label class="inline text-gray-700 text-sm font-bold" for="company_id">
             {{ __('Company') }}
             <!-- REQUIRED SYMBOL -->
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline">
@@ -71,12 +71,12 @@
 
             <!-- TIP -->
             @can('perform-admin-actions')
-            <span class="text-sm text-grey-darker ml-1" title="If the list does not contain the company for which this employee needs to be associated with then click this link to create a new company."
+            <span class="text-sm text-gray-700 ml-1" title="If the list does not contain the company for which this employee needs to be associated with then click this link to create a new company."
               @click="tipFlag = !tipFlag"
             >
-              <img src="/img/icons/md-information-circle.svg" class="w-6">
+              @include('layouts.partials.svg.tip')
             </span>
-            <p class="px-2 py-1 text-grey-darker border border-grey"
+            <p class="px-2 py-1 text-gray-700 border border-gray"
               v-if="tipFlag"
             >
               If the list does not contain the company for which this employee needs to be associated with then click this link to create a new company.

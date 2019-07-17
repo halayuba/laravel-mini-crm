@@ -52,9 +52,9 @@ class CompanyController extends Controller
   {
        //== VALIDATION: NO DUPLICATE NAME
       //====================
-      if ( Company::isDuplicate($request->name)->count() )
+      if ( Company::isDuplicate(strtolower($request->name))->count() )
       {
-        return back()->with(flash_message("warning", "Duplicate company name."));
+        return back()->with(flash_message("danger", "Duplicate company name."));
       }
       else
       {
