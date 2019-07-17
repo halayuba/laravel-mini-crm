@@ -337,7 +337,7 @@
         @click.self="feature15 = false"
       >
         <p class="mb-3"><strong>Dashboard</strong></p>
-        <p class="mb-2">A basic Admin dashboard is created to allow for the management of many new functionality when planned for the next phase.
+        <p class="mb-2">A basic Admin dashboard is created to allow for the management of components (eg, setting default look up values). Many new functionality are planned for future sprints.
           <a class="text-indigo-500 text-lg text-bold tracking-widest no-underline cursor-pointer"
             @click="feature15 = true"
           > View ...
