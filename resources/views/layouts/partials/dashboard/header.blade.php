@@ -12,7 +12,7 @@
     </div>
   </div>
 
-  <div class="flex-1 flex justify-between sm:w-auto sm:flex">
+  <div class="flex-1 flex justify-between sm:w-auto">
 
     <!-- SEARCH -->
     <div class="relative w-1/3">

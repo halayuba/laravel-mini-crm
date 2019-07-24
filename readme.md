@@ -1,10 +1,9 @@
 ## Laravel - Mini CRM
 
 - Author: Simon Bashir
-- Version: 0.3 (2019.07.10)
+- Version: 0.4 (2019.07.23)
 - First release Date: May 1st, 2019
-- To see a hosted demo you can visit [ziffoo.com](http://www.ziffoo.com)
-- To see a hosted demo you can visit [flexcrm.app](http://www.flexcrm.app)
+- To see a hosted demo you can visit [flexcrm.app](https://flexcrm.app)
 
 ### Brief Description
 Coded in `Laravel 5.8`, Mini CRM is a demo project.
@@ -71,7 +70,7 @@ Mini CRM requires Laravel v5.8 (not tested with other versions).
 ### Roadmap
 - ~~Add filters.~~
 - ~~Admin dashboard.~~
-- Responsive design.
+- Responsive design: WIP many new UI improvements had been made for this release.
 - Expand functionality to include basic Customer Care and Billing.
 - Additional form validation (including client-side validation).
 - Expand on Admin dashboard.

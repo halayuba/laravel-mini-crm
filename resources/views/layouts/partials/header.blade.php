@@ -9,7 +9,7 @@
     </a>
   </div>
 
-  <!-- NAVIGATION MENU -->
+  <!-- NAVIGATION MENU: NON MOBILE -->
   <div class="hidden sm:flex flex-1 items-center justify-center p-6">
 
     <!-- HOME -->
@@ -28,11 +28,10 @@
     @endauth
   </div>
 
-  <!-- AUTH -->
+  <!-- AUTHENTICATION -->
   <div class="flex flex-1 justify-end pr-4 xl:pr-8"
     v-on-clickaway="away"
   >
-
     <div class="hidden sm:block">
       @guest
         <!-- LOGIN -->
@@ -48,7 +47,6 @@
         <div class="cursor-pointer"
           @click="visible=!visible"
         >
-
           <div class="flex items-center relative">
             <!-- AVATAR -->
             <img src="{{ asset('img/avatar.png') }}" class="inline-block h-8 w-8 rounded-full mr-2">
@@ -62,13 +60,12 @@
           <div class="leading-tight rounded-lg py-4 bg-white absolute shadow-md z-10"
             :class="[visible? 'block' : 'hidden']"
           >
-
             <!-- DASHBOARD -->
             @can('perform-admin-actions')
-            <a href="{{ route('dashboard') }}" class="block px-6 py-3 width-full hover:bg-gray-200">
-              @include('layouts.partials.svg.dashboard')
-              <span class="text-sm text-green-600 tracking-tight hover:text-blue-700">Dashboard</span>
-            </a>
+              <a href="{{ route('dashboard') }}" class="block px-6 py-3 width-full hover:bg-gray-200">
+                @include('layouts.partials.svg.dashboard')
+                <span class="text-sm text-green-600 tracking-tight hover:text-blue-700">Dashboard</span>
+              </a>
             @endcan
 
             <!-- SIGN OUT -->
@@ -90,16 +87,24 @@
       @endauth
     </div>
 
-  </div>
+  </div> <!-- END AUTHENTICATION -->
 
   <!-- MOBILE MENU -->
-  <div class="block sm:hidden mr-3">
-      <button class="flex items-center px-3 py-2 border rounded text-white border-teal-300 hover:border-teal-700"
-        @click="mobileVisible = !mobileVisible"
+  <div class="sm:hidden mr-3">
+    <button class="flex items-center px-2 text-gray-500 hover:text-white focus:outline-none focust:text-white"
+      @click="mobileVisible = !mobileVisible"
+    >
+      <template
+        v-if="mobileVisible"
       >
-        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-      </button>
+        @include('layouts.partials.svg.close')
+      </template>
+      <template
+        v-else
+      >
+        @include('layouts.partials.svg.menu')
+      </template>
+    </button>
   </div>
 
 </header>
@@ -109,17 +114,37 @@
   v-if="mobileVisible"
 >
 
-  <a href="{{ route('home') }}" class="text-gray-600 py-2">Home</a>
+  <a href="{{ route('home') }}" class="text-gray-600 px-2 py-4 hover:bg-gray-200">Home</a>
+
+  <!-- DIVIDER -->
+  <span class="p4-4 border-t border-gray-200"></span>
+
+  <!-- SHOW PRIOR TO AUTH -->
+  @guest
+    <!-- LOGIN -->
+    <a href="{{ route('login') }}" class="text-gray-600 px-2 py-4 hover:bg-gray-200">Login</a>
+  @endguest
 
   <!-- SHOW ONLY IF USER IS AUTHENTICATED  -->
   @auth
-    <!-- COMPANIES -->
-    <a href="{{ url('/companies') }}" class="text-gray-600 py-2">Companies</a>
+  <!-- COMPANIES -->
+  <a href="{{ url('/companies') }}" class="text-gray-600 px-2 py-4 hover:bg-gray-200">Companies</a>
 
-    <!-- EMPLOYEES -->
-    <a href="{{ url('/employees') }}" class="text-gray-600 py-2">Employees</a>
+  <!-- EMPLOYEES -->
+  <a href="{{ url('/employees') }}" class="text-gray-600 px-2 py-4 hover:bg-gray-200">Employees</a>
 
-    <!-- MANAGERS -->
-    <a href="{{ url('/managers') }}" class="text-gray-600 py-2">Managers</a>
+  <!-- MANAGERS -->
+  <a href="{{ url('/managers') }}" class="text-gray-600 px-2 py-4 hover:bg-gray-200">Managers</a>
+
+  <!-- DIVIDER -->
+  <span class="p4-4 border-t border-gray-200"></span>
+
+  <!-- LOG OUT -->
+  <a href="{{ route('logout') }}" class="text-gray-600 px-2 py-4 hover:bg-gray-200"
+    onclick="event.preventDefault();
+    document.getElementById('logout-form').submit();"
+  >Logout</a>
+
   @endauth
+
 </div>

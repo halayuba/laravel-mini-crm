@@ -12,11 +12,11 @@
 
   <div class="min-h-screen flex items-center container mx-auto mb-4 xl:mb-32">
 
-      <div class="flex justify-start flex-wrap mr-4 xl:mr-0 xl:mb-12">
+      <div class="flex justify-start flex-wrap xl:mb-12">
 
         <!-- LARAVEL -->
-        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mr-4 mb-6">
-          <a href="https://laravel.com/">
+        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mr-4 mb-10 flex items-center">
+          <a href="https://laravel.com/" class="">
             <figure class="">
               <img class="" src="{{ asset('img/logos/laravel.png') }}" title="Mini CRM was developed using Laravel 5.8.28">
             </figure>
@@ -24,7 +24,7 @@
         </div>
 
         <!-- PHP -->
-        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mr-4 mb-6">
+        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mr-4 mb-10 flex items-center">
           <a href="https://php.net/">
             <figure class="">
               <img class="" src="{{ asset('img/logos/PHP.png') }} " title="PHP">
@@ -33,7 +33,7 @@
         </div>
 
         <!-- MYSQL -->
-        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mr-4 mb-6">
+        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mr-4 mb-10 flex items-center">
           <a href="https://mysql.com/">
             <figure class="">
               <img class="" src="{{ asset('img/logos/mysql.png') }} " title="MySQL">
@@ -42,7 +42,7 @@
         </div>
 
         <!-- VUE -->
-        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mb-6">
+        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mb-10 flex items-center">
           <a href="https://vuejs.org/">
             <figure class="">
               <img class="" src="{{ asset('img/logos/vue.png') }} " title="Vue">
@@ -51,7 +51,7 @@
         </div>
 
         <!-- TAILWIND -->
-        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mb-6">
+        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mb-10 flex items-center">
           <a href="https://tailwindcss.com/">
             <figure class="">
               <img class="" src="{{ asset('img/logos/tailwind.png') }} " title="TAILWIND">
@@ -60,7 +60,7 @@
         </div>
 
         <!-- GIT -->
-        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mr-4 mb-6">
+        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mr-4 mb-10 flex items-center">
           <a href="https://git-scm.com/">
             <figure class="">
               <img class="" src="{{ asset('img/logos/Git.png') }} " title="Git">
@@ -69,7 +69,7 @@
         </div>
 
         <!-- GITHUB -->
-        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mr-4 mb-6">
+        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mr-4 mb-10 flex items-center">
           <a href="https://github.com/">
             <figure class="">
               <img class="" src="{{ asset('img/logos/GitHub.png') }} " title="GitHub">
@@ -78,7 +78,7 @@
         </div>
 
         <!-- BITBUCKET -->
-        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mr-4 mb-6">
+        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mr-4 mb-10 flex items-center">
           <a href="https://bitbucket.org">
             <figure class="">
               <img class="" src="{{ asset('img/logos/bitbucket.png') }} " title="Bitbucket">
@@ -87,7 +87,7 @@
         </div>
 
       <!-- ATOM -->
-       <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mr-4 mb-6">
+       <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mr-4 mb-10 flex items-center">
          <a href="https://atom.io/">
            <figure class="">
              <img class="" src="{{ asset('img/logos/atom.png') }} " title="Atom">
@@ -96,7 +96,7 @@
        </div>
 
         <!-- DIGITAL OCEAN -->
-        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4">
+        <div class="flex-grow-0 w-24 xl:w-48 px-2 xl:px-4 mb-10 flex items-center">
           <a href="https://www.digitalocean.com//">
             <figure class="">
               <img class="" src="{{ asset('img/logos/DO.png') }} " title="DIGITAL OCEAN">

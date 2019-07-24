@@ -26,14 +26,14 @@
 
           <!-- EMPLOYEE EMAIL -->
           <span class="flex-auto text-sm mb-1 sm:mb-0 sm:mr-2" title="Employee email">
-            <img src="{{ asset('img/icons/ios-mail.svg') }}" class="w-4 pt-1">
+            @include('layouts.partials.svg.mail')
             {{ $employee->email }}
           </span>
 
           <!-- PHONE -->
           <span class="flex-auto text-sm mb-1 sm:mb-0 sm:mr-2" title="Employee Phone">
-            <img src="{{ asset('img/icons/ios-call.svg') }}" class="w-4 pt-1">
-              {{ $employee->phone }}
+            @include('layouts.partials.svg.phone')
+            {{ $employee->phone }}
           </span>
 
         </div>
@@ -46,7 +46,7 @@
          <span class="flex-1 bg-gray-200 hover:bg-white text-center py-2">
 
            <a href="{{ route('employee.show', $employee->id) }}" class="text-gray-700" title="View details">
-             <img src="{{ asset('img/icons/md-eye.svg') }}" class="w-4 pt-1">
+             @include('layouts.partials.svg.view')
              <span class="hidden sm:inline-block">view</span>
            </a>
 
@@ -56,7 +56,7 @@
           <span class="flex-1 bg-gray-200 hover:bg-white text-center py-2">
 
             <a href="{{ route('employee.edit', $employee->id) }}" class="text-gray-700" title="Edit COMPNAY">
-              <img src="{{ asset('img/icons/ios-create.svg') }}" class="w-4 pt-1">
+              @include('layouts.partials.svg.edit3')
               <span class="hidden sm:inline-block">edit</span>
             </a>
 
@@ -68,7 +68,7 @@
               onclick="event.preventDefault();
               document.getElementById('delete-{{ $employee->id }}').submit();"
             >
-              <img src="{{ asset('img/icons/erase.png') }}" class="w-4 pt-1">
+              @include('layouts.partials.svg.delete')
               <span class="hidden sm:inline-block">delete</span>
             </a>
           </span>
