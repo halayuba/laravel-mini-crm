@@ -129,7 +129,7 @@ class CompanyController extends Controller
       'file' => 'image|dimensions:min_width=100,min_height=100'
     ], ['name.unique' => 'Your attempt to update this company is rejected since the name already exists in the database!']);
 
-    /* == GRAB THE CURRENT FILE NAME (LOGO) IF EXISTS == */
+    /* == GRAB THE CURRENT FILE NAME (COMPNAY LOGO) IF EXISTS == */
     $current_image_name = $company->file;
 
     /* == USE REPOSITORY FOR VAIDATING AND STORING IMAGE == */
@@ -174,11 +174,13 @@ class CompanyController extends Controller
       /* == PERFORM DELETE == */
       if ( $company->delete() )
       {
-        /* == UPLOADED IMAGE (LOGO) EXISTS == */
+        /* == CHECK UPLOADED IMAGE (COMPNAY LOGO) EXISTS == */
         if ( $company->file )
         {
           $pathAndName = 'public/uploads/' . $company->file;
           $exists = Storage::exists($pathAndName);
+
+          /* == DELETE LOGO == */
           if( $exists ) Storage::delete($pathAndName);
         }
         return redirect("/companies")->with(flash_message("success", "Company deleted successfully."));
@@ -196,8 +198,10 @@ class CompanyController extends Controller
    //==================== */
    public function deleteLogo(Company $company)
    {
+     /* == USE REPOSITORY TO REMOVE STORED IMAGE (COMPANY LOGO) == */
      $this->upload->removeStoredUpload($company->file);
 
+     /* == DELETE THE LOGO NAME IN THE DB TABLE == */
      $company->removeLogo();
 
      return back()->with(flash_message("success", "Logo has been removed."));

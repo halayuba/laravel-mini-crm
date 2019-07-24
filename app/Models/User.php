@@ -76,7 +76,7 @@ class User extends Authenticatable
      });
    }
 
-   /* == FETCH COMPANY IDs WHERE THIS USER HAS ACCESS PERMISSION == */
+   /* == FETCH COMPANY IDs FOR WHICH THIS USER HAS ACCESS PERMISSION TO == */
    public function fetchAccessIds()
    {
      return $this->companies()->pluck('id')->toArray();

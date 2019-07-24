@@ -60,9 +60,11 @@ class Company extends Model
       return Storage::disk('local')->url('public/uploads/' . $this->file);
     }
 
+     //== UPDATE THE ATTRIBUTE "FILE" TO NULL AFTER DELETING THE LOGO
+    //====================
     public function removeLogo()
     {
-      return $this->update(['file' => '']);
+      return $this->update(['file' => NULL]);
     }
 
      //== RELATIONSHIPS
