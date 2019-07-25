@@ -47,7 +47,7 @@
         <div class="cursor-pointer"
           @click="visible=!visible"
         >
-          <div class="flex items-center relative">
+          <div class="relative flex items-center">
             <!-- AVATAR -->
             <img src="{{ asset('img/avatar.png') }}" class="inline-block h-8 w-8 rounded-full mr-2">
             <!-- USER NAME -->
@@ -57,19 +57,19 @@
           </div>
 
           <!-- DROPDOWN CONTENT -->
-          <div class="leading-tight rounded-lg py-4 bg-white absolute shadow-md z-10"
+          <div class="leading-tight rounded-lg mt-2 xl:mt-3 py-2 md:py-4 bg-white absolute shadow-md z-10"
             :class="[visible? 'block' : 'hidden']"
           >
             <!-- DASHBOARD -->
             @can('perform-admin-actions')
-              <a href="{{ route('dashboard') }}" class="block px-6 py-3 width-full hover:bg-gray-200">
+              <a href="{{ route('dashboard') }}" class="block px-4 md:px-6 py-3 width-full hover:bg-gray-200">
                 @include('layouts.partials.svg.dashboard')
                 <span class="text-sm text-green-600 tracking-tight hover:text-blue-700">Dashboard</span>
               </a>
             @endcan
 
             <!-- SIGN OUT -->
-            <a href="{{ route('logout') }}" class="block px-6 py-3 width-full hover:bg-gray-200"
+            <a href="{{ route('logout') }}" class="block px-4 md:px-6 py-3 width-full hover:bg-gray-200"
               onclick="event.preventDefault();
               document.getElementById('logout-form').submit();"
             >

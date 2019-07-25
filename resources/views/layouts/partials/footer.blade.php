@@ -2,12 +2,12 @@
   <div class="flex flex-col lg:flex-row lg:justify-between border-t-2 border-gray-200 py-6 text-gray-700">
 
     <!-- LOGO -->
-    <div class="mb-4 lg:mb-1 flex items-center">
+    <div class="flex items-center">
         @include('layouts.partials.svg.logo')
       <span class="ml-2">{{ (date('Y') > 2019)?  '2019 - '.date('Y') : '2019' }} Mini CRM</span>
     </div>
 
-    <div class="flex flex-col">
+    <div class="flex flex-col mt-4 xl:mt-0 ml-4 md:ml-0">
       <!-- HOME -->
       <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-500">
         @include('layouts.partials.svg.home')
@@ -20,9 +20,9 @@
       </a>
     </div>
 
-    <div class="flex flex-col">
+    <div class="flex flex-col mt-4 xl:mt-0 ml-4 md:ml-0">
       <!-- SOURCE CODE -->
-      <a href="https://github.com/halayuba/laravel-mini-crm.git" class="text-gray-700 hover:text-green-500 mt-4 xl:mt-0">
+      <a href="https://github.com/halayuba/laravel-mini-crm.git" class="text-gray-700 hover:text-green-500">
         @include('layouts.partials.svg.github')
         <span class="">Source code</span>
       </a>

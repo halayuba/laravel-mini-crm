@@ -1,7 +1,7 @@
 ## Laravel - Mini CRM
 
 - Author: Simon Bashir
-- Version: 0.4 (2019.07.23)
+- Version: 0.5 (2019.07.25)
 - First release Date: May 1st, 2019
 - To see a hosted demo you can visit [flexcrm.app](https://flexcrm.app)
 
@@ -16,7 +16,7 @@ Coded in `Laravel 5.8`, Mini CRM is a demo project.
 5. Migrations to create schema and DB structure and Seeders (including factories) are used to pre-populate certain tables.
 6. The "ProcessFileUpload" repository is used to validate and store uploaded files to the local storage folder that is publicly accessible.
 7. Contains many useful concepts: Filters, form validation, scope (in Models), view composer, blade service provider, markdown mail, flash messaging, pagination, and helper functions are used in this project.
-8. TailwindCSS is used for layout design.
+8. TailwindCSS is used for CSS layout design.
 9. Vue.js is used to allow previewing image (logo) in the form (client-side and before uploading to the back-end). Vue.js is also used in a few other places (for example, showing/hiding tooltips).
 10. Simple Admin dashboard for updating password.
 
@@ -70,11 +70,11 @@ Mini CRM requires Laravel v5.8 (not tested with other versions).
 ### Roadmap
 - ~~Add filters.~~
 - ~~Admin dashboard.~~
-- Responsive design: WIP many new UI improvements had been made for this release.
+- Responsive design: WIP - many improvements had been made for this release.
 - Expand functionality to include basic Customer Care and Billing.
 - Additional form validation (including client-side validation).
 - Expand on Admin dashboard.
-
+- You have an idea? Let me know.
 
 ### Maintainers & Contributors
 - Simon Bashir (Designer and Developer)

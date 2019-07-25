@@ -1,5 +1,11 @@
 <div class="w-full sm:w-3/4 px-4 sm:px-0 sm:pr-8 mt-8 rounded">
 
+    <!-- HEADER -->
+    <div class="flex items-baseline justify-between border-b-2 border-gray-400 mb-10">
+      <span class="tracking-wide uppercase font-bold pb-4 border-b-2 border-indigo-500">Employees </span>
+      <span class="ml-2 font-bold text-indigo-600">{{ $employees_count }}</span>
+    </div>
+
     <!-- MAIN SECTION -->
     @forelse($manager->companies as $company)
 

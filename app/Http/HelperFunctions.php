@@ -113,7 +113,6 @@ function last_week()
   return appTz()->subWeek()->toDateString();
 }
 
-
  //== COMPANIES WITH/WITHOUT EMPLOYEES
 //====================
 function companies_filter()

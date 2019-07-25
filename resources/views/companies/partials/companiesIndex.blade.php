@@ -3,8 +3,10 @@
   <!-- HEADER -->
   <div class="flex border-b-2 border-gray-400 mb-10">
     <span class="tracking-wide uppercase font-bold pb-4 border-b-2 border-indigo-500">companies </span>
-    <span class="ml-1 tracking-tight">{{ companies_filter() . " : " }}</span>
-    <span class="ml-2 font-bold text-indigo-600">{{ $companies_count }}</span>
+    @can('perform-admin-actions')
+      <span class="ml-1 tracking-tight">{{ companies_filter() . " : " }}</span>
+      <span class="ml-2 font-bold text-indigo-600">{{ $companies_count }}</span>
+    @endcan
   </div>
 
   <!-- MAIN SECTION -->
@@ -133,5 +135,7 @@
     </div>
   @endforelse
 
-{{ $companies->links() }}
+  @urlNoSearch
+  {{ $companies->links() }}
+  @endurlNoSearch
 </div>

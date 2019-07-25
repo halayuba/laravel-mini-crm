@@ -1,4 +1,4 @@
-<div class="w-full sm:w-3/4 px-4 sm:px-0 sm:pr-8 mt-8 rounded">
+<div class="w-full md:w-3/4 sm:pr-8 mt-8 rounded">
 
   <!-- HEADER -->
   <div class="flex items-baseline justify-between border-b-2 border-gray-400 mb-10">
@@ -103,5 +103,8 @@
     </div>
   @endforelse
 
-{{ $employees->links() }}
+  @urlNoSearch
+  {{ $employees->links() }}
+  @endurlNoSearch
+
 </div>

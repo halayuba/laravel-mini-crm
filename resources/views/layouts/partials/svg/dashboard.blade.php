@@ -1,4 +1,4 @@
-<svg class="w-4 h-4 fill-current text-green-600 inline-block" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg class="hidden md:inline-block w-4 h-4 fill-current text-green-600" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 <g>
 	<path d="M394.6,341.2c-29.5,0-53.4,23.9-53.4,53.4c0,29.5,23.9,53.4,53.4,53.4c29.5,0,53.4-23.9,53.4-53.4

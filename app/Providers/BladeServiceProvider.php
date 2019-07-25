@@ -37,5 +37,11 @@ class BladeServiceProvider extends ServiceProvider
           }
           else return false;
         });
+
+         //== URI CONTAINS "SEARCH"
+        //====================
+        \Blade::if('urlNoSearch', function(){
+          return ends_with(request()->path(), 'search')? false : true;
+        });
     }
 }

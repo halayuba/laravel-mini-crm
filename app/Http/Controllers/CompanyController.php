@@ -89,9 +89,20 @@ class CompanyController extends Controller
   {
     if ( strlen(trim($request->company)) >= 3 )
     {
-      $companies = Company::searchByName($request->company)->paginate(10);
-      $companies_count = Company::searchByName($request->company)->count();
-
+      /* == SHOW ALL COMPANIES BASED ON THE SEARCH RESULT IF THE REQUESTER IS ADMIN == */
+      if( Gate::allows('perform-admin-actions') )
+      {
+        $companies = Company::searchByName($request->company)->paginate(10);
+        $companies_count = $companies->count();
+      }
+      /* == LIMIT THE SEARCH RESULT TO ONLY SHOW COMPANIES THE REQUESTER HAS PERMISSION TO ACCESS == */
+      else
+      {
+        $companies_search = Company::searchByName($request->company)->get();
+        $companies_permission = request()->user()->companies()->get();
+        $companies = $companies_search->intersect($companies_permission);
+        $companies_count = optional($companies)->count();
+      }
       return view("companies.index", compact('companies', 'companies_count'));
     }
     else
@@ -99,7 +110,6 @@ class CompanyController extends Controller
       return redirect('/companies')->with(flash_message("warning", "Search field must contain 3 characters at least."));
     }
   }
-
 
   /* //====================
     //== SHOW

@@ -18,13 +18,13 @@ class EmployeeController extends Controller
         {
           $employees = Employee::with('company')->paginate(10);
           $employees_count = Employee::count();
-
           return view("employees.index", compact('employees', 'employees_count'));
         }
         else
         {
           $manager = request()->user()->load('companies.employees');
-          return view("employees.indexManagers", compact('manager'));
+          $employees_count = Employee::countEmployeeSearchByManager()->count();
+          return view("employees.indexManagers", compact('manager', 'employees_count'));
         }
       }
 
@@ -69,9 +69,18 @@ class EmployeeController extends Controller
       {
         if ( strlen(trim($request->employee)) >= 3 )
         {
-          $employees = Employee::searchByName($request->employee)->paginate(10);
-          $employees_count = Employee::searchByName($request->employee)->count();
-
+          /* == SHOW ALL EMPLOYEES BASED ON THE SEARCH RESULT IF THE REQUESTER IS ADMIN == */
+          if( Gate::allows('perform-admin-actions') )
+          {
+            $employees = Employee::searchByName($request->employee)->paginate(10);
+            $employees_count = $employees->count();
+          }
+          /* == LIMIT THE SEARCH RESULT TO ONLY SHOW EMPLOYEES THE REQUESTER HAS PERMISSION TO ACCESS == */
+          else
+          {
+            $employees = Employee::employeeSearchByManager($request->employee)->get();
+            $employees_count = Employee::countEmployeeSearchByManager()->count();
+          }
           return view("employees.index", compact('employees', 'employees_count'));
         }
         else
