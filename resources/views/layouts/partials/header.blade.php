@@ -64,7 +64,7 @@
             @can('perform-admin-actions')
               <a href="{{ route('dashboard') }}" class="block px-4 md:px-6 py-3 width-full hover:bg-gray-200">
                 @include('layouts.partials.svg.dashboard')
-                <span class="text-sm text-green-600 tracking-tight hover:text-blue-700">Dashboard</span>
+                <span class="text-sm text-green-600 tracking-tight md:tracking-normal xl:ml-2 hover:text-blue-700">Dashboard</span>
               </a>
             @endcan
 
@@ -74,7 +74,7 @@
               document.getElementById('logout-form').submit();"
             >
               @include('layouts.partials.svg.logout')
-              <span class="text-sm text-green-600 tracking-tight hover:text-blue-700">{{ __('Logout') }}</span>
+              <span class="text-sm text-green-600 tracking-tight md:tracking-normal xl:ml-2 hover:text-blue-700">{{ __('Logout') }}</span>
             </a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
