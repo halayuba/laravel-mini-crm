@@ -6,7 +6,7 @@
 - To see a hosted demo you can visit [flexcrm.app](https://flexcrm.app)
 
 ### Brief Description
-Coded in `Laravel 5.8`, Mini CRM is a demo project based on a request for a [code test](http://mini-crm.test/code-test).
+Coded in `Laravel 5.8`, Mini CRM is a demo project based on a request for a [code test](http://flexcrm.app/code-test).
 
 ### Basic Features
 1. The tool will allow "Admin" users to perform CRUD operations on Companies, Employees, and Managers.
