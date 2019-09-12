@@ -1,12 +1,12 @@
 ## Laravel - Mini CRM
 
 - Author: Simon Bashir
-- Version: 0.6 (2019.07.31)
+- Version: 0.7 (2019.09.11)
 - First release Date: May 1st, 2019
 - To see a hosted demo you can visit [flexcrm.app](https://flexcrm.app)
 
 ### Brief Description
-Coded in `Laravel 5.8`, Mini CRM is a demo project.
+Coded in `Laravel 5.8`, Mini CRM is a demo project based on a request for a [code test](http://mini-crm.test/code-test).
 
 ### Basic Features
 1. The tool will allow "Admin" users to perform CRUD operations on Companies, Employees, and Managers.
@@ -20,8 +20,8 @@ Coded in `Laravel 5.8`, Mini CRM is a demo project.
 9. Vue.js is used to allow previewing image (logo) in the form (client-side and before uploading to the back-end). Vue.js is also used in a few other places (for example, showing/hiding tooltips).
 10. Simple Admin dashboard for updating password.
 
-### Screen Shots
-visit [ziffoo.com](http://www.ziffoo.com/features)
+### Screen Shots of all features
+visit [flexcrm.app](https://flexcrm.app/features)
 
 
 ### Disclaimer

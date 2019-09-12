@@ -46,7 +46,8 @@ class PermissionController extends Controller
   {
     $user->companies()->sync($request->input('companies'));
 
-    \Mail::to($user->email)->send( new AccessToCompanyGranted(mailCompanies($request->input('companies'))) );
+    /* == THIS WORKS FINE BUT UNLESS THE PROVIDED EMAIL IS LEGIT, THE CODE WILL BREAK AND AN ERROR WILL DISPLAY == */
+    // \Mail::to($user->email)->send( new AccessToCompanyGranted(mailCompanies($request->input('companies'))) );
 
     return redirect("/managers")->with(flash_message("success", "Permissions were updated successfully."));
   }
@@ -59,6 +60,7 @@ class PermissionController extends Controller
     /* == USER MODEL >> FETCH THE IDs OF THE COMPANIES ASSOCIATED WITH THE USER  == */
     $user->companies()->detach($user->fetchAccessIds());
 
-    return back()->with(flash_message("success", "All permissions were removed successfully."));
+    return redirect("/managers")->with(flash_message("success", "All permissions were removed successfully."));
+    // return back()->with(flash_message("success", "All permissions were removed successfully."));
   }
 }

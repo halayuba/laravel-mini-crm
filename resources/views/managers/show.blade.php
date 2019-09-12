@@ -106,7 +106,7 @@
 
             <!-- EDIT ACTION -->
             <span class="flex-1 bg-gray-200 text-center py-2">
-              <a href="{{ route('employee.edit', $user->id) }}" class="" title="Edit">
+              <a href="{{ route('manager.edit', $user->id) }}" class="" title="Edit">
                 @include('layouts.partials.svg.edit2')
               </a>
             </span>

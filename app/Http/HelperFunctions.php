@@ -118,7 +118,7 @@ function last_week()
 function companies_filter()
 {
   $uri = $_SERVER['QUERY_STRING'];
-  if ( str_contains($uri, 'employees=true') ) return 'with employees';
-  elseif ( str_contains($uri, 'employees=false') ) return 'with no employees';
-  elseif ( str_contains($uri, 'recent=true') ) return 'recently added';
+  if ( str_contains($uri, 'employees=true') ) return '(with employees)';
+  elseif ( str_contains($uri, 'employees=false') ) return '(with no employees)';
+  elseif ( str_contains($uri, 'recent=true') ) return '(recently added)';
 }

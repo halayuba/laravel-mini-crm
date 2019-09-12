@@ -75,6 +75,7 @@ class ManagerController extends Controller
      //==================== */
     public function edit(User $user)
     {
+      $user = $user->load('companies');
       return view("managers.edit", compact('user'));
     }
 

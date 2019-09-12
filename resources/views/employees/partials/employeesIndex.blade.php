@@ -35,10 +35,12 @@
         </span>
 
         <!-- PHONE -->
+        @if( $employee->phone )
         <span class="flex-auto text-sm mb-1 sm:mb-0 sm:mr-2" title="Employee Phone">
           @include('layouts.partials.svg.phone')
           {{ $employee->phone }}
         </span>
+        @endif
 
       </div>
 

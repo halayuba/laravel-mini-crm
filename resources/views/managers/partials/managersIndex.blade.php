@@ -91,7 +91,6 @@
 
         <!-- DELETE -->
         <span class="flex-1 bg-gray-200 hover:bg-gray-300 text-center py-2">
-
           <a href="{{ route('manager.destroy', $manager->id) }}" class="flex items-center justify-center text-gray-700" title="Warning! attempting to delete a company will also delete all associated employees"
             onclick="event.preventDefault();
             document.getElementById('delete-{{ $manager->id }}').submit();"

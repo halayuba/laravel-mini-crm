@@ -49,8 +49,8 @@
 
         <!-- COMPNAY OFFICIAL WEBSITE -->
         <span class="flex-auto text-sm mb-1 sm:mb-0 sm:mr-2" title="COMPNAY's Website">
-          @include('layouts.partials.svg.link2')
           @if($company->website)
+            @include('layouts.partials.svg.link2')
             <a href="{{ $company->website }}" class="text-indigo">{{ clean_url($company->website) }}</a>
           @endif
         </span>

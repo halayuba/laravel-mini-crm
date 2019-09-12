@@ -57,24 +57,24 @@
           </div>
 
           <!-- DROPDOWN CONTENT -->
-          <div class="leading-tight rounded-lg mt-2 xl:mt-3 py-2 md:py-4 bg-white absolute shadow-md z-10"
+          <div class="leading-tight rounded-lg mt-2 xl:mt-3 xl:mr-2 py-2 md:py-4 bg-white absolute shadow-md z-10"
             :class="[visible? 'block' : 'hidden']"
           >
             <!-- DASHBOARD -->
             @can('perform-admin-actions')
-              <a href="{{ route('dashboard') }}" class="block px-4 md:px-6 py-3 width-full hover:bg-gray-200">
+              <a href="{{ route('dashboard') }}" class="block px-4 py-3 width-full hover:bg-gray-200">
                 @include('layouts.partials.svg.dashboard')
-                <span class="text-sm text-green-600 tracking-tight md:tracking-normal xl:ml-2 hover:text-blue-700">Dashboard</span>
+                <span class="text-sm text-green-600 tracking-tight md:tracking-normal ml-1">Dashboard</span>
               </a>
             @endcan
 
             <!-- SIGN OUT -->
-            <a href="{{ route('logout') }}" class="block px-4 md:px-6 py-3 width-full hover:bg-gray-200"
+            <a href="{{ route('logout') }}" class="block px-4 py-3 width-full hover:bg-gray-200"
               onclick="event.preventDefault();
               document.getElementById('logout-form').submit();"
             >
               @include('layouts.partials.svg.logout')
-              <span class="text-sm text-green-600 tracking-tight md:tracking-normal xl:ml-2 hover:text-blue-700">{{ __('Logout') }}</span>
+              <span class="text-sm text-green-600 tracking-tight md:tracking-normal ml-1">{{ __('Logout') }}</span>
             </a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

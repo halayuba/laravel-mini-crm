@@ -54,7 +54,7 @@ class EmployeeController extends Controller
         if ( $request->return_to_route == 'companies' )
         {
           $company = Company::find($request->company_id)->name;
-          return redirect()->route('companies.index')->with(flash_message("success", "A new employee has been added successfully to company '" . $company . "'."));
+          return redirect()->route('companies.index')->with(flash_message("success", "A new employee has been successfully added to company '" . $company . "'."));
         }
         else
         {

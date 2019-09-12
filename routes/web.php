@@ -1,15 +1,14 @@
 <?php
-use Illuminate\Http\Request;
 
-
+ //== GENERAL PAGES
+//====================
 Route::redirect('/', '/home');
+Route::view('/home', 'pages.home')->name('home');
 Route::view('/technologies', 'pages.technologies');
 Route::view('/features', 'pages.features');
-Route::view('/welcome', 'welcome');
+Route::view('/code-test', 'pages.codeTest');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
  //== COMPANIES
 //====================
@@ -57,7 +56,7 @@ Route::prefix('managers')->middleware(['auth', 'adminRole'])->group(function(){
   Route::post('/search', 'ManagerController@search')->name('managers.search');
 });
 
-//== ASSIGN-COMPANIES: PROVIDE ACCESS PERMISSIONS TO A MANAGER
+ //== ASSIGN-COMPANIES: PROVIDE ACCESS PERMISSIONS TO A MANAGER
 //====================
 Route::prefix('permissions')->middleware(['auth', 'adminRole'])->group(function(){
   Route::get('/{user}/create', 'PermissionController@create')->name('permissions.create');
@@ -67,6 +66,8 @@ Route::prefix('permissions')->middleware(['auth', 'adminRole'])->group(function(
   Route::delete('/{user}', 'PermissionController@destroy')->name('permissions.destroy');
 });
 
+ //== DASHBOARD
+//====================
 Route::prefix('dashboard')->middleware(['auth'])->group(function(){
   Route::get('/', 'Dashboard\DashboardController@index')->name('dashboard');
 

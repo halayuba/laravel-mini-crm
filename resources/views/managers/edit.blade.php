@@ -46,8 +46,54 @@
           <input id="email" type="email" name="email" class="form_input" value="{{ old('email')?: $user->email }}" placeholder="Manager address">
         </div>
 
+        <!-- PERMISSIONS -->
+        <div class="bg-gray-100 px-2 py-4 text-gray-700">
+
+          <!-- ACCESS PERMISSIONS WERE ASSIGNED -->
+          @if( $user->companies->count() )
+            <div class="px-2">
+              <span>{{ $user->name }} has access permissions to these companies:</span>
+
+              <!-- LIST OF COMPANIES WITH ACCESS -->
+              <ol class="text-gray-600 px-2 py-2 list-decimal list-inside">
+                @foreach( $user->companies as $company )
+                  <li class="leading-loose ml-2 py-1 text-sm font-semibold">
+                    {{ $company->name }}
+                  </li>
+                @endforeach
+              </ol>
+
+              <div class="flex flex-col my-4">
+                <!-- UPDATE ACCESS PERMISSIONS -->
+                <a href="{{ route('permissions.edit', $user->id) }}" class="inline-block" title="Update access permissions">
+                  @include('layouts.partials.svg.refresh')
+                  <span class="hidden xl:inline-block">Update access permissions</span>
+                </a>
+
+                <!-- REMOVE ACCESS PERMISSIONS -->
+                <a href="{{ route('permissions.destroy', $user->id) }}" class="mt-4 inline-block" title="Remove access permissions"
+                  onclick="event.preventDefault();
+                  document.getElementById('remove-{{ $user->id }}').submit();"
+                >
+                  @include('layouts.partials.svg.remove')
+                  <span class="hidden xl:inline-block">Remove access permissions</span>
+                </a>
+              </div>
+
+            </div>
+          @else
+            <div class="px-2">
+              <span class="">{{ $user->name }} has no access permissions to any company.</span>
+              <a href="{{ route('permissions.create', $user->id) }}" class="mt-2 block" title="Assign access permissions">
+                @include('layouts.partials.svg.add')
+                <span class="text-gray-500 hover:underline">Assign access permissions</span>
+              </a>
+            </div>
+          @endif
+        </div>
+
         <!-- BUTTONS -->
-        <div class="flex justify-end">
+        <div class="flex justify-end mt-6">
           <a href="{{ url('/managers') }}" class="btn_cancel mr-2">Cancel</a>
           <button class="btn_jobsave" type="submit">
             {{ __('Save') }}
@@ -55,6 +101,11 @@
         </div>
       </form>
 
+      <form id="remove-{{ $user->id }}" action="{{ route('permissions.destroy', $user->id) }}" method="POST" class="hidden">
+        @csrf
+        @method('DELETE')
+        <input class="" type="submit" value="Delete">
+      </form>
     </div>
   </div>
 
