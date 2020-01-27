@@ -25,6 +25,7 @@ class AccessToCompanyGranted extends Mailable
      */
     public function build()
     {
-        return $this->subject('New access previliges have been assigned to you')->markdown('emails.access-permissions');
+        return $this->subject('New access previliges have been assigned to you')
+                    ->markdown('emails.access-permissions');
     }
 }

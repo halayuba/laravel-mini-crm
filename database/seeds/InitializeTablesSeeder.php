@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 class InitializeTablesSeeder extends Seeder
 {
@@ -28,7 +29,7 @@ class InitializeTablesSeeder extends Seeder
            'email' => 'admin@site.com',
            'password' => bcrypt('password'),
            'role_id' => 1,
-           'remember_token' => str_random(10),
+           'remember_token' => Str::random(10),
            'created_at' => Carbon::now(),
            'updated_at' => Carbon::now()
          ];
@@ -42,7 +43,7 @@ class InitializeTablesSeeder extends Seeder
            'email' => 'manager@site.com',
            'password' => bcrypt('password'),
            'role_id' => 2,
-           'remember_token' => str_random(10),
+           'remember_token' => Str::random(10),
            'created_at' => Carbon::now(),
            'updated_at' => Carbon::now()
          ];

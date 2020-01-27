@@ -29,7 +29,7 @@ Mini CRM is just for demo purposes. Although it is a work in progress with many 
 
 ### Setup Instructions
 ```
-Mini CRM requires Laravel v5.8 (not tested with other versions).
+Mini CRM was built with Laravel v5.8 (not tested with other versions).
 ```
 
 * Clone this repository to your local drive
@@ -47,12 +47,10 @@ Mini CRM requires Laravel v5.8 (not tested with other versions).
 ~~~
 * Update .env to your specific needs (replace the * with the associated value)
 ~~~
-    cp .env.example .env
-    nano .env
     DB_HOST=localhost
-    DB_DATABASE=*db_name
-    DB_USERNAME=*username
-    DB_PASSWORD=*password
+    DB_DATABASE=*db_name*
+    DB_USERNAME=*username*
+    DB_PASSWORD=*password*
 ~~~
 * Run all migrations to create and populate the database tables
 ~~~
