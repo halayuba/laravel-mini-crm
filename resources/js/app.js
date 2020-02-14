@@ -26,6 +26,7 @@ const app = new Vue({
     el: '#app',
     data() {
         return {
+            selectedFeature: '',
             visible: false,
             mobileVisible: false,
             navClicked: false,
@@ -35,21 +36,6 @@ const app = new Vue({
             selectedFile: '',
             tipFlag: false,
             state: 'default',
-            feature1: false,
-            feature2: false,
-            feature3: false,
-            feature4: false,
-            feature5: false,
-            feature6: false,
-            feature7: false,
-            feature8: false,
-            feature9: false,
-            feature10: false,
-            feature11: false,
-            feature12: false,
-            feature13: false,
-            feature14: false,
-            feature15: false
         }
     },
     directives: {
@@ -64,6 +50,18 @@ const app = new Vue({
       }
     },
     methods: {
+      featureClicked(selection) {
+        this.selectedFeature = selection
+      },
+      toggleClicked(selection) {
+        if ( this.selectedFeature == '' || this.selectedFeature != selection ) {
+          this.selectedFeature = ''
+          this.featureClicked(selection)
+        }
+        else {
+          this.selectedFeature = ''
+        }
+      },
         away: function() {
           this.visible = false
         },

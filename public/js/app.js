@@ -33235,6 +33235,7 @@ var app = new Vue({
   el: '#app',
   data: function data() {
     return {
+      selectedFeature: '',
       visible: false,
       mobileVisible: false,
       navClicked: false,
@@ -33243,22 +33244,7 @@ var app = new Vue({
       imageData: null,
       selectedFile: '',
       tipFlag: false,
-      state: 'default',
-      feature1: false,
-      feature2: false,
-      feature3: false,
-      feature4: false,
-      feature5: false,
-      feature6: false,
-      feature7: false,
-      feature8: false,
-      feature9: false,
-      feature10: false,
-      feature11: false,
-      feature12: false,
-      feature13: false,
-      feature14: false,
-      feature15: false
+      state: 'default'
     };
   },
   directives: {
@@ -33273,6 +33259,17 @@ var app = new Vue({
     }
   },
   methods: {
+    featureClicked: function featureClicked(selection) {
+      this.selectedFeature = selection;
+    },
+    toggleClicked: function toggleClicked(selection) {
+      if (this.selectedFeature == '' || this.selectedFeature != selection) {
+        this.selectedFeature = '';
+        this.featureClicked(selection);
+      } else {
+        this.selectedFeature = '';
+      }
+    },
     away: function away() {
       this.visible = false;
     },
@@ -33460,8 +33457,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/halayuba/Code/wip/mini-crm/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/halayuba/Code/wip/mini-crm/resources/css/app.css */"./resources/css/app.css");
+__webpack_require__(/*! /home/halayuba/Code/Current/mini-crm/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/halayuba/Code/Current/mini-crm/resources/css/app.css */"./resources/css/app.css");
 
 
 /***/ })
