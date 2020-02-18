@@ -1,6 +1,1 @@
-<svg class="w-6 h-6 fill-current text-green-500 inline-block" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-<g>
-	<polygon points="208,448 208,320 304,320 304,448 401.6,448 401.6,256 464,256 256,64 48,256 110.4,256 110.4,448 	"/>
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><path d="M14 16h-3v-6H6v6H3V7H2v10h13V7h-1v9zm-7 0v-5h3v5H7zm9.796-9.527l-.592.807L8.5 1.62.796 7.278l-.592-.806L8.5.38l8.296 6.093z"/></svg>

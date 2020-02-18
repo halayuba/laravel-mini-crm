@@ -4,7 +4,6 @@
   <div class="flex items-baseline justify-between border-b-2 border-gray-400 mb-10">
     <span class="tracking-wide uppercase font-bold pb-4 border-b-2 border-indigo-500">Managers </span>
     <span class="ml-2 font-bold text-indigo-600">{{ $managers_count }}</span>
-
   </div>
 
   <!-- MAIN SECTION -->
@@ -27,7 +26,7 @@
       <div class="text-gray-600 mb-4 px-2">
 
         @if( $manager->companies->count() )
-          <p class="block mb-2 text-sm underline leading-loose tracking-tight ">Companies with access permissions to:</p>
+          <p class="block mb-2 text-sm underline leading-loose tracking-tight ">You've been assigned access to these companies:</p>
 
           <div class="flex flex-wrap text-gray-600 mb-4 py-2 px-2">
           @foreach( $manager->companies as $company )
