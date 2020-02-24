@@ -1,4 +1,4 @@
-<div class="container mx-auto px-6 py-10">
+<div class="mt-8 container mx-auto px-6 py-10 border-t border-gray-300">
   <div class="flex flex-col lg:flex-row lg:justify-between text-gray-700">
 
     <!-- SITE LOGO -->
