@@ -1,7 +1,7 @@
 ## Laravel - Mini CRM
 
 - Author: Simon Bashir
-- Version: 0.71 (2020.02.14)
+- Version: 0.72 (2020.02.23)
 - First release Date: May 1st, 2019
 - To see a hosted demo you can visit [flexcrm.app](https://flexcrm.app)
 

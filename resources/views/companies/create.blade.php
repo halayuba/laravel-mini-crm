@@ -45,40 +45,8 @@
         <input id="website" type="url" name="website" class="form_input" value="{{ old('website') }}" placeholder="Company Website">
       </div>
 
-      <!-- LOGO UPLOAD -->
-      <div class="w-full mb-16">
-        <label class="form_label">Upload Logo
-
-          <!-- TIP -->
-          <span class="text-sm text-gray-700 ml-1" title="Logo must be an image and min 100X100"
-            @click="tipFlag = !tipFlag"
-          >
-            @include('layouts.partials.svg.tip')
-          </span>
-          <p class="px-2 py-1 text-gray-700 border border-gray-500"
-            v-if="tipFlag"
-          >
-            Logo must be an image and min 100X100
-          </p>
-        </label>
-
-        <!-- VUE FOR FORMATTING AND INITIAL VALIDATION -->
-        <div class="block w-32 h-32 cursor-pointer bg-cover bg-center bg-gray-500 hover:bg-gray-400"
-          :style="{ 'background-image': `url(${imageData})` }"
-          @click="$refs.fileInput.click()"
-        >
-          <span class="w-full h-full flex justify-center items-center text-gray-700 text-sm text-semibold"
-            v-if="!imageData"
-          >
-            Choose an Image
-          </span>
-          <input name="file" type="file" class="hidden"
-            ref="fileInput"
-            @input="onFileSelected"
-          >
-        </div>
-
-      </div> <!-- END LOGO UPLOAD -->
+      <!-- IMAGE -->
+      <image-upload></image-upload>
 
       <!-- BUTTONS -->
       <div class="flex justify-end">

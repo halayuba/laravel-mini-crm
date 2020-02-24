@@ -19,8 +19,7 @@ Vue.use(Toastr)
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('app', require('./components/App.vue').default);
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('image-upload', require('./components/ImageUpload.vue').default);
 
 const app = new Vue({
     el: '#app',
@@ -32,10 +31,6 @@ const app = new Vue({
             navClicked: false,
             hideAlertFlag: false,
             actionsVisible: false,
-            imageData: null,
-            selectedFile: '',
-            tipFlag: false,
-            state: 'default',
         }
     },
     directives: {
@@ -62,51 +57,10 @@ const app = new Vue({
           this.selectedFeature = ''
         }
       },
-        away: function() {
-          this.visible = false
-        },
-        chooseImage () {
-          this.state = 'uploading'
-          this.$refs.fileInput.click()
-        },
-        onFileSelected (event) {
-          if (event.target.files.length !== 0) {
-            this.selectedFile = event.target.files[0]
+      away: function() {
+        this.visible = false
+      },
 
-            /* == VALIDATION == */
-            if( this.isImage() ) {
-              if( this.isSizeAcceptable() ) {
-                const input = this.$refs.fileInput
-                const files = input.files
-                if (files && files[0]) {
-                  const reader = new FileReader
-                  reader.onload = e => {
-                  this.imageData = e.target.result
-                  }
-                  reader.readAsDataURL(files[0])
-                  this.$emit('input', files[0])
-                }
-              } else {
-                this.$toastr.e('The file you are trying to upload is too large.')
-              }
-            } else {
-              this.$toastr.e('The file you are trying to upload does not seem to be an image.')
-            }
-          } else {
-            this.$toastr.e('No file selected.')
-          }
-        },
-        isImage() {
-          return this.selectedFile.type.match('image.*') ? true : false
-        },
-        isSizeAcceptable() {
-          return (this.selectedFile.size < 99999)? true : false
-        },
-        removeImage() {
-          this.imageData = null
-          this.selectedFile = null
-          this.$toastr.i('image is removed.')
-        },
     },
 
 });

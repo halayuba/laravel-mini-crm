@@ -10,35 +10,38 @@
     <div class="flex flex-col mt-8 lg:mt-0 ml-4 md:ml-0">
 
       <!-- HOME -->
-      <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-500 flex items-center">
-        <picture class="w-5 h-5 fill-current text-indigo inline-block">
-          @include('layouts.partials.svg.home')
-        </picture>
-        <span class="inline-block ml-2">Home</span>
+      <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-500 flex items-baseline">
+          <picture class="w-5 h-5 fill-current text-gray-700 inline-block">
+            @include('layouts.partials.svg.home')
+          </picture>
+          <span class="inline-block ml-2">Home</span>
       </a>
 
       <!-- FEATURES -->
-      <a href="{{ url('/features') }}" class="text-gray-700 hover:text-green-500 mt-4 flex items-center">
-        <picture class="w-5 h-5 fill-current text-indigo inline-block">
-          @include('layouts.partials.svg.features')
-        </picture>
-        <span class="inline-block ml-2">Features</span>
-      </a>
+      <div class="mt-4">
+        <a href="{{ url('/features') }}" class="text-gray-700 hover:text-green-500 flex items-baseline">
+          <picture class="w-5 h-5 fill-current text-gray-700 inline-block">
+            @include('layouts.partials.svg.features')
+          </picture>
+          <span class="inline-block ml-2">Features</span>
+        </a>
+      </div>
+
     </div>
 
-    <div class="flex flex-col mt-4 lg:mt-0 ml-4 md:ml-0">
+    <div class="flex flex-col mt-2 lg:mt-0 ml-4 md:ml-0">
 
       <!-- SOURCE CODE -->
-      <a href="https://github.com/halayuba/laravel-mini-crm.git" class="text-gray-700 hover:text-green-500 mt-4 lg:mt-0 flex items-center">
-        <picture class="w-5 h-5 fill-current text-indigo inline-block">
+      <a href="https://github.com/halayuba/laravel-mini-crm.git" class="text-gray-700 hover:text-green-500 mt-4 lg:mt-0 flex items-baseline">
+        <picture class="w-5 h-5 fill-current text-gray-700 inline-block">
           @include('layouts.partials.svg.github')
         </picture>
         <span class="inline-block ml-2">Source code</span>
       </a>
 
       <!-- TECHNOLOGIES & SERVICES -->
-      <a href="{{ url('/technologies') }}" class="text-gray-700 hover:text-green-500 mt-4 flex items-center">
-        <picture class="w-5 h-5 fill-current text-indigo inline-block">
+      <a href="{{ url('/technologies') }}" class="text-gray-700 hover:text-green-500 mt-4 flex items-baseline">
+        <picture class="w-5 h-5 fill-current text-gray-700 inline-block">
           @include('layouts.partials.svg.technologies')
         </picture>
         <span class="inline-block ml-2">Technologies</span>
