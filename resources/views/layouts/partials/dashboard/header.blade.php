@@ -7,7 +7,7 @@
     <div class="flex-1 items-center flex-no-shrink py-1 xl:pl-2">
       <a href="{{ route('home') }}" class="flex items-center xl:text-2xl text-green-600">
         @include('layouts.partials.svg.logo')
-        Mini CRM
+        <span class="ml-3">Mini CRM</span>
       </a>
     </div>
   </div>

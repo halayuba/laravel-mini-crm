@@ -4,37 +4,37 @@
 
 @section('content')
 
-  <div class="container mx-auto px-8 mt-4 xl:mt-12">
+  <div class="container mx-auto mt-4 xl:mt-12 py-8 bg-white border border-gray-200 shadow">
     <div class="flex flex-wrap">
 
       <!-- COMPANIES -->
-      <div class="max-w-xs bg-white border border-gray-400 border-t-4 border-t-green-500 rounded px-4 py-6 mb-8 mr-8 text-center">
-        <h1>{{ $companies }}</h1>
-        <small>Companies</small>
+      <div class="flex-1 border-r border-gray-300 text-center">
+        <small class="text-gray-500 uppercase">Companies</small>
+        <span class="mt-4 text-lg text-gray-600 font-semibold block">{{ $companies }}</span>
       </div>
 
       <!-- MANAGERS -->
-      <div class="max-w-xs bg-white border border-gray-400 border-t-4 border-t-green-500 rounded px-4 py-6 mb-8 mr-8 text-center">
-        <h1>{{ $managers }}</h1>
-        <small>Managers</small>
+      <div class="flex-1 border-r border-gray-300 text-center">
+        <small class="text-gray-500 uppercase">Managers</small>
+        <span class="mt-4 text-lg text-gray-600 font-semibold block">{{ $managers }}</span>
       </div>
 
       <!-- EMPLOYEES -->
-      <div class="max-w-xs bg-white border border-gray-400 border-t-4 border-t-green-500 rounded px-4 py-6 mb-8 mr-8 text-center">
-        <h1>{{ $employees }}</h1>
-        <small>Employees</small>
+      <div class="flex-1 border-r border-gray-300 text-center">
+        <small class="text-gray-500 uppercase">Employees</small>
+        <span class="mt-4 text-lg text-gray-600 font-semibold block">{{ $employees }}</span>
       </div>
 
       <!-- TICKETS -->
-      <div class="max-w-xs bg-white border border-gray-400 border-t-4 border-t-green-500 rounded px-4 py-6 mb-8 mr-8 text-center">
-        <h1> 5 </h1>
-        <small>Tickets</small>
+      <div class="flex-1 border-r border-gray-300 text-center">
+        <small class="text-gray-500 uppercase">Tickets</small>
+        <span class="mt-4 text-lg text-gray-600 font-semibold block"> 5 </span>
       </div>
 
       <!-- PAYMENTS -->
-      <div class="max-w-xs bg-white border border-gray-400 border-t-4 border-t-green-500 rounded px-4 py-6 mb-8 mr-8 text-center">
-        <h1> $50,000 </h1>
-        <small>Payments</small>
+      <div class="flex-1 border-r border-gray-300 text-center">
+        <small class="text-gray-500 uppercase">Payments</small>
+        <span class="mt-4 text-lg text-gray-600 font-semibold block"> $50,000 </span>
       </div>
 
 

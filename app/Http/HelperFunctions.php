@@ -67,7 +67,7 @@ function active_filter($passed_value = '/')
   function active_dashboard($passed_value = '/')
   {
    $uri = request()->path();
-   return ends_with($uri, $passed_value)? 'pl-3 bg-white border-l-4 border-teal-800' : 'pl-4 hover:bg-gray-300';
+   return ends_with($uri, $passed_value)? 'pl-3 bg-white border-l-4 border-teal-600' : 'pl-4 hover:bg-gray-200';
   }
 
  //== FUNCTION WILL RETURN "SELECTED" USED IN FORM LOOKUP SELECT LIST

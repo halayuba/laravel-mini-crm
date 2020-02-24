@@ -7,8 +7,10 @@
     <ul class="border-b border-gray-400 text-sm mt-6 mb-8">
 
       <!-- HOME -->
-      <li class="py-2 pl-4 my-1 hover:bg-gray-400">
-        @include('layouts.partials.svg.home')
+      <li class="py-2 pl-4 my-1 hover:bg-gray-200">
+        <picture class="w-5 h-5 fill-current text-gray-700 inline-block">
+          @include('layouts.partials.svg.home')
+        </picture>
         <a href="{{ route('home') }}" class="text-sm text-gray-700 hover:text-teal-600">Home Page</a>
       </li>
 
